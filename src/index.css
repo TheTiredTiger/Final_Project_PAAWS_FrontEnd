@@ -17,3 +17,46 @@ body {
   border-right: lightgray solid 1px;
   box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
 }
+
+/* user profile */
+
+.bannerWrap {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.banner {
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.userGreeting {
+  position: relative;
+}
+
+.userHeader {
+  text-align: left;
+  margin: 2rem 0rem 1.5rem 2rem;
+}
+
+.scrollingWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+      display: none;
+  }
+}
+
+.card {
+  margin: 2rem;
+  width: 18rem;
+  flex: "0 0 auto";
+}

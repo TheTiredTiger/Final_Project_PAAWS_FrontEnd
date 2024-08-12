@@ -30,7 +30,7 @@ function Register() {
         <Button className='m-2' variant="primary" type="submit">
           Submit
         </Button>
-        <span>Already have an account? <Link to="/login">Log in</Link>!</span>
+        <p>Already have an account? <Link to="/login">Log in</Link>!</p>
     </Form>
   );
 }
