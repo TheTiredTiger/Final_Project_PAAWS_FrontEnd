@@ -35,8 +35,6 @@ function UserProfile() {
 				})}
 	</div>
 
-
-        
     </> );
 }
 

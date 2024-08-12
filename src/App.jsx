@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import UserProfile from './pages/UserProfile'
+import AnimalSearch from './pages/AnimalSearch'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
           <Route path="/profile" element={< UserProfile />} />
+          <Route path="/ourpets" element={< AnimalSearch />} />
         </Routes>
       </BrowserRouter>
       <Footer />
