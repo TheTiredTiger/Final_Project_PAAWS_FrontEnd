@@ -8,6 +8,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import UserProfile from './pages/UserProfile'
 import AnimalSearch from './pages/AnimalSearch'
+import AnimalPage from './pages/AnimalPage'
+import AdoptionForm from './pages/AdoptionForm'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/register" element={< Register />} />
           <Route path="/profile" element={< UserProfile />} />
           <Route path="/ourpets" element={< AnimalSearch />} />
+          <Route path="/animalpage" element={< AnimalPage />} />
+          <Route path="/adoptionform" element={< AdoptionForm />} />
         </Routes>
       </BrowserRouter>
       <Footer />

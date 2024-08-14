@@ -60,3 +60,24 @@ body {
   width: 18rem;
   flex: "0 0 auto";
 }
+
+/* animal page */
+
+.animalPage{
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.animalPageDesc {
+  text-align: left;
+  padding-top: 0;
+}
+
+.animalPageBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1.5rem;
+}
