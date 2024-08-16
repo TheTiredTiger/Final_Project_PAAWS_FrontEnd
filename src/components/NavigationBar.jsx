@@ -5,13 +5,15 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-/* import NavDropdown from 'react-bootstrap/NavDropdown'; */
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+let userIcon = <i className="fa-solid fa-user me-3" />
 
 function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky='top' style={{"alignItems": "flex-end" }}>
       <Container>
-        <Navbar.Brand href="#brand">
+        <Navbar.Brand href="/">
             <i className="fa-solid fa-paw" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -21,10 +23,18 @@ function NavigationBar() {
             <Nav.Link href="/ourpets">Our Pets</Nav.Link>
             <Nav.Link href="/paymentplan">Payment Plans</Nav.Link>
           </Nav>
+
           <Nav>
-            <Nav.Link href="/profile">
-                <i className="fa-solid fa-user me-3" />
-            </Nav.Link>
+          <NavDropdown title={userIcon} id="basic-nav-dropdown">
+              <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="/personaldata">
+                Personal data
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link eventKey={2} href="/cart">
                 <i className="fa-solid fa-cart-shopping" />
             </Nav.Link>

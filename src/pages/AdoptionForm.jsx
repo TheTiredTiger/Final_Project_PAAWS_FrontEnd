@@ -4,38 +4,49 @@
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function AdoptionForm() {
     return (
+      <>
+      {/* prefilled data */}
+      <Container fluid>
+        <Row>
+          <Col lg="6" >
+            <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }} >
+              <Card.Img variant="top" src="https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg" alt="pet picture"/> {/* maybe delete image so it's easier to keep the cards the same height? */}
+              <Card.Body>
+                <Card.Title>Adorable little fluffball</Card.Title>
+                <Card.Text>
+                  ID
+                </Card.Text>
+                <Button variant="primary">More</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col lg="6">
+            <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }} >
+              <Card.Body>
+                <Card.Title>User</Card.Title>
+                <Card.Text>
+                  Full name <br/>
+                  Email
+                </Card.Text>
+                <Button variant="primary">Profile</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      
+      {/* questions */}
       <Form>
-        <Form.Group className="m-3" controlId="formAnimalName">
-          <Form.Label>Animal Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter the animal's name" />
-        </Form.Group>
-
-        <Form.Group className="m-3" controlId="formAnimalRed">
-          <Form.Label>Animal Reference</Form.Label>
-          <Form.Control type="number" placeholder="Enter the animal's reference" />
-        </Form.Group>
-
-        <Form.Group className="m-3" controlId="formFirstName">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your first name" />
-        </Form.Group>
-
-        <Form.Group className="m-3" controlId="formLastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your last name" />
-        </Form.Group>
-
-        <Form.Group className="m-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
 
         <Form.Group className="m-3" controlId="formBasicPhone">
             <Form.Label>Phone number</Form.Label>
-            <Form.Control type="tel" placeholder="Enter email" />
+            <Form.Control type="tel" placeholder="Enter phone number" />
         </Form.Group>
 
 
@@ -81,6 +92,8 @@ function AdoptionForm() {
           Submit
         </Button>
       </Form>
+      </Container>
+      </>
     );
   }
 

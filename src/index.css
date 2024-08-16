@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  background-color: rgb(230, 223, 211, 0.3); /* white coffee */
 }
 
 /* home page */
@@ -56,7 +55,7 @@ body {
 }
 
 .card {
-  margin: 2rem;
+  margin: 1rem;
   width: 18rem;
   flex: "0 0 auto";
 }

@@ -10,6 +10,7 @@ import UserProfile from './pages/UserProfile'
 import AnimalSearch from './pages/AnimalSearch'
 import AnimalPage from './pages/AnimalPage'
 import AdoptionForm from './pages/AdoptionForm'
+import PersonalData from './pages/PersonalData'
 
 function App() {
 
@@ -19,9 +20,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} />
+
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
-          <Route path="/profile" element={< UserProfile />} />
+
+          <Route path="/userprofile" element={< UserProfile />} />
+          <Route path="/personaldata" element={< PersonalData />} />
+
           <Route path="/ourpets" element={< AnimalSearch />} />
           <Route path="/animalpage" element={< AnimalPage />} />
           <Route path="/adoptionform" element={< AdoptionForm />} />

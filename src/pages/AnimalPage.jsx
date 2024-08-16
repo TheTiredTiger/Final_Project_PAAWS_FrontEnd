@@ -23,6 +23,8 @@ function AnimalCard() {
               Species: <br/>
               Gender: <br/>
               Age: <br/>
+              Weight: <br/>
+              Location: <br/>
               Known illnesses: <br/>
               Description:
             </Card.Text>
