@@ -17,7 +17,6 @@ function AdoptionForm() {
         <Row>
           <Col lg="6" >
             <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }} >
-              <Card.Img variant="top" src="https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg" alt="pet picture"/> {/* maybe delete image so it's easier to keep the cards the same height? */}
               <Card.Body>
                 <Card.Title>Adorable little fluffball</Card.Title>
                 <Card.Text>
@@ -30,9 +29,8 @@ function AdoptionForm() {
           <Col lg="6">
             <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }} >
               <Card.Body>
-                <Card.Title>User</Card.Title>
+                <Card.Title>User full name</Card.Title>
                 <Card.Text>
-                  Full name <br/>
                   Email
                 </Card.Text>
                 <Button variant="primary">Profile</Button>
@@ -52,13 +50,13 @@ function AdoptionForm() {
 
         {/* Should be yes or no question */}
         <Form.Group className="m-3" controlId="formBasicEmail">
-          <Form.Label>Is this your first time adopting a pet? </Form.Label>
+          <Form.Label>Is this your first time having a pet? </Form.Label>
           <Form.Control type="text" placeholder="Enter your answer" />
         </Form.Group>
 
         {/* Should be yes or no question */}
         <Form.Group className="m-3" controlId="formBasicEmail">
-          <Form.Label>Do you already have any pets?</Form.Label>
+          <Form.Label>Do you already have any pets currently?</Form.Label>
           <Form.Control type="text" placeholder="Enter your answer" />
         </Form.Group>
 

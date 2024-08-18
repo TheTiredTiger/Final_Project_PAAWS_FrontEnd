@@ -24,6 +24,7 @@ function AnimalCard() {
               Gender: <br/>
               Age: <br/>
               Weight: <br/>
+              Breed: <br/>
               Location: <br/>
               Known illnesses: <br/>
               Description:

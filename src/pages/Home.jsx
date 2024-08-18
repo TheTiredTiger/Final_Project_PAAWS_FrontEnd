@@ -53,7 +53,7 @@ function Home() {
 
         <section className="successStories" style={{ display: "flex", margin: "3rem" }}>
             <div className="sectionText" style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <h5>Success Stories</h5>
+                <h5>Success stories</h5>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta blanditiis quod obcaecati quaerat corrupti error sunt ratione voluptas aut eligendi inventore deleniti officiis exercitationem veniam, velit excepturi est voluptate tempora.</p>
             </div>
             <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "right"}}/>
@@ -62,7 +62,7 @@ function Home() {
         <section className="getToKnow" style={{ display: "flex", margin: "3rem" }}>
             <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "left"}}/>
             <div className="sectionText" style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <h5>Get to know our animals</h5>
+                <h5>Meet your compawnion</h5>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel quasi adipisci aspernatur accusantium quis, assumenda at ab fuga voluptatem nam nemo sequi repellendus doloremque enim exercitationem ratione, dolor placeat.</p>
             </div>
         </section>

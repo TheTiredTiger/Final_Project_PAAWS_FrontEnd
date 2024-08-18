@@ -11,6 +11,9 @@ import AnimalSearch from './pages/AnimalSearch'
 import AnimalPage from './pages/AnimalPage'
 import AdoptionForm from './pages/AdoptionForm'
 import PersonalData from './pages/PersonalData'
+import AdminAdd from './pages/Admin/AdminAdd'
+import AdminEdit from './pages/Admin/AdminEdit'
+import AdminDelete from './pages/Admin/AdminDelete'
 
 function App() {
 
@@ -30,6 +33,12 @@ function App() {
           <Route path="/ourpets" element={< AnimalSearch />} />
           <Route path="/animalpage" element={< AnimalPage />} />
           <Route path="/adoptionform" element={< AdoptionForm />} />
+
+          <Route path="/adminadd" element={< AdminAdd />} />
+          <Route path="/adminedit" element={< AdminEdit />} />
+          <Route path="/admindelete" element={< AdminDelete />} />
+
+
         </Routes>
       </BrowserRouter>
       <Footer />

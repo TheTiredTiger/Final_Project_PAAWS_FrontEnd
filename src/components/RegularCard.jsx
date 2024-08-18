@@ -14,9 +14,6 @@ function AnimalCard() {
           Species: <br/>
           Gender: <br/>
           Age: <br/>
-          Weight: <br/>
-          Location: <br/>
-          Known illnesses: <br/>
         </Card.Text>
         <Button variant="primary">
           <Link to="/animalpage" style={{color: "white", textDecoration: "none"}}>
