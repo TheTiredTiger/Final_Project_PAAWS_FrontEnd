@@ -65,6 +65,11 @@ function AdminAdd() {
           <Form.Label>Description</Form.Label>
           <Form.Control type="text" placeholder="Enter description" />
         </Form.Group>
+
+        <Form.Group className="m-3" controlId="animalLocation">
+          <Form.Label>Add image</Form.Label>
+          <Form.Control type="file" placeholder="Insert image" />
+        </Form.Group>
         
         <Button className='m-2' variant="primary" type="submit">
           Submit
