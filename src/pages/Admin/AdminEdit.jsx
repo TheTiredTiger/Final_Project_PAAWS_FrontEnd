@@ -4,6 +4,8 @@
 
 // name, species, gender, age, location, weight, known illnesses, description, race
 
+// Bárbara was here branching out
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
