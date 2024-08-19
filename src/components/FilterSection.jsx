@@ -119,7 +119,6 @@ function FilterSection() {
           <option value="VianaDoCastelo">Viana do Castelo</option>
           <option value="VilaReal">Vila Real</option>
           <option value="Viseu">Viseu</option>
-
         </Form.Control>
       </ListGroup>
     </Card>
