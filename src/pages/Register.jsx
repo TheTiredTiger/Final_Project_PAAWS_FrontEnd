@@ -1,32 +1,42 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Link } from 'react-router-dom';
 
 function Register() {
   return (
     <Form>
-        <Form.Group className="m-3" controlId="formFirstName">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter first name" />
-        </Form.Group>
+        <FloatingLabel
+          controlId="floatingInput"
+          label="First name"
+          className="mb-3"
+        >
+          <Form.Control type="text" placeholder="Jane" />
+        </FloatingLabel>
 
-        <Form.Group className="m-3" controlId="formLastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter last name" />
-        </Form.Group>
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Last name"
+          className="mb-3"
+        >
+          <Form.Control type="text" placeholder="Doe" />
+        </FloatingLabel>
 
-        <Form.Group className="m-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-  
-        <Form.Group className="m-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Email address"
+          className="mb-3"
+        >
+          <Form.Control type="email" placeholder="name@example.com" />
+        </FloatingLabel>
+
+      <FloatingLabel
+        controlId="floatingPassword"
+        label="Password"
+      >
+        <Form.Control type="password" placeholder="Password" />
+      </FloatingLabel>
+
         <Button className='m-2' variant="primary" type="submit">
           Submit
         </Button>
