@@ -11,35 +11,36 @@ import Col from 'react-bootstrap/Col';
 function AnimalCard() {
   return (
     <>
+      <h1>I was here  sign.Ralfe</h1>
       <Card className='animalPage'>
         <Row>
           <Col lg="5" >
             <Card.Img className="animalPageImg" variant="top" src="https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg" alt="animal picture" />
           </Col>
           <Col lg="7" >
-          <Card.Body className='animalPageDesc'>
-            <Card.Title>Name</Card.Title>
-            <Card.Text>
-              Species: <br/>
-              Gender: <br/>
-              Age: <br/>
-              Weight: <br/>
-              Breed: <br/>
-              Location: <br/>
-              Known illnesses: <br/>
-              Description:
-            </Card.Text>
-            <div className="animalPageBtn">
-              <Button variant="primary" style={{marginRight: "1rem"}}>
-                Sponsor
-              </Button>
-              <Button variant="secondary">
-                <Link to="/ourpets" style={{color: "white", textDecoration: "none"}}>
-                  Return
-                </Link>
-              </Button>
-            </div>
-          </Card.Body>
+            <Card.Body className='animalPageDesc'>
+              <Card.Title>Name</Card.Title>
+              <Card.Text>
+                Species: <br />
+                Gender: <br />
+                Age: <br />
+                Weight: <br />
+                Breed: <br />
+                Location: <br />
+                Known illnesses: <br />
+                Description:
+              </Card.Text>
+              <div className="animalPageBtn">
+                <Button variant="primary" style={{ marginRight: "1rem" }}>
+                  Sponsor
+                </Button>
+                <Button variant="secondary">
+                  <Link to="/ourpets" style={{ color: "white", textDecoration: "none" }}>
+                    Return
+                  </Link>
+                </Button>
+              </div>
+            </Card.Body>
           </Col>
         </Row>
       </Card>
