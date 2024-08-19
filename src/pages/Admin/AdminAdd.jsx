@@ -160,13 +160,6 @@ function AdminAdd() {
             <div key={`inline-${type}`} className="mb-3">
               <Form.Check
                 inline
-                label="pending"
-                name="adoptionStatus"
-                type={type}
-                id={`inline-${type}-1`}
-              />
-              <Form.Check
-                inline
                 label="rejected"
                 name="adoptionStatus"
                 type={type}
