@@ -11,7 +11,6 @@ import Col from 'react-bootstrap/Col';
 function AnimalCard() {
   return (
     <>
-      <h1>I was here  sign.Ralfe</h1>
       <Card className='animalPage'>
         <Row>
           <Col lg="5" >

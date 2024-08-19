@@ -110,26 +110,27 @@ function AdminAdd() {
 
         <Form.Group className="m-3" controlId="animalLocation"> 
           <Form.Label>Location</Form.Label> <br/>
-          <select id="location" name="location">
-            <option value="volvo">Aveiro</option>
-            <option value="saab">Beja</option>
-            <option value="fiat">Braga</option>
-            <option value="audi">Bragança</option>
-            <option value="audi">Castelo Branco</option>
-            <option value="audi">Coimbra</option>
-            <option value="audi">Évora</option>
-            <option value="audi">Faro</option>
-            <option value="audi">Guarda</option>
-            <option value="audi">Leiria</option>
-            <option value="audi">Lisboa</option>
-            <option value="audi">Portalegre</option>
-            <option value="audi">Porto</option>
-            <option value="audi">Santarém</option>
-            <option value="audi">Setúbal</option>
-            <option value="audi">Viana do Castelo</option>
-            <option value="audi">Vila Real</option>
-            <option value="audi">Viseu</option>
-          </select>
+          <Form.Control as="select" type="text" placeholder="Choose location" > 
+            <option value="null">Choose a location</option>
+            <option value="Aveiro">Aveiro</option>
+            <option value="Beja">Beja</option>
+            <option value="Braga">Braga</option>
+            <option value="Bragança">Bragança</option>
+            <option value="CasteloBranco">Castelo Branco</option>
+            <option value="Coimbra">Coimbra</option>
+            <option value="Evora">Évora</option>
+            <option value="Faro">Faro</option>
+            <option value="Guarda">Guarda</option>
+            <option value="Leiria">Leiria</option>
+            <option value="Lisboa">Lisboa</option>
+            <option value="Portalegre">Portalegre</option>
+            <option value="Porto">Porto</option>
+            <option value="Santarém">Santarém</option>
+            <option value="Setúbal">Setúbal</option>
+            <option value="VianaDoCastelo">Viana do Castelo</option>
+            <option value="VilaReal">Vila Real</option>
+            <option value="Viseu">Viseu</option>
+          </Form.Control>
         </Form.Group>
 
         <Form.Group className="m-3" controlId="animalLocation">
