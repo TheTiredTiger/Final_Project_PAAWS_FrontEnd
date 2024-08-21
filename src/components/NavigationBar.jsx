@@ -6,15 +6,31 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+//Aded by RM
+import { useAPI } from '../pages/Context/Context';
+import { useNavigate } from 'react-router-dom';
+
 
 let userIcon = <i className="fa-solid fa-user me-3" />
 
 function NavigationBar() {
+
+  const { logoutUser } = useAPI(); // Get logout function from context
+  /* const navigate = useNavigate(); */ // Hook for redirection
+
+  const handleLogout = async () => {
+    try {
+      await logoutUser(); // Perform logout
+      /* navigate('/'); */ // Redirect to home after logout
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky='top' style={{"alignItems": "flex-end" }}>
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky='top' style={{ "alignItems": "flex-end" }}>
       <Container>
         <Navbar.Brand href="/">
-            <i className="fa-solid fa-paw" />
+          <i className="fa-solid fa-paw" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,18 +41,16 @@ function NavigationBar() {
           </Nav>
 
           <Nav>
-          <NavDropdown title={userIcon} id="basic-nav-dropdown">
+            <NavDropdown title={userIcon} id="basic-nav-dropdown">
               <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="/personaldata">
-                Personal data
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item onClick={handleLogout}> {/* Trigger logout */}
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link eventKey={2} href="/cart">
-                <i className="fa-solid fa-cart-shopping" />
+              <i className="fa-solid fa-cart-shopping" />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
