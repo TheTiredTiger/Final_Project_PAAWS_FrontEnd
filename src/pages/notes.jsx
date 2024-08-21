@@ -35,15 +35,8 @@ function AnimalSearch() {
         const fetchAnimals = async () => {
             try {
                 const animalData = await listAnimals();
-                const normalizedData = animalData.map(animal => ({
-                    ...animal,
-                    species: animal.species?.trim().toLowerCase(), // Normalize species (normalize its like )
-                    gender: animal.gender?.trim().toLowerCase(), // Normalize gender
-                    life_stage: animal.life_stage?.trim().toLowerCase(), // Normalize life_stage
-                    known_ilness: animal.known_ilness?.trim().toLowerCase() // Normalize known illness
-                }));
-                setAnimals(normalizedData);
-                setFilteredAnimals(normalizedData); // Initialize with all animals
+                setAnimals(animalData);
+                setFilteredAnimals(animalData); // Initialize with all animals
             } catch (error) {
                 console.error('Failed to fetch animals:', error);
             }
@@ -51,33 +44,33 @@ function AnimalSearch() {
         fetchAnimals();
     }, [listAnimals]);
 
-    // Complicated Shenanigans to  aply filters and sorting 
+    // Apply filters and sorting
     useEffect(() => {
         let result = animals;
 
-        // Apply species filter 
+        // Apply species filter if any species filter is active
         if (Object.values(filters.species).some(Boolean)) {
             result = result.filter(animal => filters.species[animal.species]);
         }
 
-        // Apply gender filter
+        // Apply gender filter if any gender filter is active
         if (Object.values(filters.gender).some(Boolean)) {
             result = result.filter(animal => filters.gender[animal.gender]);
         }
 
-        // Apply life stage filter
+        // Apply life stage filter if any life stage filter is active
         if (Object.values(filters.life_stage).some(Boolean)) {
             result = result.filter(animal => filters.life_stage[animal.life_stage]);
         }
 
-        // Apply known illness filter
+        // Apply known illness filter if any known illness filter is active
         if (Object.values(filters.known_ilness).some(Boolean)) {
             result = result.filter(animal => filters.known_ilness[animal.known_ilness]);
         }
 
-        // Apply location filter
+        // Apply location filter if location is selected
         if (filters.location) {
-            result = result.filter(animal => animal.location.trim().toLowerCase() === filters.location.toLowerCase());
+            result = result.filter(animal => animal.location === filters.location);
         }
 
         // Apply sorting
@@ -90,6 +83,7 @@ function AnimalSearch() {
             return 0;
         });
 
+        // Update the state with the filtered and sorted result
         setFilteredAnimals(result);
     }, [filters, sortOption, animals]);
 

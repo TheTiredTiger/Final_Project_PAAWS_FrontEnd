@@ -15,18 +15,15 @@ import Form from 'react-bootstrap/Form';
 
 function FilterSection({ filters, setFilters }) {
   const handleFilterChange = (category, value) => {
-    setFilters((prevFilters) => {
-      const currentFilter = prevFilters[category] || {};
-      const updatedFilter = {
-        ...currentFilter,
-        [value]: !currentFilter[value],
-      };
-      return {
-        ...prevFilters,
-        [category]: updatedFilter,
-      };
-    });
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [category]: {
+        ...prevFilters[category],
+        [value]: !prevFilters[category][value],
+      },
+    }));
   };
+
 
   return (
     <Card>
@@ -53,7 +50,7 @@ function FilterSection({ filters, setFilters }) {
                 key={gender}
                 type="checkbox"
                 label={gender}
-                checked={!!filters.gender[gender]}
+                checked={!!filters.gender[gender]} //check double negation
                 onChange={() => handleFilterChange('gender', gender)}
               />
             ))}
@@ -74,13 +71,13 @@ function FilterSection({ filters, setFilters }) {
 
           <ListGroup.Item>
             <strong>Known Illnesses?</strong>
-            {['yes', 'no'].map((illness) => (
+            {['yes', 'no'].map((known_ilness) => (
               <Form.Check
-                key={illness}
+                key={known_ilness}
                 type="checkbox"
-                label={illness}
-                checked={!!filters.illnesses[illness]}
-                onChange={() => handleFilterChange('illnesses', illness)}
+                label={known_ilness}
+                checked={!!filters.known_ilness[known_ilness]}
+                onChange={() => handleFilterChange('known_ilness', known_ilness)}
               />
             ))}
           </ListGroup.Item>
