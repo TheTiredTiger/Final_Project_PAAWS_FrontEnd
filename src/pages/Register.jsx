@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; //Added useNavigate -RM
 //Added by Aléxis
 import React, { useState, useContext } from 'react';
 import { useAPI } from '../pages/Context/Context';
@@ -17,7 +17,7 @@ function Register() {
   const [error, setError] = useState(null); // For any oopsie moments during registration
   const [success, setSuccess] = useState(null); // For that sweet success message
   const [loading, setLoading] = useState(false); //To make user wait
-
+  const navigate = useNavigate();
   //Basicly updates form dat as the user types
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +33,8 @@ function Register() {
     try {
       await registerUser(formData); //Atttemp at registation
       setSuccess('Registration successful!'); //yay!
-      setError(null); //Limpar erros anteriores
+      navigate('/login')
+      setError(null); //Clean Errors
     } catch (err) {
       setError('Registration failed. Please try again. 🦧'); //🦧
       setSuccess(null);
@@ -42,7 +43,7 @@ function Register() {
     }
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='py-3'>
       <FloatingLabel
         controlId="floatingFirstName"
         label="First name"

@@ -19,19 +19,19 @@ function App() {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} />
 
-          <Route path="/login" element={< Login />} />
-          <Route path="/register" element={< Register />} />
+          <Route path="/login" element={< Login />} /> {/* Done -RM */}
+          <Route path="/register" element={< Register />} /> {/* Done -RM */}
 
-          <Route path="/userprofile" element={< UserProfile />} />
+          <Route path="/userprofile" element={< UserProfile />} /> {/* Done -RM */}
           <Route path="/personaldata" element={< PersonalData />} />
 
           <Route path="/ourpets" element={< AnimalSearch />} />
-          <Route path="/animalpage" element={< AnimalPage />} />
+          <Route path="/animalpage" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
           <Route path="/adoptionform" element={< AdoptionForm />} />
 
           <Route path="/adminadd" element={< AdminAdd />} />
