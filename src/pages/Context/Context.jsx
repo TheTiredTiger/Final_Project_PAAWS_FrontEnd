@@ -26,9 +26,6 @@ export const APIProvider = ({ children }) => {
     });
 
 
-
-
-
     //working
     const registerUser = async (userData) => {
         try {
