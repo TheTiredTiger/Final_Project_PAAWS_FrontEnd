@@ -1,0 +1,15 @@
+/* cute cursor styling */
+
+* {
+    cursor: url('../images/black_paw.png') auto !important;
+}
+
+input,
+textarea,
+select,
+button,
+a,
+option,
+select {
+    cursor: url('../images/light_brown_paw.png'), pointer;
+}

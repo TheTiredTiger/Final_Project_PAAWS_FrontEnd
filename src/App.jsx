@@ -14,6 +14,9 @@ import PersonalData from './pages/PersonalData'
 import AdminAdd from './pages/Admin/AdminAdd'
 import AdminEdit from './pages/Admin/AdminEdit'
 import AdminDelete from './pages/Admin/AdminDelete'
+//Added by -RM
+import './css components/styles.css'
+
 
 function App() {
 
