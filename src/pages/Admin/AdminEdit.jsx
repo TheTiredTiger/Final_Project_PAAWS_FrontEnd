@@ -1,17 +1,11 @@
-// page for adding animals + changing adoption status of animals
-// plus edit
-// plus delete
-
-// name, species, gender, age, location, weight, known illnesses, description, race
-
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function AdminAdd() {
+function AdminEdit() {
     return ( 
 
-    <Form>
+    <div>
       
         <Form.Group className="m-3" controlId="animalName">
             <Form.Label>ID</Form.Label>
@@ -193,9 +187,9 @@ function AdminAdd() {
         <Button className='m-2' variant="primary" type="submit">
           Submit
         </Button>
-      </Form>
+      </div>
       );
 }
 
 
-export default AdminAdd;
+export default AdminEdit;

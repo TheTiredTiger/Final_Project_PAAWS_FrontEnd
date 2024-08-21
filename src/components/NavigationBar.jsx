@@ -37,7 +37,6 @@ function NavigationBar() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/ourpets">Our Pets</Nav.Link>
-            <Nav.Link href="/paymentplan">Payment Plans</Nav.Link>
           </Nav>
 
           <Nav>
@@ -49,9 +48,6 @@ function NavigationBar() {
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey={2} href="/cart">
-              <i className="fa-solid fa-cart-shopping" />
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
