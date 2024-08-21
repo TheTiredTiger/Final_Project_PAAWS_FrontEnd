@@ -8,7 +8,7 @@ export const APIProvider = ({ children }) => {
     const [token, setToken] = useState(null);
 
     const api = axios.create({
-        baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL
+        baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta"
         headers: {
             'Content-Type': 'application/json',
             /* Authorization: `Bearer ${token}`, */
@@ -107,6 +107,16 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+    //List Single Animal
+    const getAnimal = async (animalId) => {
+        try {
+            const response = await api.get(`/animal/${animalId}`);
+            return response.data;
+        } catch (error) {
+            console.error(`Fetching animal with ID ${animalId} failed:`, error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
 
     // Auto-login if token is available
     useEffect(() => {
@@ -116,6 +126,17 @@ export const APIProvider = ({ children }) => {
             /* getProfile(); */
         }
     }, []);
+
+    //-------####-Admin Features-###----------------
+    //Delete Animal
+    const deleteAnimal = async (animalId) => {
+        try {
+            await api.delete(`/admin_delete_animal/${animalId}`);
+        } catch (error) {
+            console.error(`Deleting animal with ID ${animalId} failed:`, error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
 
     useEffect(() => {
         if (token) {
@@ -136,6 +157,8 @@ export const APIProvider = ({ children }) => {
                 getProfile,
                 get_user_profile,
                 listAnimals,
+                getAnimal,
+                deleteAnimal,
             }}
         >
             {children}
