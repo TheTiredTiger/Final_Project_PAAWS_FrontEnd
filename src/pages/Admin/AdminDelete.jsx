@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Make sure Bootstrap CSS is included
 //maybe change input text to center later
-//its working
+//its working missing to lock routes 
 
 function AdminDelete() {
   const [animalId, setAnimalId] = useState('');
