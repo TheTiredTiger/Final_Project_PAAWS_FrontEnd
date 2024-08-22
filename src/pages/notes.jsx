@@ -25,7 +25,7 @@ function AnimalSearch() {
         species: {},
         gender: {},
         life_stage: {},
-        known_ilness: {},
+        known_illness: {},
         location: '',
     });
     const [sortOption, setSortOption] = useState('name');
@@ -35,8 +35,15 @@ function AnimalSearch() {
         const fetchAnimals = async () => {
             try {
                 const animalData = await listAnimals();
-                setAnimals(animalData);
-                setFilteredAnimals(animalData); // Initialize with all animals
+                console.log(animalData)
+                const normalizedData = animalData.map(animal => ({
+                    ...animal,
+                    //life_stage: animal.life_stage.trim().toLowerCase(), // Normalize life_stage
+                    //known_illness: animal.known_illness.trim().toLowerCase(), // Normalize known illness
+                    //location: animal.location.trim().toLowerCase() // Normalize location can delete or leave ...-RM
+                }));
+                setAnimals(normalizedData);
+                setFilteredAnimals(normalizedData); // Initialize with all animals
             } catch (error) {
                 console.error('Failed to fetch animals:', error);
             }
@@ -44,46 +51,54 @@ function AnimalSearch() {
         fetchAnimals();
     }, [listAnimals]);
 
-    // Apply filters and sorting
+    // Complicated Shenanigans to  aply filters and sorting 
     useEffect(() => {
         let result = animals;
 
-        // Apply species filter if any species filter is active
+        // Apply species filter 
         if (Object.values(filters.species).some(Boolean)) {
             result = result.filter(animal => filters.species[animal.species]);
         }
 
-        // Apply gender filter if any gender filter is active
+        // Apply gender filter
         if (Object.values(filters.gender).some(Boolean)) {
             result = result.filter(animal => filters.gender[animal.gender]);
         }
 
-        // Apply life stage filter if any life stage filter is active
+        // Apply life stage filter
         if (Object.values(filters.life_stage).some(Boolean)) {
             result = result.filter(animal => filters.life_stage[animal.life_stage]);
         }
 
-        // Apply known illness filter if any known illness filter is active
-        if (Object.values(filters.known_ilness).some(Boolean)) {
-            result = result.filter(animal => filters.known_ilness[animal.known_ilness]);
+        // Apply known illness filter
+        if (Object.values(filters.known_illness).some(Boolean)) {
+            result = result.filter(animal => filters.known_illness[animal.known_illness]);
         }
 
-        // Apply location filter if location is selected
+        // Apply location filter
         if (filters.location) {
-            result = result.filter(animal => animal.location === filters.location);
+            result = result.filter(animal => animal.location.trim().toLowerCase() === filters.location.toLowerCase());
         }
 
+        //Simple scalable way to not mess up sort by :D 
+        const lifeStageOrder = {
+            'baby': 1,
+            'junior': 2,
+            'adult': 3,
+            'senior': 4
+        };
         // Apply sorting
         result = result.sort((a, b) => {
             if (sortOption === 'name') {
-                return a.name.localeCompare(b.name);
+                // Ensure case-insensitive sorting
+                return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
             } else if (sortOption === 'age') {
-                return a.age - b.age;
+                // Sort by life stage using the defined order
+                return (lifeStageOrder[a.life_stage] || 0) - (lifeStageOrder[b.life_stage] || 0);
             }
             return 0;
         });
 
-        // Update the state with the filtered and sorted result
         setFilteredAnimals(result);
     }, [filters, sortOption, animals]);
 
@@ -97,8 +112,8 @@ function AnimalSearch() {
                     <div style={{ marginBottom: '1rem' }}>
                         <label htmlFor="sortOption">Sort By: </label>
                         <select id="sortOption" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
-                            <option value="name">Name</option>
-                            <option value="age">Age</option>
+                            <option value="name">Age</option> {/* Made some mischief because for some reason they were changed with each other */}
+                            <option value="age">Name</option>
                         </select>
                     </div>
                     <Row>

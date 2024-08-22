@@ -25,7 +25,7 @@ function AnimalSearch() {
         species: {},
         gender: {},
         life_stage: {},
-        known_ilness: {},
+        known_illness: {},
         location: '',
     });
     const [sortOption, setSortOption] = useState('name');
@@ -35,12 +35,12 @@ function AnimalSearch() {
         const fetchAnimals = async () => {
             try {
                 const animalData = await listAnimals();
+                console.log(animalData)
                 const normalizedData = animalData.map(animal => ({
                     ...animal,
-                    species: animal.species?.trim().toLowerCase(), // Normalize species (normalize its like )
-                    gender: animal.gender?.trim().toLowerCase(), // Normalize gender
-                    life_stage: animal.life_stage?.trim().toLowerCase(), // Normalize life_stage
-                    known_ilness: animal.known_ilness?.trim().toLowerCase() // Normalize known illness
+                    //life_stage: animal.life_stage.trim().toLowerCase(), // Normalize life_stage
+                    //known_illness: animal.known_illness.trim().toLowerCase(), // Normalize known illness
+                    //location: animal.location.trim().toLowerCase() // Normalize location can delete or leave ...-RM
                 }));
                 setAnimals(normalizedData);
                 setFilteredAnimals(normalizedData); // Initialize with all animals
@@ -71,8 +71,8 @@ function AnimalSearch() {
         }
 
         // Apply known illness filter
-        if (Object.values(filters.known_ilness).some(Boolean)) {
-            result = result.filter(animal => filters.known_ilness[animal.known_ilness]);
+        if (Object.values(filters.known_illness).some(Boolean)) {
+            result = result.filter(animal => filters.known_illness[animal.known_illness]);
         }
 
         // Apply location filter
@@ -80,12 +80,21 @@ function AnimalSearch() {
             result = result.filter(animal => animal.location.trim().toLowerCase() === filters.location.toLowerCase());
         }
 
+        //Simple scalable way to not mess up sort by :D 
+        const lifeStageOrder = {
+            'baby': 1,
+            'junior': 2,
+            'adult': 3,
+            'senior': 4
+        };
         // Apply sorting
         result = result.sort((a, b) => {
             if (sortOption === 'name') {
-                return a.name.localeCompare(b.name);
+                // Ensure case-insensitive sorting
+                return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
             } else if (sortOption === 'age') {
-                return a.age - b.age;
+                // Sort by life stage using the defined order
+                return (lifeStageOrder[a.life_stage] || 0) - (lifeStageOrder[b.life_stage] || 0);
             }
             return 0;
         });
@@ -103,8 +112,8 @@ function AnimalSearch() {
                     <div style={{ marginBottom: '1rem' }}>
                         <label htmlFor="sortOption">Sort By: </label>
                         <select id="sortOption" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
-                            <option value="name">Name</option>
-                            <option value="age">Age</option>
+                            <option value="name">Age</option> {/* Made some mischief because for some reason they were changed with each other */}
+                            <option value="age">Name</option>
                         </select>
                     </div>
                     <Row>

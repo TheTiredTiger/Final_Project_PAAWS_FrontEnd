@@ -71,13 +71,13 @@ function FilterSection({ filters, setFilters }) {
 
           <ListGroup.Item>
             <strong>Known Illnesses?</strong>
-            {['yes', 'no'].map((known_ilness) => (
+            {['yes', 'no'].map((known_illness) => (
               <Form.Check
-                key={known_ilness}
+                key={known_illness}
                 type="checkbox"
-                label={known_ilness}
-                checked={!!filters.known_ilness[known_ilness]}
-                onChange={() => handleFilterChange('known_ilness', known_ilness)}
+                label={known_illness}
+                checked={!!filters.known_illness[known_illness]}
+                onChange={() => handleFilterChange('known_illness', known_illness)}
               />
             ))}
           </ListGroup.Item>
