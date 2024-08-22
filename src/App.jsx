@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      <NavigationBar  /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
       <BrowserRouter >
+        <NavigationBar  /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
         <Routes>
           <Route path="/" element={< Home />} />
 
@@ -37,7 +37,8 @@ function App() {
           <Route path="/personaldata" element={< PersonalData />} />
 
           <Route path="/ourpets" element={< AnimalSearch />} />
-          <Route path="/animalpage" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
+          <Route path="/animalpage/:id" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
+          {/* Route is done - BM */}
           <Route path="/adoptionform" element={< AdoptionForm />} />
 
           <Route path="/adminadd" element={< AdminAdd />} />
@@ -48,8 +49,8 @@ function App() {
 
 
         </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </>
   )
 }

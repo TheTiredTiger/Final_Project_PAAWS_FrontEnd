@@ -48,7 +48,7 @@ function AdminPage() {
                 <Card.Body>
                     <Card.Title>Edit adoption status</Card.Title>
                     <Card.Text>
-                    Form to edit adoption status of an existing animal.
+                    Form to edit adoption status of an animal.
                     </Card.Text>
                     <Button href="/adoptionstatus">Edit</Button>
                 </Card.Body>
