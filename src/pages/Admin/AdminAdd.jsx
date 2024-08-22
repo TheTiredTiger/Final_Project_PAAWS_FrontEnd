@@ -88,7 +88,7 @@ function AdminAdd() {
             />
             <Form.Check
               inline
-              label="senior"
+              label="Senior"
               name="lifeStage"
               type={type}
               id={`inline-${type}-3`}
