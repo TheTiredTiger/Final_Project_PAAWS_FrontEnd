@@ -2,11 +2,15 @@
 
 // each card has buttons for: Approve, Reject, More(+) --> with link to form
 
-function AdoptionStatus() {
-    return ( <>
-        
+
+
+
+function AdoptionStatus ({ animal }) {
+  return ( <>
+  
+  </>
     
-    </> );
+  );
 }
 
 export default AdoptionStatus;

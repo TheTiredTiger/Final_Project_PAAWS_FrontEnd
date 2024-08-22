@@ -43,6 +43,7 @@ function NavigationBar() {
             <NavDropdown title={userIcon} id="basic-nav-dropdown">
               <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
+              <NavDropdown.Item href="/adminpage">Admin</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={handleLogout}> {/* Trigger logout */}
                 Logout
