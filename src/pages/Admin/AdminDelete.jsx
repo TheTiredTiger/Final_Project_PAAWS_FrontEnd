@@ -21,7 +21,7 @@ function AdminDelete() {
         setError('');
       } catch (error) {
         setAnimalData(null);
-        setError(`Error fetching animal with ID ${animalId}: ${error.message}`);
+        setError(`Error fetching animal with ID ${animalId}: ${error.message} Please Try Again`);
       }
     }
   };
@@ -92,8 +92,8 @@ function AdminDelete() {
                 <p>Life stage: {animalData.life_stage}</p>
                 <p>Weight: {animalData.weight}</p>
                 <p>Breed: {animalData.breed}</p>
-                <p>Location: {animalData.location}</p>
-                <p>Known illnesses: {animalData.known_illnesses}</p>
+                <p>Location: {animalData.location}</p> {/* fixed */}
+                <p>Known illnesses: {animalData.known_illness}</p>
                 <p>Adoption status: {animalData.adoption_status}</p>
                 <p>Description: {animalData.description}</p>
               </div>
