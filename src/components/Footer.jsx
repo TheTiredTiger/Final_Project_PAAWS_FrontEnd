@@ -8,13 +8,13 @@ function Footer() {
   return (
     <Navbar collapseOnSelect expand="lg" className="footer bg-body-tertiary" >
       <Container>
-        <Navbar.Brand href="#brand">
+        <Navbar.Brand href="/">
             <i className="fa-solid fa-paw" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/contactUs">Contact us</Nav.Link>
+            <Nav.Link href="/contactus">Contact us</Nav.Link>
             <Nav.Link href="/FAQ">FAQ</Nav.Link>
             <Nav.Link href="/Kofi">Buy us a Kofi!</Nav.Link>
           </Nav>

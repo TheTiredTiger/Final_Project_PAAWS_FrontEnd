@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAPI } from '../Context/Context';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 //maybe change input text to center later
 //its working missing to lock routes 
@@ -109,6 +110,9 @@ function AdminDelete() {
             >
               Delete animal
             </button>
+            <Button href="/adminpage" variant="outline-secondary">
+              Return
+            </Button>
             <button
               className='btn btn-warning py-2 px-2'
               onClick={navigateToEdit}
