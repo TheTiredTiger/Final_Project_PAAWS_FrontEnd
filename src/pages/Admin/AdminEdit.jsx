@@ -4,13 +4,18 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner';
+import { useAPI } from '../Context/Context';
 
 function AdminEdit() {
   const location = useLocation();
+  /* const history = useHistory(); */
   const { animalData } = location.state || {};
   console.log("Received animalData:", animalData);
 
+  const { deleteImage } = useAPI();
+
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     id: '',
     name: '',
@@ -20,9 +25,9 @@ function AdminEdit() {
     weight: '',
     breed: '',
     location: '',
-    known_illnesses: '',
+    known_illness: '',
     description: '',
-    images: [], // armazenar images carrosel
+    images: [], // Stores carousel images
   });
 
   useEffect(() => {
@@ -32,11 +37,11 @@ function AdminEdit() {
         name: animalData.name || '',
         species: animalData.species || '',
         gender: animalData.gender || '',
-        lifeStage: animalData.life_stage || '',
+        life_stage: animalData.life_stage || '',
         weight: animalData.weight || '',
         breed: animalData.breed || '',
         location: animalData.location || '',
-        knownIllnesses: animalData.known_illnesses || '',
+        known_illness: animalData.known_illness || '',
         description: animalData.description || '',
         images: animalData.images || [],
       });
@@ -58,19 +63,30 @@ function AdminEdit() {
     }
   };
 
-  const handleImageDelete = (imageId) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      images: prevData.images.filter((image) => image.id !== imageId),
-    }));
-    // Aqui vai ser o request à API para eliminar a imagem especifica
-    console.log(`Deleted image with ID: ${imageId}`);
+  const handleImageDelete = async (imageId) => {
+    setIsLoading(true);
+
+    try {
+      await deleteImage(imageId);
+
+      // Update the formData state to remove the deleted image from the local UI
+      const updatedImages = formData.images.filter((image) => image.id !== imageId);
+
+      setFormData((prevData) => ({
+        ...prevData,
+        images: updatedImages,
+      }));
+
+      console.log(`Deleted image with ID: ${imageId}`);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Fazer o put para atualizar dados do animal
-    console.log(formData);
+    console.log('Form submitted:', formData);
+    /* history.push('/admin');  */// Redirect to another page after submission
   };
 
   return (
@@ -156,42 +172,42 @@ function AdminEdit() {
             <Form.Check
               inline
               label="Baby"
-              name="lifeStage"
+              name="life_stage"
               type="radio"
               value="baby"
-              checked={formData.lifeStage === 'baby'}
+              checked={formData.life_stage === 'baby'}
               onChange={handleInputChange}
-              id="lifestage-baby"
+              id="life_stage-baby"
             />
             <Form.Check
               inline
               label="Junior"
-              name="lifeStage"
+              name="life_stage"
               type="radio"
               value="junior"
-              checked={formData.lifeStage === 'junior'}
+              checked={formData.life_stage === 'junior'}
               onChange={handleInputChange}
-              id="lifestage-junior"
+              id="life_stage-junior"
             />
             <Form.Check
               inline
               label="Adult"
-              name="lifeStage"
+              name="life_stage"
               type="radio"
               value="adult"
-              checked={formData.lifeStage === 'adult'}
+              checked={formData.life_stage === 'adult'}
               onChange={handleInputChange}
-              id="lifestage-adult"
+              id="life_stage-adult"
             />
             <Form.Check
               inline
               label="Senior"
-              name="lifeStage"
+              name="life_stage"
               type="radio"
               value="senior"
-              checked={formData.lifeStage === 'senior'}
+              checked={formData.life_stage === 'senior'}
               onChange={handleInputChange}
-              id="lifestage-senior"
+              id="life_stage-senior"
             />
           </div>
         </Form.Group>
@@ -255,20 +271,20 @@ function AdminEdit() {
             <Form.Check
               inline
               label="Yes"
-              name="knownIllnesses"
+              name="known_illness"
               type="radio"
               value="yes"
-              checked={formData.knownIllnesses === 'yes'}
+              checked={formData.known_illness === 'yes'}
               onChange={handleInputChange}
               id="illnesses-yes"
             />
             <Form.Check
               inline
               label="No"
-              name="knownIllnesses"
+              name="known_illness"
               type="radio"
               value="no"
-              checked={formData.knownIllnesses === 'no'}
+              checked={formData.known_illness === 'no'}
               onChange={handleInputChange}
               id="illnesses-no"
             />
@@ -304,7 +320,7 @@ function AdminEdit() {
                 <Carousel.Item key={index}>
                   <img
                     className="d-block w-100"
-                    src={image.url} //depends on object 
+                    src={image.image_url} // Depends on the image object
                     alt={`Animal Image ${index + 1}`}
                     style={{ height: '300px', objectFit: 'contain' }}
                   />
@@ -312,8 +328,19 @@ function AdminEdit() {
                     <Button
                       variant="danger"
                       onClick={() => handleImageDelete(image.id)}
+                      disabled={isLoading} // Disable button while loading
                     >
-                      Delete Image
+                      {isLoading ? (
+                        <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        'Delete Image'
+                      )}
                     </Button>
                   </Carousel.Caption>
                 </Carousel.Item>

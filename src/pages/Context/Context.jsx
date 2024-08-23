@@ -134,6 +134,16 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+    //Delete Sinlge Image by id
+    const deleteImage = async (imageId) => {
+        try {
+            await api.delete(`/delete_image/${imageId}`);
+            console.log(`Image with ID ${imageId} deleted successfully.`);
+        } catch (error) {
+            console.error(`Deleting image with ID ${imageId} failed:`, error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
 
     useEffect(() => {
         if (token) {
@@ -156,6 +166,7 @@ export const APIProvider = ({ children }) => {
                 listAnimals,
                 getAnimal,
                 deleteAnimal,
+                deleteImage,
             }}
         >
             {children}
