@@ -14,7 +14,10 @@ import PersonalData from './pages/PersonalData'
 import AdminAdd from './pages/Admin/AdminAdd'
 import AdminEdit from './pages/Admin/AdminEdit'
 import AdminDelete from './pages/Admin/AdminDelete'
-//Added by -RM
+import AdminPage from './pages/Admin/AdminPage'
+import AdoptionStatus from './pages/Admin/AdoptionStatus'
+//Added by -RM 
+// would you mind if I moved this to main.jsx? it's where all css-related stuff is. just for organization's sake.
 import './css components/styles.css'
 
 
@@ -23,7 +26,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavigationBar /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
+        <NavigationBar />
         <Routes>
           <Route path="/" element={< Home />} />
 
@@ -34,17 +37,20 @@ function App() {
           <Route path="/personaldata" element={< PersonalData />} />
 
           <Route path="/ourpets" element={< AnimalSearch />} />
-          <Route path="/animalpage" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
+          <Route path="/animalpage/:id" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
+          {/* Route is done - BM */}
           <Route path="/adoptionform" element={< AdoptionForm />} />
 
           <Route path="/adminadd" element={< AdminAdd />} />
           <Route path="/adminedit" element={< AdminEdit />} />
           <Route path="/admindelete" element={< AdminDelete />} />
+          <Route path="/adoptionstatus" element={< AdoptionStatus />} />
+          <Route path="/adminpage" element={< AdminPage />} />
 
 
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   )
 }
