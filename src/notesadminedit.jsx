@@ -1,4 +1,4 @@
-//working with problems maybe due to passing value to the form from navigate, i have to find a way to solve
+/* //working with problems maybe due to passing value to the form from navigate, i have to find a way to solve
 //maybe fetch by animal id after deleting image would be easier
 
 
@@ -143,53 +143,54 @@ function AdminEdit() {
 
                 {/* Other form fields */}
 
+{
+    formData.images.length > 0 && (
+        <Form.Group className="m-3" controlId="animalImages" >
+            <Form.Label>Current Images </Form.Label>
+            < Carousel interval={null} >
                 {
-                    formData.images.length > 0 && (
-                        <Form.Group className="m-3" controlId="animalImages" >
-                            <Form.Label>Current Images </Form.Label>
-                            < Carousel interval={null} >
-                                {
-                                    formData.images.map((image, index) => (
-                                        <Carousel.Item key={index} >
-                                            <img
-                                                className="d-block w-100"
-                                                src={image.image_url}
-                                                alt={`Animal Image ${index + 1}`}
-                                                style={{ height: '300px', objectFit: 'contain' }
-                                                }
+                    formData.images.map((image, index) => (
+                        <Carousel.Item key={index} >
+                            <img
+                                className="d-block w-100"
+                                src={image.image_url}
+                                alt={`Animal Image ${index + 1}`}
+                                style={{ height: '300px', objectFit: 'contain' }
+                                }
+                            />
+                            < Carousel.Caption >
+                                <Button
+                                    variant="danger"
+                                    onClick={() => handleImageDelete(image.id)
+                                    }
+                                    disabled={loadingImages[image.id]} // Disable only the button for the specific image being deleted
+                                >
+                                    {
+                                        loadingImages[image.id] ? (
+                                            <Spinner
+                                                as="span"
+                                                animation="border"
+                                                size="sm"
+                                                role="status"
+                                                aria- hidden="true"
                                             />
-                                            < Carousel.Caption >
-                                                <Button
-                                                    variant="danger"
-                                                    onClick={() => handleImageDelete(image.id)
-                                                    }
-                                                    disabled={loadingImages[image.id]} // Disable only the button for the specific image being deleted
-                                                >
-                                                    {
-                                                        loadingImages[image.id] ? (
-                                                            <Spinner
-                                                                as="span"
-                                                                animation="border"
-                                                                size="sm"
-                                                                role="status"
-                                                                aria- hidden="true"
-                                                            />
-                                                        ) : (
-                                                            'Delete Image'
-                                                        )}
-                                                </Button>
-                                            </Carousel.Caption>
-                                        </Carousel.Item>
-                                    ))}
-                            </Carousel>
-                        </Form.Group>
-                    )}
+                                        ) : (
+                                            'Delete Image'
+                                        )}
+                                </Button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+            </Carousel>
+        </Form.Group>
+    )
+}
 
-                <Button className='m-2' variant="primary" type="submit" >
-                    Submit
-                </Button>
-            </Form>
-        </div>
+<Button className='m-2' variant="primary" type="submit" >
+    Submit
+</Button>
+            </Form >
+        </div >
     );
 }
 
@@ -986,3 +987,4 @@ const handleImageDelete = async (imageId) => {
 }
 
 export default AdminEdit;
+ */

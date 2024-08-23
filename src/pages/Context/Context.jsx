@@ -37,6 +37,7 @@ export const APIProvider = ({ children }) => {
         }
     };
 
+    //working
     const loginUser = async (credentials) => {
         try {
             const response = await api.post('/login', credentials);
@@ -57,7 +58,8 @@ export const APIProvider = ({ children }) => {
             localStorage.removeItem('token'); //Sends token to tokens'heaven
             setToken(null);
             setUser(null);
-
+            console.log("user logged out")
+            //could also return true for feedback
             //It would be also possible to invalidate token on server side
 
         } catch (error) {

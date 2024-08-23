@@ -22,8 +22,8 @@ function App() {
 
   return (
     <>
-      <NavigationBar /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
       <BrowserRouter>
+        <NavigationBar /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
         <Routes>
           <Route path="/" element={< Home />} />
 
