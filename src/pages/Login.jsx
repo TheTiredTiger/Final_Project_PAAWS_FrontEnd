@@ -78,9 +78,9 @@ function Login() {
           required // Seriously, you can’t just skip this – we need to pretend to care about security
         />
       </FloatingLabel>
-      <Form.Text className="text-muted" onClick={handleShow} style={{ textAlign: "left"}}>
+      <Link onClick={handleShow} style={{ textAlign: "left", fontSize: "16px" }}>
         <p>Forgot your password?</p>
-      </Form.Text>
+      </Link>
 
       {/* If something goes wrong, we’ll kindly let them know – in red, because red means danger */}
       {error && <p className="text-danger">{error}</p>}
@@ -95,17 +95,21 @@ function Login() {
 
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Email confirmation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
+              <Modal.Body>
+                <p>We'll send you an email with a link to reset your password.</p>
+              </Modal.Body>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mb-3"
+              >
+              <Form.Control type="email" placeholder="name@example.com" />
+      </FloatingLabel>
             </Form.Group>
           </Form>
         </Modal.Body>
