@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      <BrowserRouter >
-        <NavigationBar  /> {/* PRovavavel ter de mudar para dentro das routes para funcionar */}
+      <BrowserRouter>
+        <NavigationBar />
         <Routes>
           <Route path="/" element={< Home />} />
 
@@ -49,7 +49,7 @@ function App() {
 
 
         </Routes>
-      <Footer />
+        <Footer />
       </BrowserRouter>
     </>
   )
