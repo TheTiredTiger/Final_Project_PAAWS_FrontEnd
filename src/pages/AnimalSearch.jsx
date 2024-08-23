@@ -2,9 +2,11 @@
 
 // Could maybe add a sort option above?
 //You wish a sort option?  ---Hold my fries -RM
+//I will gladly hold (and eat) those fries -BF
 
 // Should we have a cap for animals that are already being sponsored?
-//CAP ? 🧢 🥸
+//CAP ? 🧢 🥸 
+// lol, no. Cap = limit 😂 - BF
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
