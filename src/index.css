@@ -5,6 +5,12 @@
 4) preto (36382e) --> black olive
 5) branco */
 
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
 body {
   margin: 0;
@@ -68,7 +74,9 @@ body {
   margin: 1rem;
   width: 18rem;
   flex: "0 0 auto";
+  padding: 2em;
 }
+
 
 /* animal page */
 

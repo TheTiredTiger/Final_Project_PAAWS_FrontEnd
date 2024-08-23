@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Link, useNavigate } from 'react-router-dom'; //Navigate serves to redirect
 //Added by RM
@@ -42,7 +43,15 @@ function Login() {
       setLoading(false); //Button back from vacation!
     }
   };
-  return (
+
+  // For the modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+  return ( <>
+  
     <Form onSubmit={handleSubmit} className='my-3'> {/* Just lowering the form a bit – RM To TT */}
       <FloatingLabel
         controlId="floatingInput"
@@ -69,6 +78,9 @@ function Login() {
           required // Seriously, you can’t just skip this – we need to pretend to care about security
         />
       </FloatingLabel>
+      <Form.Text className="text-muted" onClick={handleShow} style={{ textAlign: "left"}}>
+        <p>Forgot your password?</p>
+      </Form.Text>
 
       {/* If something goes wrong, we’ll kindly let them know – in red, because red means danger */}
       {error && <p className="text-danger">{error}</p>}
@@ -80,6 +92,34 @@ function Login() {
 
       <p>Don't have an account? <Link to='/register'>Register</Link>! {/* No account? Join the fun of filling out more forms! */}</p>
     </Form>
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Send
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+    </>
   );
 }
 
