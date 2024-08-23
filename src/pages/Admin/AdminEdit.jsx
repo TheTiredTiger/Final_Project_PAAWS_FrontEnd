@@ -353,6 +353,10 @@ function AdminEdit() {
           Submit
         </Button>
       </Form>
+
+      <div style={{ display: "flex", justifyContent: "right" }}>
+        <Button href='/adminpage' variant="outline-secondary" >Return</Button>
+      </div>
     </div>
   );
 }
