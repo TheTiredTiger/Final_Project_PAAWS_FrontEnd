@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAPI } from '../Context/Context';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 //maybe change input text to center later
 //its working missing to lock routes 
 
@@ -9,6 +10,7 @@ function AdminDelete() {
   const [animalId, setAnimalId] = useState('');
   const [animalData, setAnimalData] = useState(null);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
   const { getAnimal, deleteAnimal } = useAPI();
 
   const handleFetchAnimal = async () => {
@@ -19,7 +21,7 @@ function AdminDelete() {
         setError('');
       } catch (error) {
         setAnimalData(null);
-        setError(`Error fetching animal with ID ${animalId}: ${error.message}`);
+        setError(`Error fetching animal with ID ${animalId}: ${error.message} Please Try Again`);
       }
     }
   };
@@ -34,6 +36,14 @@ function AdminDelete() {
       } catch (error) {
         setError(`Error deleting animal with ID ${animalId}: ${error.message}`);
       }
+    }
+  };
+
+  const navigateToEdit = () => {
+    if (animalData) {
+      navigate('/adminedit', { state: { animalData } });
+    } else {
+      alert('No animal data available. Please fetch an animal first.');
     }
   };
 
@@ -82,8 +92,8 @@ function AdminDelete() {
                 <p>Life stage: {animalData.life_stage}</p>
                 <p>Weight: {animalData.weight}</p>
                 <p>Breed: {animalData.breed}</p>
-                <p>Location: {animalData.location}</p>
-                <p>Known illnesses: {animalData.known_illnesses}</p>
+                <p>Location: {animalData.location}</p> {/* fixed */}
+                <p>Known illnesses: {animalData.known_illness}</p>
                 <p>Adoption status: {animalData.adoption_status}</p>
                 <p>Description: {animalData.description}</p>
               </div>
@@ -92,16 +102,19 @@ function AdminDelete() {
         )}
 
         <div className='row justify-content-center py-2'>
-          <div className='col-md-6 text-center'>
+          <div className='col-md-6 d-flex justify-content-between'>
             <button
-              className='btn btn-danger'
+              className='btn btn-danger py-2 px-2'
               onClick={handleDeleteAnimal}
             >
               Delete animal
             </button>
-            <p className='py-2'>
-              Do you want to <Link to="/adminedit">edit</Link> instead?
-            </p>
+            <button
+              className='btn btn-warning py-2 px-2'
+              onClick={navigateToEdit}
+            >
+              Want to Edit Instead?
+            </button>
           </div>
         </div>
 
