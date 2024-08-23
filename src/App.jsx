@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
@@ -16,9 +15,6 @@ import AdminEdit from './pages/Admin/AdminEdit'
 import AdminDelete from './pages/Admin/AdminDelete'
 import AdminPage from './pages/Admin/AdminPage'
 import AdoptionStatus from './pages/Admin/AdoptionStatus'
-//Added by -RM 
-// would you mind if I moved this to main.jsx? it's where all css-related stuff is. just for organization's sake.
-import './css components/styles.css'
 
 
 function App() {
