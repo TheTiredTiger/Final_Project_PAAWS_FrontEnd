@@ -129,6 +129,19 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+    //Delete User account and end session
+    const deleteUser = async () => {
+        try {
+            // The token is automatically included in the headers by the Axios interceptor
+            const response = await api.delete('/delete_user');
+            console.log("User deleted successfully:", response.data);
+            logoutUser();  // Assuming logoutUser clears local storage and context state
+            return response.data;
+        } catch (error) {
+            console.error("Error deleting user account:", error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
 
 
     // single user by jwt its not very helpfull make route user/<id>?
@@ -260,6 +273,7 @@ export const APIProvider = ({ children }) => {
                 loginUser,
                 logoutUser,
                 getProfile,
+                deleteUser,
                 get_user_profile,
                 listAnimals,
                 getAnimal,
