@@ -127,6 +127,42 @@ export const APIProvider = ({ children }) => {
     }, []);
 
     //-------####-Admin Features-###----------------
+    //Add Single Animal W/ Photo
+    const addAnimal = async (animalData, imageFiles) => {
+        const formData = new FormData();
+        formData.append('name', animalData.name);
+        formData.append('species', animalData.species);
+        formData.append('gender', animalData.gender);
+        formData.append('life_stage', animalData.lifeStage);
+        formData.append('weight', animalData.weight);
+        formData.append('breed', animalData.breed);
+        formData.append('location', animalData.location);
+        formData.append('known_illness', animalData.knownIllness);
+        formData.append('description', animalData.description);
+
+        // Handle multiple images
+        if (imageFiles && imageFiles.length > 0) {
+            // Append each file to the form data
+            for (let i = 0; i < imageFiles.length; i++) {
+                formData.append('image', imageFiles[i]);
+            }
+        }
+
+        try {
+            const response = await api.post('/admin_add_animal', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'  //Necessary because of api.create
+                }
+            });
+            console.log('Another Pawosome member added successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error adding animal:', error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
+
+
     //Delete Animal
     const deleteAnimal = async (animalId) => {
         try {
@@ -169,6 +205,7 @@ export const APIProvider = ({ children }) => {
                 getAnimal,
                 deleteAnimal,
                 deleteImage,
+                addAnimal,
             }}
         >
             {children}
