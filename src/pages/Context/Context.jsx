@@ -37,8 +37,8 @@ export const APIProvider = ({ children }) => {
         }
     };
 
-    //working
-    const loginUser = async (credentials) => {
+    //working ---commented to test better login
+    /*   const loginUser = async (credentials) => {
         try {
             const response = await api.post('/login', credentials);
             setToken(response.data.token);
@@ -51,9 +51,42 @@ export const APIProvider = ({ children }) => {
             console.error('Login failed:', error.response.data || error.message);
             throw error;
         }
-    };
+    }; */
 
-    const logoutUser = async () => {
+    //_-----------------------------------------------------
+    //login v2
+    // Login User and Fetch Complete Profile
+    const loginUser = async (credentials) => {
+        try {
+            // Attempt to log in the user with provided credentials
+            const response = await api.post('/login', credentials);
+
+            // Set the token in state and localStorage
+            setToken(response.data.token);
+            localStorage.setItem('token', response.data.token);
+
+            // Fetch the user's profile including admin status
+            const profileResponse = await api.get('/profile', {
+                headers: {
+                    Authorization: `Bearer ${response.data.token}`,
+                },
+            });
+
+            // Set the user profile in state and localStorage
+            setUser(profileResponse.data);
+            localStorage.setItem('user', JSON.stringify(profileResponse.data));
+
+            return profileResponse.data;
+
+        } catch (error) {
+            // Handle any errors that occurred during login or profile fetching
+            console.error('Error during login or fetching user profile:', error.response ? error.response.data : error.message);
+            throw new Error('Login or profile fetching failed. Please try again.');
+        }
+    };
+    //_-----------------------------------------------------
+
+    /* const logoutUser = async () => {
         try {
             localStorage.removeItem('token'); //Sends token to tokens'heaven
             setToken(null);
@@ -66,7 +99,23 @@ export const APIProvider = ({ children }) => {
             console.error('Logout failed:', error.response.data);
             throw error;
         }
+    }; */
+
+    //-----------------------log out v2
+    // Logout User
+    const logoutUser = async () => {
+        try {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            setToken(null);
+            setUser(null);
+            console.log("User logged out");
+        } catch (error) {
+            console.error('Logout failed:', error.response.data);
+            throw error;
+        }
     };
+    //---------------------------------
 
     const get_user_profile = async () => {
         try {
@@ -82,7 +131,7 @@ export const APIProvider = ({ children }) => {
     };
 
 
-    //For Editing Info later single user by jwt its not very helpfull make route user/<id>?
+    // single user by jwt its not very helpfull make route user/<id>?
     //or erase
     const getProfile = async () => {
         try {
@@ -96,6 +145,16 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+    // Restore token and user profile from localStorage on app load
+    useEffect(() => {
+        const storedToken = localStorage.getItem('token');
+        const storedUser = localStorage.getItem('user');
+
+        if (storedToken && storedUser) {
+            setToken(storedToken);
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
     //-------------------------------------------------------------------------
     const listAnimals = async () => {
         try {
@@ -183,6 +242,7 @@ export const APIProvider = ({ children }) => {
         }
     };
 
+    //Sync the token with the local storage - omg
     useEffect(() => {
         if (token) {
             localStorage.setItem('token', token);

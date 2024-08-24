@@ -49,7 +49,8 @@ function AdminAdd() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.name && formData.species && formData.gender && formData.description && formData.location) {
+    //we can add more to make them required or less (if database allows it ) -RM
+    if (formData.name && formData.species && formData.gender && formData.description && formData.location && formData.knownIllness && formData.lifeStage) {
       setLoading(true);  // Start loading
       try {
         const response = await addAnimal(formData, images);
