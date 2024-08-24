@@ -37,7 +37,7 @@ function App() {
           <Route path="/ourpets" element={< AnimalSearch />} />
           <Route path="/animalpage/:id" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
           {/* Route is done - BM */}
-          <Route path="/adoptionform" element={< AdoptionForm />} />
+          <Route path="/adoptionform/:id" element={< AdoptionForm />} /> {/* test by RM */}
 
           <Route path="/adminadd" element={< AdminAdd />} />
           <Route path="/adminedit" element={< AdminEdit />} />
