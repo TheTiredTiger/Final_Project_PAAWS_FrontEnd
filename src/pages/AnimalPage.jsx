@@ -64,7 +64,9 @@ function AnimalPage() {
               </Card.Text>
               <div className="animalPageBtn">
                 <Button variant="primary" style={{ marginRight: "1rem" }}>
+                  <Link to="/sponsor" style={{ color: "white", textDecoration: "none" }}>
                   Sponsor
+                  </Link>
                 </Button>
                 <Button variant="secondary">
                   <Link to="/ourpets" style={{ color: "white", textDecoration: "none" }}>
