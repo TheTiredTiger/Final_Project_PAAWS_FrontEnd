@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 //Added by-RM
-//I think it will work forever now 
+//I think it will work forever now
 //Receives child to render
 function AnimalCard({ animal }) {
   console.log("I am animal object in regular card", animal)

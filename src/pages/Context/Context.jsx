@@ -168,6 +168,20 @@ export const APIProvider = ({ children }) => {
             setUser(JSON.parse(storedUser));
         }
     }, []);
+
+    //-----User Animal Interactions----------
+
+    //CreateAdoption (adopt)
+    const createAdoption = async (adoptionData) => {
+        try {
+            const response = await api.post('/adopt', adoptionData);
+            return response.data;
+        } catch (error) {
+            console.error('Adoption creation failed:', error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
+
     //-------------------------------------------------------------------------
     const listAnimals = async () => {
         try {

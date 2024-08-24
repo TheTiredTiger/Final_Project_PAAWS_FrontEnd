@@ -75,7 +75,7 @@ function AdminAdd() {
         }
         setValidated(false);
       } catch (error) {
-        alert(`Failed to add the animal: ${error.message}`);
+        alert(`Failed to add the Pet: ${error.message}`);
       } finally {
         setLoading(false);  // End loading
       }
