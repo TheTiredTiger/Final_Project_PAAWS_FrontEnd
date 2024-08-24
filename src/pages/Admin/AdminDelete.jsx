@@ -18,6 +18,8 @@ function AdminDelete() {
     if (animalId) {
       try {
         const data = await getAnimal(animalId);
+        //kiling bugs
+        console.log(data)
         setAnimalData(data);
         setError('');
       } catch (error) {
