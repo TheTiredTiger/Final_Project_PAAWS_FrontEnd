@@ -3,14 +3,19 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import NavigationBar from './components/NavigationBar'
 import Footer from './components/Footer'
+
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ResetPass from './pages/ResetPass'
+
 import UserProfile from './pages/UserProfile'
+import PersonalData from './pages/PersonalData'
+
 import AnimalSearch from './pages/AnimalSearch'
 import AnimalPage from './pages/AnimalPage'
+import SponsorPage from './pages/SponsorPage'
 import AdoptionForm from './pages/AdoptionForm'
-import PersonalData from './pages/PersonalData'
+
 import AdminAdd from './pages/Admin/AdminAdd'
 import AdminEdit from './pages/Admin/AdminEdit'
 import AdminDelete from './pages/Admin/AdminDelete'
@@ -37,7 +42,9 @@ function App() {
           <Route path="/ourpets" element={< AnimalSearch />} />
           <Route path="/animalpage/:id" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
           {/* Route is done - BM */}
-          <Route path="/adoptionform/:id" element={< AdoptionForm />} /> {/* test by RM */}
+          <Route path="/adoptionform/:id" element={< AdoptionForm />} />
+          <Route path="/sponsor" element={< SponsorPage />} />
+          {/* I didn't add /:id so you could see the page first, but once it's working through ids, we should add it to the route - BF */}
 
           <Route path="/adminadd" element={< AdminAdd />} />
           <Route path="/adminedit" element={< AdminEdit />} />
