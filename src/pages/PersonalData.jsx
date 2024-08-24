@@ -146,6 +146,6 @@ function PersonalData() {
       </div>
     </>
   );
+  //this is a change to solve a commit issue
 }
-
 export default PersonalData;
