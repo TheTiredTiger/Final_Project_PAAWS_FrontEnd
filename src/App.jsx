@@ -5,6 +5,7 @@ import NavigationBar from './components/NavigationBar'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ResetPass from './pages/ResetPass'
 import UserProfile from './pages/UserProfile'
 import AnimalSearch from './pages/AnimalSearch'
 import AnimalPage from './pages/AnimalPage'
@@ -28,6 +29,7 @@ function App() {
 
           <Route path="/login" element={< Login />} /> {/* Done -RM */}
           <Route path="/register" element={< Register />} /> {/* Done -RM */}
+          <Route path="/resetpass" element={< ResetPass />} />
 
           <Route path="/userprofile" element={< UserProfile />} /> {/* Done -RM */}
           <Route path="/personaldata" element={< PersonalData />} />
