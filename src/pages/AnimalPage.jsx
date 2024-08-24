@@ -8,21 +8,46 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+//By RM
+import { useEffect, useState } from 'react';
 
-function AnimalPage({ animal }) {
+function AnimalPage() {
+  /* console.log("I am animal prop", animal) */
+
   const { getAnimal } = useAPI()
   const { id } = useParams();
+  console.log("I am id ", id)
+  /*  console.log("I am animal object in animal page", animal) */
+  const [animal, setAnimal] = useState(null); // State to store the animal data
 
-  console.log("I am animal object in animal page", animal)
+  useEffect(() => {
+    // Fetch the animal data using the id
+    const fetchAnimal = async () => {
+      try {
+        const fetchedAnimal = await getAnimal(id);
+        setAnimal(fetchedAnimal);
+      } catch (error) {
+        console.error('Error fetching animal:', error);
+      }
+    };
 
+    fetchAnimal();
+  }, [id, getAnimal]);
+
+  //killing bugs
+  console.log("I am ANIMAL OBJECT AFTER FETCH:", animal);
+
+  if (!animal) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
       <Card className='animalPage' key={animal}>
         <Row>
           <Col lg="5" >
-            <Card.Img className="animalPageImg" variant="top" src=""
-            alt="animal picture" />
+            <Card.Img className="animalPageImg" variant="top" src={animal.images[0].image_url}
+              alt="animal picture" />
           </Col>
           <Col lg="7" >
             <Card.Body className='animalPageDesc'>
