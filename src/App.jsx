@@ -21,6 +21,7 @@ import AdminEdit from './pages/Admin/AdminEdit'
 import AdminDelete from './pages/Admin/AdminDelete'
 import AdminPage from './pages/Admin/AdminPage'
 import AdoptionStatus from './pages/Admin/AdoptionStatus'
+import AdoptionFormView from './pages/Admin/AdminFormView'
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           <Route path="/adoptionstatus" element={< AdoptionStatus />} />
           {/*  <Route path="/adoptionform_adminview/:id" element={< adoptionform_adminview />} /> */}
 
+          <Route path="/adminformview" element={< AdoptionFormView />} />
           <Route path="/adminpage" element={< AdminPage />} />
 
 

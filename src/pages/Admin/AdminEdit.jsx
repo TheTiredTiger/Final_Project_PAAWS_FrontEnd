@@ -116,9 +116,9 @@ function AdminEdit() {
 
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="m-3" controlId="animalId">
+    <div className="container" style={{ margin: "auto", width: "80%" }}>
+      <div onSubmit={handleSubmit}>
+        <div controlId="animalId">
           <Form.Label>ID</Form.Label>
           <Form.Control
             type="text"
@@ -127,7 +127,7 @@ function AdminEdit() {
             placeholder="Enter ID"
             readOnly
           />
-        </Form.Group>
+        </div>
 
         <Form.Group className="m-3" controlId="animalName">
           <Form.Label>Name</Form.Label>
@@ -379,7 +379,7 @@ function AdminEdit() {
         <Button className='m-2' variant="primary" type="submit" disabled={isLoading}>
           {isLoading ? 'Submitting...' : 'Submit'}
         </Button>
-      </Form>
+      </div>
 
       <div style={{ display: "flex", justifyContent: "right" }}>
         <Button href='/adminpage' variant="outline-secondary" disabled={isLoading}>

@@ -1,14 +1,9 @@
 // page for adding animals + changing adoption status of animals
-// plus edit
-// plus delete
-
-// name, species, gender, age, location, weight, known illnesses, description, race
 
 //Added user feedback and spinner if the user as missing field before submit -RM
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 //Added by RM
 import { useAPI } from '../Context/Context';
 import React, { useState, useRef } from 'react';
@@ -85,7 +80,7 @@ function AdminAdd() {
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validated} onSubmit={handleSubmit} style={{ margin: "auto", width: "80%", marginTop: "2rem"}}>
       <Form.Group controlId="animalName">
         <Form.Label>Name</Form.Label>
         <Form.Control
@@ -330,8 +325,9 @@ function AdminAdd() {
           onChange={handleFileChange}
         />
       </Form.Group>
-
-      <Button className='m-2' variant="primary" type="submit" disabled={loading}>
+      
+      <div style={{ display: "flex", justifyContent: "space-between", margin: "2rem 0rem" }}>
+      <Button variant="primary" type="submit" disabled={loading}>
         {loading ? (
           <>
             <Spinner
@@ -346,9 +342,10 @@ function AdminAdd() {
           'Submit'
         )}
       </Button>
-      <Button href='/adminpage' variant="outline-secondary" className="m-2" disabled={loading}>
+      <Button href='/adminpage' variant="outline-secondary"  disabled={loading} style={{ right: "0" }}>
         Return
       </Button>
+    </div>
     </Form>
   );
 }
