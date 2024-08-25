@@ -270,6 +270,31 @@ export const APIProvider = ({ children }) => {
         }
     };
 
+    //---New: Update Adoption Status--- And Adoptions Related 
+
+    const updateAdoptionStatus = async (adoptionId, newStatus) => {
+        try {
+            const response = await api.put(`/update_adoption_status/${adoptionId}`, {
+                adoption_status: newStatus,
+            });
+            console.log('Adoption status updated successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error(`Updating adoption status failed:`, error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
+    // New function to get all adoptions with animal images
+    const getAllAdoptions = async () => {
+        try {
+            const response = await api.get('/adoptions');
+            return response.data;
+        } catch (error) {
+            console.error('Fetching adoptions failed:', error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
+
     //Sync the token with the local storage - omg
     useEffect(() => {
         if (token) {
@@ -291,6 +316,8 @@ export const APIProvider = ({ children }) => {
                 deleteUser,
                 get_user_profile,
                 createAdoption,
+                getAllAdoptions,
+                updateAdoptionStatus,
                 listAnimals,
                 getAnimal,
                 deleteAnimal,
