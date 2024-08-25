@@ -1,9 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
 
 const APIContext = createContext();
 
 export const APIProvider = ({ children }) => {
+    const publishableKey = import.meta.env.VITE_PUBLISHABLE_KEY;
+    const stripePromise = loadStripe('pk_test_51PpLYtIZE8iI5Xv6223PXSNVJKFJVgctliIQyi9w5fWQYFvswR6JOX8m76glrAuTMri6evVlnGOKYaa0pw69Jp4A00LvdG6UQO');
+
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
 
@@ -331,6 +335,43 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+    //Update Animal
+    // Update Animal with Photos
+    const updateAnimal = async (animalId, animalData, imageFiles) => {
+        const formData = new FormData();
+        formData.append('name', animalData.name);
+        formData.append('species', animalData.species);
+        formData.append('gender', animalData.gender);
+        formData.append('life_stage', animalData.life_stage);
+        formData.append('weight', animalData.weight);
+        formData.append('breed', animalData.breed);
+        formData.append('location', animalData.location);
+        formData.append('known_illness', animalData.known_illness);
+        formData.append('description', animalData.description);
+
+        // Handle multiple images
+        if (imageFiles && imageFiles.length > 0) {
+            // Append each file to the form data
+            for (let i = 0; i < imageFiles.length; i++) {
+                formData.append('image', imageFiles[i]);
+            }
+        }
+
+        try {
+            const response = await api.put(`/admin_update_animal/${animalId}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'  // Necessary to handle file uploads
+                }
+            });
+            console.log('Animal updated successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error updating animal:', error.response ? error.response.data : error.message);
+            throw error;
+        }
+    };
+
+
     //Delete Sinlge Image by id
     const deleteImage = async (imageId) => {
         try {
@@ -395,6 +436,7 @@ export const APIProvider = ({ children }) => {
                 updateAdoptionStatus,
                 listAnimals,
                 getAnimal,
+                updateAnimal,
                 deleteAnimal,
                 deleteImage,
                 addAnimal,
