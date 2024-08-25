@@ -97,7 +97,7 @@ function AdminEdit() {
           <Form.Control
             type="text"
             name="id"
-            value={formData.id}
+            defaultValue={formData.id}
             placeholder="Enter ID"
             readOnly
           />
@@ -108,7 +108,7 @@ function AdminEdit() {
           <Form.Control
             type="text"
             name="name"
-            value={formData.name}
+            defaultValue={formData.name}
             onChange={handleInputChange}
             placeholder="Enter name"
           />
@@ -218,7 +218,7 @@ function AdminEdit() {
             aria-label="Amount (to the nearest kg)"
             placeholder="Weight in kg"
             name="weight"
-            value={formData.weight}
+            defaultValue={formData.weight}
             onChange={handleInputChange}
           />
           <InputGroup.Text>kg</InputGroup.Text>
@@ -229,7 +229,7 @@ function AdminEdit() {
           <Form.Control
             type="text"
             name="breed"
-            value={formData.breed}
+            defaultValue={formData.breed}
             onChange={handleInputChange}
             placeholder="Enter breed"
           />
@@ -240,7 +240,7 @@ function AdminEdit() {
           <Form.Control
             as="select"
             name="location"
-            value={formData.location}
+            defaultValue={formData.location}
             onChange={handleInputChange}
           >
             <option value="null">Choose a location</option>

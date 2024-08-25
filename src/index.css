@@ -1,16 +1,9 @@
 /* palete:
-1) verde claro (6bffb8) --> aquamarine
-2) verde mais escuro (2ceaa3) --> also aquamarine
-3) rosa (para destaques) (ffa69e) --> melon
-4) preto (36382e) --> black olive
+1) verde claro (#6bffb8 // rgb(107,255,184) ) --> aquamarine
+2) verde mais escuro (#2ceaa3 // rgb(44 , 234, 163) ) --> also aquamarine
+3) rosa (para destaques) (#ffa69e // rbg(255,166,158) ) --> melon
+4) preto (#36382e // rbg(54,56,46) ) --> black olive
 5) branco */
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 body {
   margin: 0;
@@ -99,11 +92,14 @@ body {
   margin: 1.5rem;
 }
 
+/* navbar */
+
+
 /* footer */
 
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 5rem;
 }
