@@ -206,6 +206,55 @@ export const APIProvider = ({ children }) => {
         }
     };
 
+    // Function to create a one-time payment session
+    const createOneTimePaymentSession = async (animalId, amount) => {
+        try {
+            const response = await api.post('/create-checkout-session', {
+                animal_id: animalId,
+                sponsorship_amount: amount,
+                currency: 'eur' // Update to EUR
+            });
+
+            const sessionId = response.data.id;
+            const stripe = await stripePromise;
+
+            // Redirect to Stripe Checkout
+            const { error } = await stripe.redirectToCheckout({ sessionId });
+
+            if (error) {
+                console.error('Stripe error:', error);
+            }
+        } catch (error) {
+            console.error('Error creating one-time payment session:', error);
+            throw error;
+        }
+    };
+
+    // Function to create a subscription session
+    const createSubscriptionSession = async (animalId, amount) => {
+        try {
+            const response = await api.post('/create-subscription-session', {
+                animal_id: animalId,
+                sponsorship_amount: amount,
+                currency: 'eur' // Update to EUR
+            });
+
+            const sessionId = response.data.id;
+            const stripe = await stripePromise;
+
+            // Redirect to Stripe Checkout
+            const { error } = await stripe.redirectToCheckout({ sessionId });
+
+            if (error) {
+                console.error('Stripe error:', error);
+            }
+        } catch (error) {
+            console.error('Error creating subscription session:', error);
+            throw error;
+        }
+    };
+
+
     //-------------------------------------------------------------------------
     const listAnimals = async () => {
         try {
@@ -340,6 +389,8 @@ export const APIProvider = ({ children }) => {
                 deleteUser,
                 get_user_profile,
                 createAdoption,
+                createOneTimePaymentSession,
+                createSubscriptionSession,
                 getAllAdoptions,
                 updateAdoptionStatus,
                 listAnimals,
