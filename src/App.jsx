@@ -50,6 +50,8 @@ function App() {
           <Route path="/adminedit" element={< AdminEdit />} />
           <Route path="/admindelete" element={< AdminDelete />} />
           <Route path="/adoptionstatus" element={< AdoptionStatus />} />
+          {/*  <Route path="/adoptionform_adminview/:id" element={< adoptionform_adminview />} /> */}
+
           <Route path="/adminpage" element={< AdminPage />} />
 
 

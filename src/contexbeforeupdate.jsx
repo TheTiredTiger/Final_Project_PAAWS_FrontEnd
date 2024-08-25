@@ -139,19 +139,6 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
-
-    // Update user data
-    const updateUserInfo = async (updatedData) => {
-        try {
-            const response = await api.put('/update_user', updatedData);
-            setUser(response.data.user); // Update the user state with the updated data
-            localStorage.setItem('user', JSON.stringify(response.data.user)); // Sync updated user data with localStorage
-            return response.data;
-        } catch (error) {
-            console.error('Updating user data failed:', error.response ? error.response.data : error.message);
-            throw error;
-        }
-    };
     //Delete User account and end session
     const deleteUser = async () => {
         try {
@@ -336,7 +323,6 @@ export const APIProvider = ({ children }) => {
                 loginUser,
                 logoutUser,
                 getProfile,
-                updateUserInfo,
                 deleteUser,
                 get_user_profile,
                 createAdoption,
