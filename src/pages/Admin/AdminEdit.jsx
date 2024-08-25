@@ -9,7 +9,7 @@ import { useAPI } from '../Context/Context';
 
 function AdminEdit() {
   const location = useLocation();
-  const { animalData } = location.state || {};
+  const { animalData } = location.state
   console.log("Received animalData:", animalData);
 
   const { deleteImage, updateAnimal } = useAPI();
