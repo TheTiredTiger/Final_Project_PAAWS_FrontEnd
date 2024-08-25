@@ -289,6 +289,7 @@ export const APIProvider = ({ children }) => {
                 getProfile,
                 deleteUser,
                 get_user_profile,
+                createAdoption,
                 listAnimals,
                 getAnimal,
                 deleteAnimal,

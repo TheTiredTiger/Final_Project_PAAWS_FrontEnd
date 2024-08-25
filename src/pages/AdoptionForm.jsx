@@ -14,13 +14,17 @@ import { Link } from 'react-router-dom'; //test
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function AdoptionForm({ animalId }) {
+
+//if we wanted we could use prop and avoid fetching
+//but when someone goes directly to link it wont work ex:bookmark the form
+function AdoptionForm() {
   const { id } = useParams();
-  console.log("I am id useParams", id)
   //kiling bugs
-  console.log("I am animalId", animalId)
+  console.log("I am id useParams", id)
+
   const { getAnimal, createAdoption } = useAPI();
   const [animal, setAnimal] = useState(null);
+  //might need or not 
   const [formData, setFormData] = useState({
     phone_number: '',
     first_time_adopting: '',
@@ -30,22 +34,30 @@ function AdoptionForm({ animalId }) {
     met_animal: '',
     space_for_play: '',
     able_to_front_vet_bills: '',
+    first_name: '',  // Added
+    last_name: '',   // Added
+    email: ''        // Added
+
   });
 
   useEffect(() => {
-    const fetchAnimalData = async () => {
+    // Fetch the animal data using the id
+    const fetchAnimal = async () => {
       try {
-        const animalData = await getAnimal(animalId);
-        setAnimal(animalData);
+        const fetchedAnimal = await getAnimal(id);
+        setAnimal(fetchedAnimal);
       } catch (error) {
-        console.error('Error fetching animal data:', error);
+        console.error('Error fetching animal:', error);
       }
     };
 
-    fetchAnimalData();
+    fetchAnimal();
 
     const user = JSON.parse(localStorage.getItem('user'));
+    //killing bugs
+    console.log('yo', user)
     if (user) {
+
       setFormData((prevData) => ({
         ...prevData,
         first_name: user.first_name,
@@ -53,7 +65,7 @@ function AdoptionForm({ animalId }) {
         email: user.email,
       }));
     }
-  }, [animalId, getAnimal]);
+  }, [getAnimal, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,6 +73,7 @@ function AdoptionForm({ animalId }) {
       ...formData,
       [name]: value,
     });
+    console.log('Updated formData:', formData);
   };
 
   const handleSubmit = async (e) => {
@@ -74,10 +87,10 @@ function AdoptionForm({ animalId }) {
         animal_reference: animal.reference,
       };
       await createAdoption(adoptionData);
-      // Handle successful submission (e.g., show success message or redirect)
+      //Put a sucess message (also redirect user somewere (see how to prevent same submition -RM))
     } catch (error) {
       console.error('Adoption submission failed:', error);
-      // Handle submission error (e.g., show error message)
+      alert("Adoption submition failed! Please try again")
     }
   };
 
@@ -91,7 +104,7 @@ function AdoptionForm({ animalId }) {
             <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>
-                <Card.Text>ID: {animal.reference}</Card.Text>
+                <Card.Text>ID: {animal.id}</Card.Text>
                 <Button variant="primary">More</Button>
               </Card.Body>
             </Card>
