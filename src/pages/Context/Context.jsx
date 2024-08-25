@@ -175,6 +175,7 @@ export const APIProvider = ({ children }) => {
     const createAdoption = async (adoptionData) => {
         try {
             const response = await api.post('/adopt', adoptionData);
+            console.log("I am respose from create adoption", response)
             return response.data;
         } catch (error) {
             console.error('Adoption creation failed:', error.response ? error.response.data : error.message);
