@@ -40,20 +40,20 @@ export const APIProvider = ({ children }) => {
     });
 
     //Interceptors v3
-    api.interceptors.response.use(
-        response => response,
-        async (error) => {
-            const originalRequest = error.config;
-            if (error.response.status === 401 && !originalRequest._retry) {
-                originalRequest._retry = true;
-                // Assume you have a function to get a new token
-                const newToken = await refreshToken();
-                axios.defaults.headers.common['Authorization'] = 'Bearer ' + newToken;
-                return api(originalRequest);
+    /*    api.interceptors.response.use(
+            response => response,
+            async (error) => {
+                const originalRequest = error.config;
+                if (error.response.status === 401 && !originalRequest._retry) {
+                    originalRequest._retry = true;
+                    // Assume you have a function to get a new token
+                    const newToken = await refreshToken();
+                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + newToken;
+                    return api(originalRequest);
+                }
+                return Promise.reject(error);
             }
-            return Promise.reject(error);
-        }
-    );
+        ); */
 
 
 

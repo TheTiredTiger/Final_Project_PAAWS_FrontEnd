@@ -23,6 +23,8 @@ import AdminPage from './pages/Admin/AdminPage'
 import AdoptionStatus from './pages/Admin/AdoptionStatus'
 import AdminFormView from './pages/Admin/AdminFormView'
 
+import SuccessPage from './pages/Payment/SucessPage'
+import CancelPage from './pages/Payment/CancelPage'
 
 function App() {
 
@@ -53,7 +55,15 @@ function App() {
           <Route path="/adoptionstatus" element={< AdoptionStatus />} />
           {/*  <Route path="/adoptionform_adminview/:id" element={< adoptionform_adminview />} /> */}
 
+
+
+          <Route path="/success" element={<SuccessPage />} />
+          {/* Added to test payments */}
+          <Route path="/cancel" element={<CancelPage />} />
+
+
           <Route path="/adoptionform_adminview/:id" element={< AdminFormView />} />
+
           <Route path="/adminpage" element={< AdminPage />} />
 
 

@@ -4,6 +4,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
 import { useAPI } from './Context/Context';
+import CheckoutButton from '../components/CheckoutButton';
 
 function SponsorPage() {
 
@@ -48,9 +49,13 @@ function SponsorPage() {
     };
 
     return (
-      <button onClick={handleClick}>
-        {type === 'one-time' ? 'Sponsor Once' : 'Sponsor Monthly'}
-      </button>
+      <>
+
+        <button onClick={handleClick}>
+          {type === 'one-time' ? 'Sponsor Once' : 'Sponsor Monthly'}
+        </button>
+
+      </>
     );
   };
 
@@ -75,6 +80,11 @@ function SponsorPage() {
           <p>Support this animal with a one-time donation.</p>
           <SponsorButton animalId="123" amount="50.00" type="one-time" />
         </div>
+
+        {/* Test */}
+        <p>Test</p>
+        <CheckoutButton>!</CheckoutButton>
+        <p>Test</p>
       </Tab>
     </Tabs>
   );
