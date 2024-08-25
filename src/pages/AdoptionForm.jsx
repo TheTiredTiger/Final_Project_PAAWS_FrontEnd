@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 //Added by RM
 import { useAPI } from './Context/Context';
-import { Link } from 'react-router-dom'; //test
+import { Link, useNavigate } from 'react-router-dom'; //test
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -21,6 +21,7 @@ function AdoptionForm() {
   const { id } = useParams();
   //kiling bugs
   console.log("I am id useParams", id)
+  const navigate = useNavigate();
 
   const { getAnimal, createAdoption } = useAPI();
   const [animal, setAnimal] = useState(null);
@@ -30,6 +31,7 @@ function AdoptionForm() {
     first_time_adopting: '',
     already_have_pets: '',
     current_pets_description: '',
+    animal_reference: 'HARDCODED_REFERENCE', // Set to hardcoded value
     interest_reason: '',
     met_animal: '',
     space_for_play: '',
@@ -37,7 +39,6 @@ function AdoptionForm() {
     first_name: '',  // Added
     last_name: '',   // Added
     email: ''        // Added
-
   });
 
   useEffect(() => {
@@ -80,14 +81,18 @@ function AdoptionForm() {
     e.preventDefault();
 
     try {
+      console.log("I am animal Adoption Form", animal)
       const adoptionData = {
         ...formData,
         animal_id: animal.id,
         animal_name: animal.name,
-        animal_reference: animal.reference,
+        animal_reference: "yey",          /*  animal.reference */
+
       };
+      console.log("Adoption form sending adoption data", adoptionData);
       await createAdoption(adoptionData);
       //Put a sucess message (also redirect user somewere (see how to prevent same submition -RM))
+      navigate('/userprofile')  //could also navigate to a thank you for adopting page and tehn back to profile (just couple secs -RM)
     } catch (error) {
       console.error('Adoption submission failed:', error);
       alert("Adoption submition failed! Please try again")
@@ -119,6 +124,16 @@ function AdoptionForm() {
             </Card>
           </Col>
         </Row>
+
+        <Form>
+          {/* Hidden Input for Animal Reference */}
+          <Form.Control
+            type="hidden"
+            name="animal_reference"
+            value={formData.animal_reference}
+            onChange={handleChange}
+          />
+        </Form>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group className="m-3" controlId="formBasicPhone">
