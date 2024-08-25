@@ -19,7 +19,7 @@ import { useAPI } from '../pages/Context/Context';
 //but data is flowing here
 function UserProfile() {
 
-    const { get_user_profile, user } = useAPI(); // Hook to get user profile
+    const { get_user_profile, user } = useAPI(); // Remove user and get it from localstorage -RM; (should we?)
     const [sponsoredPets, setSponsoredPets] = useState([]);
     const [adoptionProcesses, setAdoptionProcesses] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -28,9 +28,10 @@ function UserProfile() {
         // Fetch the  user profile data when the component mounts
         const fetchUserProfile = async () => {
             try {
-                const profileData = await get_user_profile(); // Fetch profile data
-                setSponsoredPets(profileData.sponsoredPets || []); // Assuming API returns sponsoredPets
-                setAdoptionProcesses(profileData.adoptionProcesses || []); // Assuming API returns adoptionProcesses
+                const profileData = await get_user_profile();
+                console.log("I am User Profile page printing profileData", profileData)
+                setSponsoredPets(profileData.sponsored_pets || []); // Returned by serialize of API
+                setAdoptionProcesses(profileData.adoptions || []); // Returned by serialize of API
             } catch (error) {
                 console.error("Failed to fetch profile data:", error);
             } finally {
@@ -39,6 +40,7 @@ function UserProfile() {
         };
 
         fetchUserProfile();
+        console.log("I am UserProfile Page printing adoption processes state: ", adoptionProcesses)
     }, []); // Empty dependency array means this effect runs once on mount
 
     // Display loading message while fetching
