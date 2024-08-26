@@ -50,7 +50,6 @@ function Home() {
 
         <div className='homeSections'>
            <img src="/src/images/patas.png" alt="pawprints" className='pawprints' />
-
             <section className="meetYourCompaawnion" >
                 <div className="sectionText">
                     <h1 className='sectionTitle'><p>Meet your</p> <p>compaawnion</p></h1>
