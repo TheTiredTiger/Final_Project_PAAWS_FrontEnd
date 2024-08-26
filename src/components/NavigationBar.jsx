@@ -27,9 +27,9 @@ function NavigationBar() {
 
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar" sticky="top">
-      <Container>
+      <Container className='me-auto'>
         <Navbar.Brand href="/">
-          {/* <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS"/> */}
+          <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo'/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
