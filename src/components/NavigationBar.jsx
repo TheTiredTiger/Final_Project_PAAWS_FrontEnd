@@ -8,6 +8,7 @@ import { useAPI } from '../pages/Context/Context';
 import { useNavigate } from 'react-router-dom';
 
 
+
 let userIcon = <i className="fa-solid fa-user me-3" />;
 
 function NavigationBar() {
@@ -27,8 +28,13 @@ function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky="top" style={{ alignItems: 'flex-end' }}>
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="">
           <i className="fa-solid fa-paw" />
+          <img
+            src="/src/images/gifs/loading_cato.gif"  // Replace with your image path
+            alt="Logo"
+            style={{ width: '30px', height: '30px' }}  // Adjust size as needed
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
