@@ -17,12 +17,24 @@ body {
   min-height: 100vh;
 }
 
+/* navbar */
+
 .navbar{
   background-color: rgb(255, 255, 255, 0.5);
-  height: 10vh;
+  height: 20vh;
   padding: 2rem 0rem;
   font-size: 20px;
   width: 100%;
+  margin: auto;
+}
+
+.PAAWSLogo{
+  position: relative;
+  left: 0;
+  top: 0;
+  object-fit: fill;
+  width: 50%;
+  height: 50%;
 }
 
 /* home page */
@@ -44,6 +56,8 @@ body {
   font-size: 7rem;
   line-height: 2;
   font-weight: 800;
+  color: #36382e;
+  text-decoration: none;
 }
 
 .sectionTitle:hover,

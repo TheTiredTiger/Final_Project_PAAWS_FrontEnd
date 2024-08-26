@@ -1,6 +1,7 @@
 // landing page with welcoming + news carousel banner, and at least 3 highlights featuring "Our mission/About us", "Success stories" & "Get to know our animals"
 
-import Carousel from 'react-bootstrap/Carousel';
+/* import Carousel from 'react-bootstrap/Carousel';
+ */import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -52,19 +53,31 @@ function Home() {
            <img src="/src/images/patas.png" alt="pawprints" className='pawprints' />
             <section className="meetYourCompaawnion" >
                 <div className="sectionText">
-                    <h1 className='sectionTitle'><p>Meet your</p> <p>compaawnion</p></h1>
+                    <h1 className='sectionTitle'>
+                        <Link to="/ourpets" className='sectionTitle'>
+                            <p>Meet your</p> <p>compawnion</p>
+                        </Link>
+                    </h1>
                 </div>
             </section>
 
             <section className="successStories" >
                 <div className="sectionText">
-                    <h1 className='sectionTitle'><p>Success </p> <p>Stories</p></h1>
+                    <h1 className='sectionTitle'>
+                        <Link to="/" className='sectionTitle'>
+                                <p>Success</p> <p>Stories</p>
+                        </Link>
+                    </h1>
                 </div>
             </section>
 
             <section className="aboutUs" >
                 <div className="sectionText">
-                    <h1 className='sectionTitle'><p>About</p> <p>Us</p></h1>
+                <h1 className='sectionTitle'>
+                        <Link to="/" className='sectionTitle'>
+                            <p>About</p> <p>Us</p>
+                        </Link>
+                    </h1>
                 </div>
             </section>
         </div>
