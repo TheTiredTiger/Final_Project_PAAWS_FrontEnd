@@ -46,7 +46,7 @@ function App() {
           <Route path="/animalpage/:id" element={< AnimalPage />} /> {/* Need to make route get single pet-RM */}
           {/* Route is done - BM */}
           <Route path="/adoptionform/:id" element={< AdoptionForm />} />
-          <Route path="/sponsor" element={< SponsorPage />} />
+          <Route path="/sponsor/:id" element={< SponsorPage />} />
           {/* I didn't add /:id so you could see the page first, but once it's working through ids, we should add it to the route - BF */}
 
           <Route path="/adminadd" element={< AdminAdd />} />

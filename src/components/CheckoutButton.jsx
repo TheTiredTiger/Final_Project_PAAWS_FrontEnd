@@ -13,8 +13,8 @@ const CheckoutButton = () => {
                 alert('Please enter a valid amount.');
                 return;
             }
-
-            const response = await axios.post('http://localhost:3000/create-checkout-session', {
+            //going to edit  link to public http://localhost:3000
+            const response = await axios.post('https://961mfdzq-3000.uks1.devtunnels.ms/create-checkout-session', {
                 amount: validAmount  // Sending amount to the backend
             });
             console.log("I am data in button checkout", response.data.url);
