@@ -10,5 +10,5 @@ const SuccessPage = () => {
         </>
     );
 }
-
+//do not delete its for stripe
 export default SuccessPage;
