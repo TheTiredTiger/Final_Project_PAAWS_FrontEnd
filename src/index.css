@@ -9,10 +9,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Century Gothic";
 }
 
 body {
-  margin: 0;
   position: relative;
   min-height: 100vh;
 }
@@ -27,17 +27,43 @@ body {
 
 /* home page */
 
-.sectionText {
-  margin-top: 1rem;
+.homeBanner {
+  margin-bottom: 5rem;
 }
 
-.aboutUs:hover, 
-.successStories:hover, 
-.getToKnow:hover {
-  background-color: rgb(200,213,185);
-  border-bottom: lightgray solid 1px;
-  border-right: lightgray solid 1px;
-  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+.pawprints {
+  position: absolute;
+  left: 10rem;
+}
+
+.sectionText {
+  margin-top: 3rem;
+}
+
+.sectionTitle {
+  font-size: 7rem;
+  line-height: 2;
+  font-weight: 800;
+}
+
+.sectionTitle:hover,
+.sectionTitle:active {
+  color: #ffa69e;
+}
+
+.meetYourCompaawnion,
+.aboutUs {
+  text-align: right;
+  position: relative;
+}
+
+.successStories {
+  margin: 23rem 10rem ;
+  text-align: left;
+}
+
+.aboutUs {
+  margin: 15rem 0rem 20rem 0rem;
 }
 
 /* user profile */
@@ -109,7 +135,7 @@ body {
 /* footer */
 
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   margin-top: 2.5rem;

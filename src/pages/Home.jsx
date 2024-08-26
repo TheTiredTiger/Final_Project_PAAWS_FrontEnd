@@ -5,8 +5,8 @@ import Carousel from 'react-bootstrap/Carousel';
 function Home() {
   return (
     <>
-        <div className='homeBanner'>
-            <img src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" />
+        <div  >
+            <img className='homeBanner' src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" style={{ width: "100%"}}/>
         </div>
 
 
@@ -48,29 +48,26 @@ function Home() {
             </Carousel.Item>
         </Carousel> */}
 
-        <section className="aboutUs" style={{ display: "flex", margin: "3rem" }}>
-            <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "left"}}/>
-            <div className="sectionText" style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <h5>About us</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel quasi adipisci aspernatur accusantium quis, assumenda at ab fuga voluptatem nam nemo sequi repellendus doloremque enim exercitationem ratione, dolor placeat.</p>
-            </div>
-        </section>
+        <div className='homeSections'>
+           <img src="/src/images/patas.png" alt="pawprints" className='pawprints' />
+            <section className="meetYourCompaawnion" >
+                <div className="sectionText">
+                    <h1 className='sectionTitle'><p>Meet your</p> <p>compaawnion</p></h1>
+                </div>
+            </section>
 
-        <section className="successStories" style={{ display: "flex", margin: "3rem" }}>
-            <div className="sectionText" style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <h5>Success stories</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta blanditiis quod obcaecati quaerat corrupti error sunt ratione voluptas aut eligendi inventore deleniti officiis exercitationem veniam, velit excepturi est voluptate tempora.</p>
-            </div>
-            <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "right"}}/>
-        </section>
+            <section className="successStories" >
+                <div className="sectionText">
+                    <h1 className='sectionTitle'><p>Success </p> <p>Stories</p></h1>
+                </div>
+            </section>
 
-        <section className="getToKnow" style={{ display: "flex", margin: "3rem" }}>
-            <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "left"}}/>
-            <div className="sectionText" style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <h5>Meet your compawnion</h5>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel quasi adipisci aspernatur accusantium quis, assumenda at ab fuga voluptatem nam nemo sequi repellendus doloremque enim exercitationem ratione, dolor placeat.</p>
-            </div>
-        </section>
+            <section className="aboutUs" >
+                <div className="sectionText">
+                    <h1 className='sectionTitle'><p>About</p> <p>Us</p></h1>
+                </div>
+            </section>
+        </div>
 
         
         
