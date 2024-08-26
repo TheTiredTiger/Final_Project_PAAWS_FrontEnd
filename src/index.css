@@ -9,10 +9,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Century Gothic";
 }
 
 body {
-  margin: 0;
   position: relative;
   min-height: 100vh;
 }
@@ -27,13 +27,40 @@ body {
 
 /* home page */
 
-.sectionText {
-  margin-top: 1rem;
+.homeBanner {
+  margin-bottom: 5rem;
 }
 
-.aboutUs:hover, 
-.successStories:hover, 
-.getToKnow:hover {
+.pawprints {
+  position: absolute;
+  left: 10rem;
+}
+
+.sectionText {
+  margin-top: 3rem;
+}
+
+.sectionTitle {
+  font-size: 7rem;
+  line-height: 2;
+  font-weight: 800;
+}
+
+.meetYourCompaawnion,
+.aboutUs {
+  text-align: right;
+}
+
+.successStories {
+  margin: 25rem 10rem;
+  text-align: left;
+}
+
+.aboutUs {
+  margin: 15rem 0rem 30rem 0rem;
+}
+
+.sectionTitle:hover {
   background-color: rgb(200,213,185);
   border-bottom: lightgray solid 1px;
   border-right: lightgray solid 1px;
@@ -109,7 +136,7 @@ body {
 /* footer */
 
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   margin-top: 2.5rem;
