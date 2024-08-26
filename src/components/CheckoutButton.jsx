@@ -15,11 +15,7 @@ const CheckoutButton = () => {
             }
 
             const response = await axios.post('http://localhost:3000/create-checkout-session', {
-                amount: validAmount,  // Sending amount to the backend
-                user_id: '11',
-                animal_id: '30',
-                sponsorship_amount: '30',
-                sponsorship_date: 26082024
+                amount: validAmount  // Sending amount to the backend
             });
             console.log("I am data in button checkout", response.data.url);
             window.location.href = response.data.url; // Redirect to Stripe's hosted checkout page
