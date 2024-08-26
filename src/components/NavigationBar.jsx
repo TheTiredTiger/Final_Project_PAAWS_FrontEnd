@@ -8,6 +8,7 @@ import { useAPI } from '../pages/Context/Context';
 import { useNavigate } from 'react-router-dom';
 
 
+
 let userIcon = <i className="fa-solid fa-user me-3" />;
 
 function NavigationBar() {
@@ -32,7 +33,7 @@ function NavigationBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" style={{ justifyContent: "center"}}>
+          <Nav className="me-auto" style={{ justifyContent: "center" }}>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/ourpets">Our Pets</Nav.Link>
           </Nav>
