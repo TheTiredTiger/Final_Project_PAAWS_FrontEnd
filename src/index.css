@@ -6,7 +6,6 @@
 5) branco */
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -16,6 +15,14 @@ body {
   margin: 0;
   position: relative;
   min-height: 100vh;
+}
+
+.navbar{
+  background-color: rgb(255, 255, 255, 0.5);
+  height: 10vh;
+  padding: 2rem 0rem;
+  font-size: 20px;
+  width: 100%;
 }
 
 /* home page */

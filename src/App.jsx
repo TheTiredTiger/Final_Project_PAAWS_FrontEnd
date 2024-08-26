@@ -54,18 +54,12 @@ function App() {
           <Route path="/admindelete" element={< AdminDelete />} />
           <Route path="/adoptionstatus" element={< AdoptionStatus />} />
           {/*  <Route path="/adoptionform_adminview/:id" element={< adoptionform_adminview />} /> */}
-
-
+          <Route path="/adoptionform_adminview/:id" element={< AdminFormView />} />
+          <Route path="/adminpage" element={< AdminPage />} />
 
           <Route path="/success" element={<SuccessPage />} />
           {/* Added to test payments */}
           <Route path="/cancel" element={<CancelPage />} />
-
-
-          <Route path="/adoptionform_adminview/:id" element={< AdminFormView />} />
-
-          <Route path="/adminpage" element={< AdminPage />} />
-
 
         </Routes>
         <Footer />

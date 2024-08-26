@@ -5,9 +5,14 @@ import Carousel from 'react-bootstrap/Carousel';
 function Home() {
   return (
     <>
-        <Carousel data-bs-theme="dark">
+        <div className='homeBanner'>
+            <img src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" />
+        </div>
+
+
+        {/* <Carousel data-bs-theme="dark">
             <Carousel.Item>
-                <img
+                <div
                 className="d-block w-100"
                 src="https://d.newsweek.com/en/full/1898130/dog-cat-under-sheet.jpg"
                 alt="First slide"
@@ -41,7 +46,7 @@ function Home() {
                 </p>
                 </Carousel.Caption>
             </Carousel.Item>
-        </Carousel>
+        </Carousel> */}
 
         <section className="aboutUs" style={{ display: "flex", margin: "3rem" }}>
             <img src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg" alt="" style={{ width: "25vw", justifyContent: "left"}}/>
