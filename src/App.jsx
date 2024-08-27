@@ -37,7 +37,7 @@ function App() {
 
           <Route path="/login" element={< Login />} /> {/* Done -RM */}
           <Route path="/register" element={< Register />} /> {/* Done -RM */}
-          <Route path="/resetpass" element={< ResetPass />} />
+          <Route path="/resetpass/:token" element={< ResetPass />} />
 
           <Route path="/userprofile" element={< UserProfile />} /> {/* Done -RM */}
           <Route path="/personaldata" element={< PersonalData />} />
