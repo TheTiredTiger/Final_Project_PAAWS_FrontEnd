@@ -1,13 +1,14 @@
 // landing page with welcoming + news carousel banner, and at least 3 highlights featuring "Our mission/About us", "Success stories" & "Get to know our animals"
 
-/* import Carousel from 'react-bootstrap/Carousel';
- */import { Link } from 'react-router-dom';
+/* import Carousel from 'react-bootstrap/Carousel'; */
+import { Link } from 'react-router-dom';
+import { Image } from 'react-bootstrap';
 
 function Home() {
   return (
     <>
         <div  >
-            <img className='homeBanner' src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" style={{ width: "100%"}}/>
+            <Image className='homeBanner' src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" fluid/>
         </div>
 
 
@@ -50,36 +51,30 @@ function Home() {
         </Carousel> */}
 
         <div className='homeSections'>
-           <img src="/src/images/patas.png" alt="pawprints" className='pawprints' />
-            <section className="meetYourCompaawnion" >
-                <div className="sectionText">
-                    <h1 className='sectionTitle'>
-                        <Link to="/ourpets" className='sectionTitle'>
-                            <p>Meet your</p> <p>compawnion</p>
-                        </Link>
-                    </h1>
-                </div>
-            </section>
-
-            <section className="aboutUs" >
-                <div className="sectionText">
-                    <h1 className='sectionTitle'>
-                        <Link to="/" className='sectionTitle'>
-                                About Us
-                        </Link>
-                    </h1>
-                </div>
-            </section>
-
-            <section className="successStories" >
-                <div className="sectionText">
+           <Image src="/src/images/patas.png" alt="pawprints" className='pawprints' fluid />
+            <div className="meetYourCompaawnion sectionText" >
                 <h1 className='sectionTitle'>
-                        <Link to="/" className='sectionTitle'>
-                            <p>Success</p> <p>Stories</p>
-                        </Link>
-                    </h1>
-                </div>
-            </section>
+                    <Link to="/ourpets" className='sectionTitle'>
+                        <p>Meet your</p> <p>compawnion</p>
+                    </Link>
+                </h1>
+            </div>
+
+            <div className="aboutUs sectionText">
+                <h1 className='sectionTitle'>
+                    <Link to="/" className='sectionTitle'>
+                            About Us
+                    </Link>
+                </h1>
+            </div>
+
+            <div className="successStories sectionText">
+            <h1 className='sectionTitle'>
+                    <Link to="/" className='sectionTitle'>
+                        <p>Success</p> <p>Stories</p>
+                    </Link>
+                </h1>
+            </div>
         </div>
 
         

@@ -27,15 +27,15 @@ function NavigationBar() {
 
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar p-0" sticky="top">
-      <Container classname="navbarContainer">
-          <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo'/>
+      <Container className="navbarContainer" href="/">
+          <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo' />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto centerNavBar" style={{ justifyContent: "center" }}>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/ourpets">Our Pets</Nav.Link>
-            <Nav.Link href="/">About Us</Nav.Link>
-            <Nav.Link href="/">Success Stories</Nav.Link>
+          <Nav className="me-auto centerNavBar justifyContentBetween" style={{ justifyContent: "center" }}>
+            <Nav.Link href="/" className='navbarItem mx-2'>Home</Nav.Link>
+            <Nav.Link href="/ourpets" className='navbarItem mx-2'>Our Pets</Nav.Link>
+            <Nav.Link href="/" className='navbarItem mx-2'>About Us</Nav.Link>
+            <Nav.Link href="/" className='navbarItem mx-2'>Success Stories</Nav.Link>
           </Nav>
 
           <Nav>
