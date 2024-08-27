@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'; //Navigate serves to redir
 //Added by RM
 import { useAPI } from '../pages/Context/Context';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
 function Login() {
@@ -16,6 +17,10 @@ function Login() {
   }); //Object to practice my non existent skills with objects
   const [error, setError] = useState(null); // For  Man handling login errors :P
   const [loading, setLoading] = useState(false); // For turning off the button while processing
+  //States for password reseting
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetMessage, setResetMessage] = useState('');
+
   const navigate = useNavigate(); // Hook for redirection
 
   //Handle input changes 
@@ -49,9 +54,24 @@ function Login() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //For password reseting
+  const handlePasswordReset = async () => {
+    try {
+      const response = await axios.post('https://961mfdzq-3000.uks1.devtunnels.ms/request-password-reset', { email: resetEmail });
+      setResetMessage(response.data.message);
+    } catch (error) {
+      if (error.response) {
+        setResetMessage(error.response.data.message);
+      } else {
+        setResetMessage('An error occurred. Please try again.');
+      }
+    }
+  };
 
-  return ( <>
-  
+
+
+  return (<>
+
     <Form onSubmit={handleSubmit} className='my-3'> {/* Just lowering the form a bit – RM To TT */}
       <FloatingLabel
         controlId="floatingInput"
@@ -94,36 +114,32 @@ function Login() {
     </Form>
 
     <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Email confirmation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Modal.Body>
-                <p>We'll send you an email with a link to reset your password.</p>
-              </Modal.Body>
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Email address"
-                className="mb-3"
-              >
-              <Form.Control type="email" placeholder="name@example.com" />
-      </FloatingLabel>
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Send
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <Modal.Header closeButton>
+        <Modal.Title>Email confirmation</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>We'll send you an email with a link to reset your password.</p>
+        <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
+          <Form.Control
+            type="email"
+            placeholder="name@example.com"
+            value={resetEmail}
+            onChange={(e) => setResetEmail(e.target.value)}
+          />
+        </FloatingLabel>
+        {resetMessage && <p className="text-info">{resetMessage}</p>}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={() => { handlePasswordReset(); handleClose(); }}>
+          Send
+        </Button>
+      </Modal.Footer>
+    </Modal>
 
-    </>
+  </>
   );
 }
 
