@@ -1,57 +1,40 @@
 // landing page with welcoming + news carousel banner, and at least 3 highlights featuring "Our mission/About us", "Success stories" & "Get to know our animals"
 
-/* import Carousel from 'react-bootstrap/Carousel'; */
+import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
 
 function Home() {
   return (
     <>
-        <div  >
+        {/* <div  >
             <Image className='homeBanner' src="/src/images/PAAWS banner.png" alt="a cat and a dog looking to the front with text saying impossible to resist that face" fluid/>
-        </div>
+        </div> */}
 
 
-        {/* <Carousel data-bs-theme="dark">
-            <Carousel.Item>
-                <div
+        <Carousel data-bs-theme="dark" className='homeBanner'>
+            <Carousel.Item interval={2000}>
+                <img
                 className="d-block w-100"
-                src="https://d.newsweek.com/en/full/1898130/dog-cat-under-sheet.jpg"
-                alt="First slide"
+                src="/src/images/PAAWS banner.png"
+                alt="a cat and a dog looking to the front with text saying impossible to resist that face"
                 />
-                <Carousel.Caption>
+{/*                 <Carousel.Caption>
                 <h5>First slide label</h5>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={2000}>
                 <img
                 className="d-block w-100"
-                src="https://pics.freeartbackgrounds.com/fullhd/Cat_in_Autumn_Landscape_Background-647.jpg"
-                alt="Second slide"
+                src="src\images\PAAWS banner_dark version.png"
+                alt="a cat and a dog looking to the front with text saying impossible to resist that face"
                 />
-                <Carousel.Caption>
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src="https://www.adventuredogphotography.com/wp-content/uploads/2023/09/0I7A9276.jpg"
-                alt="Third slide"
-                />
-                <Carousel.Caption>
-                <h5>Third slide label</h5>
-                <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel> */}
+        </Carousel>
 
         <div className='homeSections'>
-           <Image src="/src/images/patas.png" alt="pawprints" className='pawprints' fluid />
+           <Image src="src\images\paws and drawings.png" alt="pawprints" className='pawprints' fluid />
             <div className="meetYourCompaawnion sectionText" >
                 <h1 className='sectionTitle'>
                     <Link to="/ourpets" className='sectionTitle'>
