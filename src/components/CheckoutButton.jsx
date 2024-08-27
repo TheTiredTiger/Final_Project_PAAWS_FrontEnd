@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-const CheckoutButton = ({ userinfo, animalinfo }) => {
+const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
 
     // Ensure that userinfo and animalinfo are available
     /*  if (!userinfo || !animalinfo) {
@@ -28,9 +28,9 @@ const CheckoutButton = ({ userinfo, animalinfo }) => {
                 alert('User or animal information is missing.');
                 return;
             }
-
+            console.log("I am type of sponsorship", typeOfSponsorship)
             // Send the request to your backend
-            const response = await axios.post('https://961mfdzq-3000.uks1.devtunnels.ms/create-checkout-session', {
+            const response = await axios.post(`https://961mfdzq-3000.uks1.devtunnels.ms/create-${typeOfSponsorship}-session`, {
                 amount: validAmount,
                 user_id: userinfo.id,  // Assuming userinfo has an 'id' property
                 animal_id: animalinfo.id  // Assuming animalinfo has an 'id' property

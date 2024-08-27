@@ -9,7 +9,11 @@ function SponsoredCard({ pet }) {
   return (
     <>
       <Card className="card">
-        <Card.Img variant="top" src="https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg" alt="pet picture" />
+        <Card.Img
+          variant="top"
+          src={(pet.animal.images && pet.animal.images[0] && pet.animal.images[0].image_url) || 'https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg'}
+          alt={pet.animal.name}
+        />
         <Card.Body>
           <Card.Title>{pet.animal.name || 'Adorable little fluffball'}</Card.Title>
           <Card.Text>

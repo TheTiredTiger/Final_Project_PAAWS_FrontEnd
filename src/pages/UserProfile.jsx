@@ -13,6 +13,7 @@ import SponsoredCard from "../components/SponsoredCard";
 //Added by RM
 import React, { useEffect, useState } from 'react';
 import { useAPI } from '../pages/Context/Context';
+import newloadingcato from '../images/gifs/newloadingcato.gif'
 
 //omfg You have no idea it took me like 4 hrs--- 🥲 its working
 //missing check when have connections in db sponsored and adoption processes
@@ -45,7 +46,9 @@ function UserProfile() {
 
     // Display loading message while fetching
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>
+            <img src={newloadingcato}></img>
+        </div>;
     }
 
     return (
