@@ -12,7 +12,9 @@ export const APIProvider = ({ children }) => {
     const [token, setToken] = useState(null);
 
     const api = axios.create({
-        baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta"
+        /*  baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta" */
+        baseURL: 'https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev', // Link codespaces espero que nao falhe
+
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
