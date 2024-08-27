@@ -6,7 +6,7 @@
 
 // In case we have time, add user milestones
 
-// Add money spent in sponserships and how much they'll spend this month
+// Add money spent in sponserships and how much they'll spend this month ----maybe not for presentation or just money contributed for each
 
 import AdoptionCard from "../components/AdoptionCard";
 import SponsoredCard from "../components/SponsoredCard";
