@@ -21,20 +21,23 @@ body {
 
 .navbar{
   background-color: rgb(255, 255, 255, 0.5);
-  height: 20vh;
-  padding: 2rem 0rem;
+  height: 15vh;
   font-size: 20px;
-  width: 100%;
+}
+
+.navbarContainer {
+  /* maybe try the second navbar example */
+}
+
+.centerNavBar {
   margin: auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .PAAWSLogo{
-  position: relative;
-  left: 0;
-  top: 0;
-  object-fit: fill;
-  width: 50%;
-  height: 50%;
+  width: 20%;
+  height: 20%;
 }
 
 /* home page */
@@ -66,17 +69,17 @@ body {
 }
 
 .meetYourCompaawnion,
-.aboutUs {
+.successStories {
   text-align: right;
   position: relative;
 }
 
-.successStories {
-  margin: 23rem 10rem ;
+.aboutUs {
+  margin: 30rem 10rem ;
   text-align: left;
 }
 
-.aboutUs {
+.successStories {
   margin: 15rem 0rem 20rem 0rem;
 }
 

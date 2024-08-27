@@ -61,21 +61,21 @@ function Home() {
                 </div>
             </section>
 
-            <section className="successStories" >
+            <section className="aboutUs" >
                 <div className="sectionText">
                     <h1 className='sectionTitle'>
                         <Link to="/" className='sectionTitle'>
-                                <p>Success</p> <p>Stories</p>
+                                About Us
                         </Link>
                     </h1>
                 </div>
             </section>
 
-            <section className="aboutUs" >
+            <section className="successStories" >
                 <div className="sectionText">
                 <h1 className='sectionTitle'>
                         <Link to="/" className='sectionTitle'>
-                            <p>About</p> <p>Us</p>
+                            <p>Success</p> <p>Stories</p>
                         </Link>
                     </h1>
                 </div>

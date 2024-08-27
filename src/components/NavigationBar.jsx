@@ -26,23 +26,23 @@ function NavigationBar() {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar" sticky="top">
-      <Container className='me-auto'>
-        <Navbar.Brand href="/">
+    <Navbar collapseOnSelect expand="lg" className="navbar p-0" sticky="top">
+      <Container classname="navbarContainer">
           <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo'/>
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" style={{ justifyContent: "center" }}>
+          <Nav className="me-auto centerNavBar" style={{ justifyContent: "center" }}>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/ourpets">Our Pets</Nav.Link>
+            <Nav.Link href="/">About Us</Nav.Link>
+            <Nav.Link href="/">Success Stories</Nav.Link>
           </Nav>
 
           <Nav>
             {user ? (
               // If user is logged in
               <>
-                <NavDropdown title={userIcon} id="basic-nav-dropdown">
+                <NavDropdown title={userIcon} id="basic-nav-dropdown" className='' >
                   <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
                   <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
                   {user.is_admin && ( // Only show Admin option if user is an admin
