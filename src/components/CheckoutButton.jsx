@@ -29,8 +29,8 @@ const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
                 return;
             }
             console.log("I am type of sponsorship", typeOfSponsorship)
-            // Send the request to your backend
-            const response = await axios.post(`https://961mfdzq-3000.uks1.devtunnels.ms/create-${typeOfSponsorship}-session`, {
+            // Send the request to your backend             //changed to codespaces link
+            const response = await axios.post(`https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev/create-${typeOfSponsorship}-session`, {
                 amount: validAmount,
                 user_id: userinfo.id,  // Assuming userinfo has an 'id' property
                 animal_id: animalinfo.id  // Assuming animalinfo has an 'id' property
