@@ -12,15 +12,14 @@ import { useEffect } from 'react';
 function SponsorPage() {
 
   // This is only a test page, I am already tired -RM
-  const { getAnimal } = useAPI()
+  const { getAnimal, user } = useAPI()
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
+  console.log("I am user object on sponsor page", user)
   // Load your publishable key from the environment variables
   const publishableKey = import.meta.env.VITE_PUBLISHABLE_KEY;
-  const stripePromise = loadStripe(publishableKey);
+  const stripePromise = loadStripe('publishableKey');
 
-  // Destructure the API functions and user state from the context
-  const { createOneTimePaymentSession, createSubscriptionSession, user } = useAPI();
 
   const [key, setKey] = useState('monthly');
 
@@ -105,7 +104,7 @@ function SponsorPage() {
 
         {/* Test */}
         <p>Test</p>
-        <CheckoutButton />
+        <CheckoutButton userinfo={user} animalinfo={animal} />
         <p>Test</p>
       </Tab>
     </Tabs>
