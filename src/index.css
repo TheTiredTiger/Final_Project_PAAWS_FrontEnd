@@ -22,11 +22,9 @@ body {
 .navbar{
   background-color: rgb(255, 255, 255, 0.5);
   height: 15vh;
-  font-size: 20px;
-}
-
-.navbarContainer {
-  /* maybe try the second navbar example */
+  font-size: 1.5em;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .centerNavBar {
@@ -35,12 +33,31 @@ body {
   justify-content: center;
 }
 
+.navbarItem:hover {
+  text-decoration: underline;
+  text-underline-offset: 15px;
+}
+
 .PAAWSLogo{
   width: 20%;
   height: 20%;
 }
 
+/* footer */
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
 /* home page */
+
+.homeSections {
+  width: 100%;
+  height: auto;
+}
 
 .homeBanner {
   margin-bottom: 5rem;
@@ -48,16 +65,17 @@ body {
 
 .pawprints {
   position: absolute;
-  left: 10rem;
+  left: 2em;
 }
 
 .sectionText {
-  margin-top: 3rem;
+  height: 100vh;
+  padding-top: 20vh;
 }
 
 .sectionTitle {
-  font-size: 7rem;
-  line-height: 2;
+  font-size: clamp(7vw, 5vw, 3rem);
+  line-height: 1.5;
   font-weight: 800;
   color: #36382e;
   text-decoration: none;
@@ -75,12 +93,8 @@ body {
 }
 
 .aboutUs {
-  margin: 30rem 10rem ;
   text-align: left;
-}
-
-.successStories {
-  margin: 15rem 0rem 20rem 0rem;
+  position: relative;
 }
 
 /* user profile */
@@ -147,13 +161,4 @@ body {
   right: 0;
   bottom: 0;
   margin: 1.5rem;
-}
-
-/* footer */
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-top: 2.5rem;
 }

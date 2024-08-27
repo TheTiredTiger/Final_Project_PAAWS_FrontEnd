@@ -49,6 +49,7 @@ function PersonalData() {
       try {
         await updateUserInfo(formData);
         setIsSubmitted(true);
+        alert("Updated successfully!")
       } catch (error) {
         console.error('Failed to update user info:', error);
       } finally {
