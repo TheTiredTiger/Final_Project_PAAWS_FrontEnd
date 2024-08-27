@@ -21,8 +21,8 @@ function ResetPass() {
     }
 
     try {
-      // Submit the new password to the API endpoint
-      const response = await axios.post(`https://961mfdzq-3000.uks1.devtunnels.ms/reset-password/${token}`, {
+      // Submit the new password to the API endpoint   //altered for codespaces
+      const response = await axios.post(`https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev/reset-password/${token}`, {
         password,
         confirm_password: confirmPassword,
       });

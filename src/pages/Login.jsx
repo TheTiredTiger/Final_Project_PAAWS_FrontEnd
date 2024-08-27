@@ -56,8 +56,8 @@ function Login() {
 
   //For password reseting
   const handlePasswordReset = async () => {
-    try {
-      const response = await axios.post('https://961mfdzq-3000.uks1.devtunnels.ms/request-password-reset', { email: resetEmail });
+    try {                                     //changed to codespaces link
+      const response = await axios.post('https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev/request-password-reset', { email: resetEmail });
       setResetMessage(response.data.message);
     } catch (error) {
       if (error.response) {
