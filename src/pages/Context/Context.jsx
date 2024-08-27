@@ -15,7 +15,7 @@ export const APIProvider = ({ children }) => {
         baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta"
         headers: {
             'Content-Type': 'application/json',
-            /* Authorization: `Bearer ${token}`, */
+            Authorization: `Bearer ${token}`,
         },
     });
 
@@ -38,6 +38,23 @@ export const APIProvider = ({ children }) => {
     }, (error) => {
         return Promise.reject(error);
     });
+
+    //Interceptors v3
+    /*    api.interceptors.response.use(
+            response => response,
+            async (error) => {
+                const originalRequest = error.config;
+                if (error.response.status === 401 && !originalRequest._retry) {
+                    originalRequest._retry = true;
+                    // Assume you have a function to get a new token
+                    const newToken = await refreshToken();
+                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + newToken;
+                    return api(originalRequest);
+                }
+                return Promise.reject(error);
+            }
+        ); */
+
 
 
     //working
