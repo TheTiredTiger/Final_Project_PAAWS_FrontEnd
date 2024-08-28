@@ -65,7 +65,7 @@ function App() {
           <Route path="/cancel" element={<CancelPage />} />
 
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </>
   )
