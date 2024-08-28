@@ -1,6 +1,6 @@
 /* palete:
 1) verde claro (6bffb8) --> aquamarine
-2) verde mais escuro (2ceaa3) --> also aquamarine
+2) verde mais escuro (2AD897) --> also aquamarine
 3) rosa (para destaques) (ffa69e) --> melon
 4) preto (36382e) --> black olive
 5) branco */
@@ -122,6 +122,35 @@ body {
   text-align: left;
   position: relative;
 }
+
+/* about us */
+
+.aboutUsPage {
+  color: #36382e;
+
+}
+
+.aboutUsHeader {
+  width: 100%;
+  height: 30vh;
+  padding-top: 2em;
+  background-color: #2AD897;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.aboutUsText {
+  font-size: 25px;
+  padding-top: 1em;
+}
+
+.aboutUsDesc {
+  margin: 3em;
+  font-size: 18px;
+  text-align: justify;
+}
+
 
 /* user profile */
 
