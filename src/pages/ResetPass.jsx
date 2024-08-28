@@ -4,10 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom'; // Import useParams to get the token from the URL
 import axios from 'axios'; // Import axios for making the API request
-import { useAPI } from './Context/Context';
 
 function ResetPass() {
-  const { url } = useAPI();
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
@@ -24,7 +22,7 @@ function ResetPass() {
 
     try {
       // Submit the new password to the API endpoint   //altered for codespaces
-      const response = await axios.post(`${url}/reset-password/${token}`, {
+      const response = await axios.post(`https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev/reset-password/${token}`, {
         password,
         confirm_password: confirmPassword,
       });
