@@ -2,6 +2,7 @@
 1) verde claro (6bffb8) --> aquamarine
 2) verde mais escuro (2AD897) --> also aquamarine
 3) rosa (para destaques) (ffa69e) --> melon
+3.5) rosa mais claro (ffc1bb)
 4) preto (36382e) --> black olive
 5) branco */
 
@@ -135,7 +136,7 @@ body {
   width: 100%;
   height: 30vh;
   padding-top: 2em;
-  background-color: #2AD897;
+  background-color: #6bffb8;
   text-align: center;
   font-size: 40px;
   color: white;
@@ -146,8 +147,9 @@ body {
   padding-top: 0.5em;
 }
 
-.aboutUsDesc {
-  margin: 5em;
+.aboutUsDesc,
+.motivationText {
+  margin: 4em 5em;
   font-size: 18px;
   text-align: justify;
   line-height: 1.75;
@@ -155,14 +157,14 @@ body {
 }
 
 .ourStory {
-  background-color: #2AD897;
+  background-color: #ffa69e;
   color: #36382e;
   padding: 5em;
   font-size: 18px;
   line-height: 1.75;
 }
 
-.ourStoryTitle, .ourMissionTitle {
+.ourStoryTitle, .ourMissionTitle, .motivationTitle {
   margin-bottom: 1.5em;
 }
 
@@ -170,12 +172,75 @@ body {
   font-size: 18px;
   padding: 5em;
   color: #36382e;
-  background-color: #6bffb8;
+  background-color: #ffc1bb;
   line-height: 1.75;
 }
 
 .aboutUsDoubleSec {
-  margin-bottom: 5em;
+  margin-bottom: 7em;
+}
+
+.howItWorks {
+  height: 30vh;
+  text-align: middle;
+  margin-bottom: 10em;
+}
+
+.howItWorksHeader {
+  background-color: #2AD897;
+  padding: 5em;
+}
+
+.howItWorksTitle{
+  line-height: 1.75;
+}
+
+.howItWorksOne {
+  background-color: #4ceca9;
+  padding: 5em;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.howItWorksTwo {
+  background-color: #6bffb8;
+  padding: 5em;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.howItWorksThree {
+  background-color: #a9ffd6;
+  padding: 5em;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.callToActionTitle {
+  margin-bottom: 1em;
+}
+
+.callToActionText {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.primaryButton {
+  background-color: #6bffb8;
+  border-color: #6bffb8;
+  font-size: 18px;
+  margin-top: 1em;
+  color:#36382e;
+  outline: none;
+  padding: 1rem;
+}
+
+.primaryButton:hover,
+.primaryButton:active
+{
+  background-color: #2AD897 !important;
+  border-color: #2AD897 !important;
+  outline: none !important;
 }
 
 
