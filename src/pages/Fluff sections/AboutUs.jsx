@@ -1,4 +1,4 @@
-import { Row, Col, Button, Card } from "react-bootstrap";
+import { Row, Col, Button, Card, Image, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function AboutUs() {
@@ -44,7 +44,6 @@ function AboutUs() {
                 </p>
             </div>
         </div>
-
         <Row className="howItWorks">
             <Col className="howItWorksHeader" lg="3">
                 <h1 className="howItWorksTitle">How it <br/> works</h1>
@@ -59,17 +58,37 @@ function AboutUs() {
                 Finally, fill out the adoption form or proceed to checkout in case of a sponsorhip.
             </Col>
         </Row>
-        <Card className="callToAction" style={{ width: '35%', margin: "auto" }}>
-            <Card.Body>
-                <h1 className="callToActionTitle">Join us</h1>
-                <Card.Text className="callToActionText">
-                    We invite you to explore the animals waiting for a loving home or sponsor one that touches your heart. Together, we can build a better world for animals—one adoption, one sponsorship, one act of kindness at a time.
-                </Card.Text>
-                <Button className="primaryButton" href="/ourpets">Check out our pets</Button>
-            </Card.Body>
-        </Card>
 
-        {/* maybe add PAAWS card + contact us card with random info?? and then footer link should go to section */}
+        {/* this card is jumping on top of previous section in smaller viewports and ruining my blood pressure */}
+        <div className="callToAction">
+            <Card style={{ width: '35%', margin: "auto" }}>
+                <Card.Body>
+                    <h1 className="callToActionTitle">Join us</h1>
+                    <Card.Text className="callToActionText">
+                        We invite you to explore the animals waiting for a loving home or sponsor one that touches your heart. Together, we can build a better world for animals—one adoption, one sponsorship, one act of kindness at a time.
+                    </Card.Text>
+                    <Button className="primaryButton" href="/ourpets">Check out our pets</Button>
+                </Card.Body>
+            </Card>
+        </div>
+        <Row>
+            <Col className="contactUs" lg="6">
+                <h1 className="contactUsTitle">
+                    Contact Us
+                </h1>
+                <p className="contactUsText">If you have any questions or concerns, please reach out through our email: <strong style={{ color: "white"}}>paaws@gmail.com</strong>.</p>
+                <div className="socialMediaIcons">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </Col>
+            <Col className="aboutUsPaawsLogo d-flex" lg="6">
+                <Image src="src/images/PAAWS_black_and_green.png" fluid />
+            </Col>
+        </Row>
+
     </div> );
 }
 

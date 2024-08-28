@@ -153,6 +153,12 @@ body {
   font-size: 18px;
   text-align: justify;
   line-height: 1.75;
+}
+
+.motivationTitle {
+  text-decoration: underline;
+  text-underline-offset: 15px;
+  text-decoration-color: #2AD897;
 
 }
 
@@ -183,7 +189,6 @@ body {
 .howItWorks {
   height: 30vh;
   text-align: middle;
-  margin-bottom: 10em;
 }
 
 .howItWorksHeader {
@@ -216,6 +221,11 @@ body {
   line-height: 1.75;
 }
 
+.callToAction {
+  margin: 12em 0em 4em 0em;
+
+}
+
 .callToActionTitle {
   margin-bottom: 1em;
 }
@@ -231,7 +241,6 @@ body {
   font-size: 18px;
   margin-top: 1em;
   color:#36382e;
-  outline: none;
   padding: 1rem;
 }
 
@@ -240,7 +249,35 @@ body {
 {
   background-color: #2AD897 !important;
   border-color: #2AD897 !important;
-  outline: none !important;
+}
+
+.contactUs {
+  background-color: #6bffb8;
+  padding: 2em;
+  text-align: center;
+}
+
+.contactUsTitle {
+  margin: 2em 0em 0em 0em;
+}
+
+.contactUsText {
+  text-align: justify;
+  padding: 2em;
+  font-size: 25px;
+  line-height: 1.75;
+}
+
+.aboutUsPaawsLogo {
+  background-color: #36382e;
+  justify-content: center;
+}
+
+.socialMediaIcons {
+  display: flex;
+  font-size: 40px;
+  padding: 0em 6em;
+  justify-content: space-between;
 }
 
 
