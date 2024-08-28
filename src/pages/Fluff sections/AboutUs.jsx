@@ -1,3 +1,5 @@
+import { Row, Col } from "react-bootstrap";
+
 function AboutUs() {
     return (
     <div className="aboutUsPage">
@@ -7,27 +9,29 @@ function AboutUs() {
         </div>
         <div className="aboutUsDesc">
             <p>
-                Welcome to PAAWS—where every animal's journey to love, care, and a forever home begins. We believe every creature deserves a second chance, and our mission is to make that a reality. However, we also understand not everyone has the means or space to welcome an animal compawnion into their home—and that's where sponsorships come in.
+                Welcome to <strong style={{ color: "#ffa69e"}}>PAAWS</strong>—where every animal's journey to love, care, and a forever home begins. We believe every creature deserves a second chance, and our mission is to make that a reality. However, we also understand not everyone has the means or space to welcome an animal compawnion into their home—and that's where sponsorships come in.
             </p>
         </div>
-        <div className="ourStory">
-            <h1>Our story</h1>
-            <p>
-                The inspiration behind PAAWS came from a deep passion for animals and a desire to help those without a voice. Founded by a duo of animal lovers, we were motivated by personal experiences with rescue animals, witnessing firsthand the transformative power of love and care. What started as rescuing and fostering stray and abandoned animals in our local community quickly grew into a larger mission: to create a platform that could connect loving families with animals in need while also empowering individuals to sponsor animals who may never find a home due to special needs or other challenges.
-            </p>
-            <p>
-                We know the bond between animals and humans is profound, and we wanted to make sure that every animal has the opportunity to experience that bond.
-            </p>
-        </div>
-        <div className="ourMission">
-            <h1>Our mission</h1>
-            <p>
-                Our mission is simple: to fund and find homes for animals in need, and to inspire compassionate action through sponsorship for animals who may not be able to be adopted, or people who may not have the means to welcome them in their homes.
-            </p>
-            <p>
-                We work tirelessly to lighten the shelters' loads and give every animal we meet a chance at a better life. Whether it's through adoption or sponsorship, our goal is to ensure that each animal has the love, security, and care they deserve.
-            </p>
-        </div>
+        <Row className="aboutUsDoubleSec">
+            <Col lg="6" className="ourStory">
+                <h1 className="ourStoryTitle">Our story</h1>
+                <p>
+                    The inspiration behind <strong style={{ color: "white"}}>PAAWS</strong> came from a deep passion for animals and a desire to help those without a voice. Founded by a duo of animal lovers, we were motivated by personal experiences with rescue animals, witnessing firsthand the transformative power of love and care. What started as rescuing and fostering stray and abandoned animals in our local community quickly grew into a larger mission: to create a platform that could connect loving families with animals in need while also empowering individuals to sponsor animals who may never find a home due to special needs or other challenges.
+                </p>
+                <p>
+                    We know the bond between animals and humans is profound, and we wanted to make sure that every animal has the opportunity to experience that bond.
+                </p>
+            </Col>
+            <Col lg="6" className="ourMission">
+                <h1 className="ourMissionTitle">Our mission</h1>
+                <p>
+                    Our mission is simple: to fund and find homes for animals in need, and to inspire compassionate action through sponsorship for animals who may not be able to be adopted, or people who may not have the means to welcome them in their homes.
+                </p>
+                <p>
+                    We work tirelessly to lighten the shelters' loads and give every animal we meet a chance at a better life. Whether it's through adoption or sponsorship, our goal is to ensure that each animal has the love, security, and care they deserve.
+                </p>
+            </Col>
+        </Row>
         <div className="motivation">
             <h1>Why we do what we do</h1>
             <p>

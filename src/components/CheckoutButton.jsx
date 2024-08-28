@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAPI } from '../pages/Context/Context';
 
 
 const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
@@ -10,6 +11,7 @@ const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
         return;
     } */
 
+    const { url } = useAPI(); //url for the host
     console.log("I am user info and animal info in sponsor button", userinfo, animalinfo)
     // State to hold the amount
     const [amount, setAmount] = useState('');
@@ -30,7 +32,9 @@ const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
             }
             console.log("I am type of sponsorship", typeOfSponsorship)
             // Send the request to your backend             //changed to codespaces link
-            const response = await axios.post(`https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev/create-${typeOfSponsorship}-session`, {
+
+            
+            const response = await axios.post(`${url}/create-${typeOfSponsorship}-session`, {
                 amount: validAmount,
                 user_id: userinfo.id,  // Assuming userinfo has an 'id' property
                 animal_id: animalinfo.id  // Assuming animalinfo has an 'id' property

@@ -7,7 +7,6 @@
 
 #root {
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   font-family: "Century Gothic";
 }
@@ -116,11 +115,13 @@ body {
 .successStories {
   text-align: right;
   position: relative;
+  padding-right: 2em;
 }
 
 .aboutUs {
   text-align: left;
   position: relative;
+  padding-left: 2em;
 }
 
 /* about us */
@@ -142,14 +143,39 @@ body {
 
 .aboutUsText {
   font-size: 25px;
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 
 .aboutUsDesc {
-  margin: 3em;
+  margin: 5em;
   font-size: 18px;
   text-align: justify;
-  text-decoration: none;
+  line-height: 1.75;
+
+}
+
+.ourStory {
+  background-color: #2AD897;
+  color: #36382e;
+  padding: 5em;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.ourStoryTitle, .ourMissionTitle {
+  margin-bottom: 1.5em;
+}
+
+.ourMission {
+  font-size: 18px;
+  padding: 5em;
+  color: #36382e;
+  background-color: #6bffb8;
+  line-height: 1.75;
+}
+
+.aboutUsDoubleSec {
+  margin-bottom: 5em;
 }
 
 
