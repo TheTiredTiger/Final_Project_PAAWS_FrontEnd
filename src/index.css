@@ -43,10 +43,26 @@ body {
   height: 20%;
 }
 
+/* this should only happen when collapsed, there is still some overlap with regular navbar blur */
+/* .centerNavBar {
+  background-color: rgb(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.navbarRight {
+  background-color: rgb(255, 255, 255, 0.5);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+} */
+
 /* footer */
 
 .footer {
   bottom: 0;
+  left: 0;
   width: 100%;
   margin-top: 2.5rem;
 }
@@ -80,6 +96,7 @@ body {
 .sectionText {
   height: 100vh;
   padding-top: 20vh;
+  position: relative;
 }
 
 .sectionTitle {
