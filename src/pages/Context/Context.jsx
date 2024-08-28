@@ -445,6 +445,7 @@ export const APIProvider = ({ children }) => {
             value={{
                 user,
                 token,
+                url,
                 registerUser,
                 loginUser,
                 logoutUser,

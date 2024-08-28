@@ -33,6 +33,7 @@ function Register() {
     try {
       await registerUser(formData); //Atttemp at registation
       setSuccess('Registration successful!'); //yay!
+      alert("Congrats! You've created an account.")
       navigate('/login')
       setError(null); //Clean Errors
     } catch (err) {

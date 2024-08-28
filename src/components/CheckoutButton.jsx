@@ -12,6 +12,7 @@ const CheckoutButton = ({ userinfo, animalinfo, typeOfSponsorship }) => {
     } */
 
     const { url } = useAPI(); //url for the host
+    console.log(url)
     console.log("I am user info and animal info in sponsor button", userinfo, animalinfo)
     // State to hold the amount
     const [amount, setAmount] = useState('');

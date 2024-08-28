@@ -56,7 +56,7 @@ function AnimalPage() {
                 Species: {animal.species || "Unknown"} <br />
                 Gender: {animal.gender || "Unknown"} <br />
                 Age: {animal.life_stage || "Unknown"} <br />
-                Weight: {animal.weight || "Unknown"}<br />
+                Weight: {`${animal.weight} kg` || "Unknown"}<br />
                 Breed: {animal.breed || "Unknown"}<br />
                 Location: {animal.location || "Unknown"}<br />
                 Known illnesses: {animal.known_illness || "Unknown"}<br />
