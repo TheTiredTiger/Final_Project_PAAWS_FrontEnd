@@ -26,8 +26,8 @@ function NavigationBar() {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar p-0" sticky="top">
-      <Container className="navbarContainer" href="/" fluid>
+    <Navbar collapseOnSelect expand="lg " className="navbar p-0" sticky="top">
+      <Container className="navbarContainer " href="/" fluid>
           <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo' />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -38,11 +38,11 @@ function NavigationBar() {
             <Nav.Link href="/successstories" className='navbarItem mx-2'>Success Stories</Nav.Link>
           </Nav>
 
-          <Nav className='navbarRight'>
+          <Nav className='navbarRight '>
             {user ? (
               // If user is logged in
               <>
-                <NavDropdown title={userIcon} id="basic-nav-dropdown" className='navbarRight bg' >
+                <NavDropdown title={userIcon} id="basic-nav-dropdown" className='navbarRight' >
                   <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
                   <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
                   {user.is_admin && ( // Only show Admin option if user is an admin

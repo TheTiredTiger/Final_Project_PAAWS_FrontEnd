@@ -1,8 +1,11 @@
 function AboutUs() {
     return (
-    <>
-        <div className="theTeam">
+    <div className="aboutUsPage">
+        <div className="aboutUsHeader">
             <h1>About us</h1>
+            <p className="aboutUsText">Learn about our team and mission</p>
+        </div>
+        <div className="aboutUsDesc">
             <p>
                 Welcome to PAAWS—where every animal's journey to love, care, and a forever home begins. We believe every creature deserves a second chance, and our mission is to make that a reality. However, we also understand not everyone has the means or space to welcome an animal compawnion into their home—and that's where sponsorships come in.
             </p>
@@ -40,7 +43,7 @@ function AboutUs() {
                 We invite you to explore the animals waiting for a loving home or sponsor one that touches your heart. Together, we can build a better world for animals—one adoption, one sponsorship, one act of kindness at a time.
             </p>
         </div>
-    </> );
+    </div> );
 }
 
 export default AboutUs;

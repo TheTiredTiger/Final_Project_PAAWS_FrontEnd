@@ -40,8 +40,10 @@ function Home() {
                     className="bannerVideo d-block w-100"
                     src={bannerVideo}
                     autoPlay
+                    /* loop */
                     muted
                     loading="lazy"
+                    alt="dog's muzzle popping into the page with the text sniff sniff, smells like a good human, PAAWS, sponsor and adopt"
                     />
                 </Carousel.Item>
 {/*                 <Carousel.Item>
@@ -49,6 +51,7 @@ function Home() {
                     className="slider-video"
                     src="/src/images/PAAWS banner_dark version.png"
                     loading="lazy"
+                    alt="a cat and a dog looking to the front with text saying impossible to resist that face"
                     />
             </Carousel.Item> */}
             </Carousel>
