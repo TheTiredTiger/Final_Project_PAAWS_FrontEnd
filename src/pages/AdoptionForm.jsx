@@ -99,7 +99,7 @@ function AdoptionForm() {
       /*  alert("Adoption submition failed! Can not resubmit application to same pet") */
       Swal.fire({
         title: "Duplicate Form!",
-        text: "Adoption submition failed! Can not resubmit application to same pet",
+        text: "Adoption submission failed! Cannot resubmit application to thesame pet.",
         icon: "error"
       });
     }
