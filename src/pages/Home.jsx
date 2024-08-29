@@ -77,7 +77,7 @@ function Home() {
 
             <div className="successStories sectionText">
             <h1 className='sectionTitle'>
-                    <Link to="/" className='sectionTitle'>
+                    <Link to="/successstories" className='sectionTitle'>
                         <p>Success</p> <p>Stories</p>
                     </Link>
                 </h1>

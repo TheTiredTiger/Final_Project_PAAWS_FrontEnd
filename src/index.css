@@ -127,22 +127,38 @@ body {
 
 /* about us */
 
-.aboutUsPage {
+.aboutUsPage,
+.storiesPage {
   color: #36382e;
-
 }
 
-.aboutUsHeader {
+/* VER ISTO MELHOR, APAGAR DESNECESSÁRIOS */
+
+.aboutUsPage p {
+  font-size: 18px;
+  line-height: 1.75;
+  margin-top: 1rem;
+}
+
+.aboutUsHeader,
+.storiesHeader {
   width: 100%;
   height: 30vh;
   padding-top: 2em;
-  background-color: #6bffb8;
   text-align: center;
   font-size: 40px;
   color: white;
 }
 
-.aboutUsText {
+.aboutUsHeader {
+  background-color: #6bffb8;
+}
+
+.storiesHeader {
+  background-color: #ffa69e;
+}
+
+.aboutUsText, .storiesText {
   font-size: 25px;
   padding-top: 0.5em;
 }
@@ -264,7 +280,7 @@ body {
 .contactUsText {
   text-align: justify;
   padding: 2em;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.75;
 }
 
@@ -280,6 +296,13 @@ body {
   justify-content: space-between;
 }
 
+/* success stories */
+
+.storiesPage p {
+  font-size: 18px;
+  line-height: 1.75;
+  margin-top: 1rem;
+}
 
 /* user profile */
 
