@@ -15,21 +15,26 @@ function AboutUs() {
         <Row className="aboutUsDoubleSec">
             <Col lg="6" className="ourStory">
                 <h1 className="ourStoryTitle">Our story</h1>
-                <p>
-                    The inspiration behind <strong style={{ color: "white"}}>PAAWS</strong> came from a deep passion for animals and a desire to help those without a voice. Founded by a duo of animal lovers, <strong style={{ color: "white"}}>Alexis Mendes</strong> and <strong style={{ color: "white"}}>Bárbara Ferreira</strong>, we were motivated by personal experiences with rescue animals, witnessing firsthand the transformative power of love and care. What started as rescuing and fostering stray and abandoned animals in our local community quickly grew into a larger mission: to create a platform that could connect loving families with animals in need while also empowering individuals to sponsor animals who may never find a home due to special needs or other challenges.
-                </p>
-                <p>
-                    We know the bond between animals and humans is profound, and we wanted to make sure that every animal has the opportunity to experience that bond.
-                </p>
+                <div className="ourStoryText">
+                    <p>
+                        The inspiration behind <strong style={{ color: "white"}}>PAAWS</strong> came from a deep passion for animals and a desire to help those without a voice. Founded by a duo of animal lovers, <strong style={{ color: "white"}}>Alexis Mendes</strong> and <strong style={{ color: "white"}}>Bárbara Ferreira</strong>, we were motivated by personal experiences with rescue animals, witnessing firsthand the transformative power of love and care. What started as rescuing and fostering stray and abandoned animals in our local community quickly grew into a larger mission: to create a platform that could connect loving families with animals in need while also empowering individuals to sponsor animals who may never find a home due to special needs or other challenges.
+                    </p>
+                    <p>
+                        We know the bond between animals and humans is profound, and we wanted to make sure that every animal has the opportunity to experience that bond.
+                    </p>
+                </div>
+                    
             </Col>
             <Col lg="6" className="ourMission">
                 <h1 className="ourMissionTitle">Our mission</h1>
-                <p>
-                    Our mission is simple: to fund and find homes for animals in need, and to inspire compassionate action through sponsorship for animals who may not be able to be adopted, or people who may not have the means to welcome them in their homes.
-                </p>
-                <p>
-                    We work tirelessly to lighten the shelters' loads and give every animal we meet a chance at a better life. Whether it's through adoption or sponsorship, our goal is to ensure that each animal has the love, security, and care they deserve.
-                </p>
+                <div className="ourMissionText">
+                    <p>
+                        Our mission is simple: to fund and find homes for animals in need, and to inspire compassionate action through sponsorship for animals who may not be able to be adopted, or people who may not have the means to welcome them in their homes.
+                    </p>
+                    <p>
+                        We work tirelessly to lighten the shelters' loads and give every animal we meet a chance at a better life. Whether it's through adoption or sponsorship, our goal is to ensure that each animal has the love, security, and care they deserve.
+                    </p>
+                </div>
             </Col>
         </Row>
         <div className="motivation">
@@ -48,13 +53,13 @@ function AboutUs() {
                 <h1 className="howItWorksTitle">How it <br/> works</h1>
             </Col>
             <Col className="howItWorksOne" lg="3">
-                First, filter your search in Our Pets to find your perfect four-legged friend.
+                <p>First, filter your search in Our Pets to find your perfect four-legged friend.</p>
             </Col>
             <Col className="howItWorksTwo" lg="3">
-                Then, decide whether you want to adopt or sponsor them (either once or monthly).
+                <p>Then, decide whether you want to adopt or sponsor them (either once or monthly).</p>
             </Col>
             <Col className="howItWorksThree" lg="3">
-                Finally, fill out the adoption form or proceed to checkout in case of a sponsorhip.
+                <p>Finally, fill out the adoption form or proceed to checkout in case of a sponsorhip.</p>
             </Col>
         </Row>
 

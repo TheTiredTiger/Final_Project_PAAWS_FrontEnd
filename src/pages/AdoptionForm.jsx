@@ -99,7 +99,7 @@ function AdoptionForm() {
       /*  alert("Adoption submition failed! Can not resubmit application to same pet") */
       Swal.fire({
         title: "Duplicate Form!",
-        text: "Adoption submission failed! Cannot resubmit application to thesame pet.",
+        text: "Adoption submission failed! Cannot resubmit application to the same pet.",
         icon: "error"
       });
     }
@@ -119,11 +119,11 @@ function AdoptionForm() {
               <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>
                 <Card.Text>ID: <br /> {animal.id}</Card.Text>
-                <Button variant="primary">
-                  <Link to={`/animalpage/${animal.id}`} style={{ color: "white", textDecoration: "none" }}>
+                <Link to={`/animalpage/${animal.id}`}  >
+                  <Button className="primaryButton">
                     More
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
@@ -132,11 +132,11 @@ function AdoptionForm() {
               <Card.Body>
                 <Card.Title>{formData.first_name} {formData.last_name}</Card.Title>
                 <Card.Text>Email: {formData.email}</Card.Text>
-                <Button variant="primary">
-                  <Link to="/userprofile" style={{ color: "white", textDecoration: "none" }}>
+                <Link to="/userprofile">
+                  <Button className="primaryButton">
                     Profile
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
@@ -265,7 +265,7 @@ function AdoptionForm() {
             />
           </Form.Group>
 
-          <Button className='m-2' variant="primary" type="submit">
+          <Button className='m-2 primaryButton' variant="primary" type="submit">
             Submit
           </Button>
         </Form>

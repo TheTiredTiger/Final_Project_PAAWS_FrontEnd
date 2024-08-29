@@ -9,7 +9,7 @@
 #root {
   margin: 0 auto;
   text-align: center;
-  font-family: "Century Gothic";
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 body {
@@ -33,7 +33,6 @@ a:active {
 .primaryButton {
   background-color: #6bffb8;
   border-color: #6bffb8;
-  margin-top: 1em;
   color:#36382e;
   padding: 1rem;
 }
@@ -49,7 +48,6 @@ a:active {
 .secondaryButton {
   background-color: white;
   border-color: #ffa69e;
-  margin-top: 1em;
   color:#ffa69e;
   padding: 1rem;
 }
@@ -185,16 +183,15 @@ a:active {
   padding-left: 2em;
 }
 
-/* about us */
+/* about us & success stories */
 
 .aboutUsPage,
 .storiesPage {
   color: #36382e;
 }
 
-/* VER ISTO MELHOR, APAGAR DESNECESSÁRIOS */
-
-.aboutUsPage p {
+.aboutUsPage p,
+.storiesPage p {
   font-size: 18px;
   line-height: 1.75;
   margin-top: 1rem;
@@ -203,7 +200,7 @@ a:active {
 .aboutUsHeader,
 .storiesHeader {
   width: 100%;
-  height: 30vh;
+  height: 30%;
   padding-top: 2em;
   text-align: center;
   font-size: 40px;
@@ -218,44 +215,46 @@ a:active {
   background-color: #ffa69e;
 }
 
-.aboutUsText, .storiesText {
+.aboutUsText,
+.storiesText {
   font-size: 25px;
-  padding-top: 0.5em;
+  padding: 0.5em 1em 2em 1em;
 }
 
 .aboutUsDesc,
-.motivationText {
+.motivationText,
+.storiesDesc,
+.storiesConclusion {
   margin: 4em 5em;
-  font-size: 18px;
   text-align: justify;
-  line-height: 1.75;
 }
 
 .motivationTitle {
   text-decoration: underline;
   text-underline-offset: 15px;
   text-decoration-color: #2AD897;
-
 }
 
 .ourStory {
   background-color: #ffa69e;
-  color: #36382e;
   padding: 5em;
-  font-size: 18px;
-  line-height: 1.75;
 }
 
-.ourStoryTitle, .ourMissionTitle, .motivationTitle {
+.ourStoryText,
+.ourMissionText,
+.storyText {
+  text-align: justify;
+}
+
+.ourStoryTitle,
+.ourMissionTitle,
+.motivationTitle {
   margin-bottom: 1.5em;
 }
 
 .ourMission {
-  font-size: 18px;
   padding: 5em;
-  color: #36382e;
   background-color: #ffc1bb;
-  line-height: 1.75;
 }
 
 .aboutUsDoubleSec {
@@ -279,22 +278,16 @@ a:active {
 .howItWorksOne {
   background-color: #4ceca9;
   padding: 5em;
-  font-size: 18px;
-  line-height: 1.75;
 }
 
 .howItWorksTwo {
   background-color: #6bffb8;
   padding: 5em;
-  font-size: 18px;
-  line-height: 1.75;
 }
 
 .howItWorksThree {
   background-color: #a9ffd6;
   padding: 5em;
-  font-size: 18px;
-  line-height: 1.75;
 }
 
 .callToAction {
@@ -309,6 +302,7 @@ a:active {
 .callToActionText {
   font-size: 18px;
   line-height: 1.75;
+  text-align: justify;
 }
 
 .contactUs {
@@ -340,16 +334,35 @@ a:active {
   justify-content: space-between;
 }
 
-/* success stories */
-
-.storiesPage p {
-  font-size: 18px;
-  line-height: 1.75;
-  margin-top: 1rem;
+.storyOne,
+.storyTwo,
+.storyThree {
+  padding:  3em;
 }
 
+.StoryTitle {
+  padding: 1em;
+}
 
+.storyOne {
+  background-color: #3dce94;
+}
 
+.storyTwo {
+  background-color: #3ce2a1;
+}
+
+.storyThree {
+  background-color: #67e9b6;
+}
+
+.storyImg {
+  width: 100%;
+  border:#36382e solid 3px;
+  margin-bottom: 1.5em;
+}
+
+/**/
 
 /* user profile */
 

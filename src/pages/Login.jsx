@@ -98,7 +98,7 @@ function Login() {
           required // Seriously, you can’t just skip this – we need to pretend to care about security
         />
       </FloatingLabel>
-      <Link onClick={handleShow} style={{ textAlign: "left", fontSize: "16px" }}>
+      <Link onClick={handleShow} style={{ textAlign: "left", fontSize: "16px", color: "#2AD897", textDecoration: "underline"}}>
         <p>Forgot your password?</p>
       </Link>
 
@@ -106,7 +106,7 @@ function Login() {
       {error && <p className="text-danger">{error}</p>}
 
       {/* The magic button – either submit or just stare at it while it says 'Logging in...' */}
-      <Button className='m-2' variant="primary" type="submit" disabled={loading}>
+      <Button className='primaryButton m-2' type="submit" disabled={loading}>
         {loading ? 'Logging in...' : 'Submit'} {/* Button changes based on how tired it is */}
       </Button>
 
@@ -130,10 +130,10 @@ function Login() {
         {resetMessage && <p className="text-info">{resetMessage}</p>}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button className='secondaryButton' onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={() => { handlePasswordReset(); handleClose(); }}>
+        <Button className="primaryButton" onClick={() => { handlePasswordReset(); handleClose(); }}>
           Send
         </Button>
       </Modal.Footer>

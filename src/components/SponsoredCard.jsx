@@ -20,7 +20,7 @@ function SponsoredCard({ pet }) {
             Contributed: € {pet.total_sponsorship_amount} Total  {/* para já acho que deviamos por o simbolo do euro a direita sendo que tmeos os distritos de pt para já -RM */}
           </Card.Text>
           <Link to={`/animalpage/${pet.animal.id} `} state={{ pet }}>
-            <Button variant="primary">
+            <Button className='primaryButton'>
               More
             </Button>
           </Link>

@@ -63,16 +63,16 @@ function AnimalPage() {
                 Description: {animal.description || "Unknown"}
               </Card.Text>
               <div className="animalPageBtn">
-                <Button variant="primary" style={{ marginRight: "1rem" }}>
-                  <Link to={`/sponsor/${animal.id}`} style={{ color: "white", textDecoration: "none" }}>
+                <Link to={`/sponsor/${animal.id}`} >
+                  <Button className='primaryButton' style={{ margin: "1rem" }}>
                     Sponsor
-                  </Link>
-                </Button>
-                <Button variant="secondary">
-                  <Link to="/ourpets" style={{ color: "white", textDecoration: "none" }}>
+                  </Button>
+                </Link>
+                <Link to="/ourpets" >
+                  <Button className='tertiaryButton'>
                     Return
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
             </Card.Body>
           </Col>
