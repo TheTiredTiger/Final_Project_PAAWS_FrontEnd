@@ -104,7 +104,7 @@ function AdoptionForm() {
         title: "Duplicate Form!",
         text: "Adoption submission failed! Cannot resubmit application to thesame pet.",
         icon: "error",
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#2AD897',
       });
     }
   };

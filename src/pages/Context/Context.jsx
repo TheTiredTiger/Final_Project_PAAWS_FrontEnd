@@ -12,7 +12,7 @@ export const APIProvider = ({ children }) => {
     const [token, setToken] = useState(null);
 
     const url = `https://961mfdzq-3000.uks1.devtunnels.ms`; //url to change api rquests -RM
-    
+
     const api = axios.create({
         /*  baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta" */
         /* baseURL: 'https://solid-couscous-wr9p957994vh9jp5-3000.app.github.dev', // Link codespaces espero que nao falhe */
@@ -431,6 +431,17 @@ export const APIProvider = ({ children }) => {
         }
     };
 
+    const fetchAdoptionForm = async (id) => {
+        try {
+            const response = await api.get(`/adoption_form/${id}`);
+            return { data: response.data, error: null };  // Return the data if successful
+        } catch (error) {
+            // Return the error message
+            return { data: null, error: error.response ? error.response.data.error : 'Failed to fetch adoption form' };
+        }
+    };
+
+
     //Sync the token with the local storage - omg
     useEffect(() => {
         if (token) {
@@ -458,6 +469,7 @@ export const APIProvider = ({ children }) => {
                 createSubscriptionSession,
                 getAllAdoptions,
                 updateAdoptionStatus,
+                fetchAdoptionForm,
                 listAnimals,
                 getAnimal,
                 updateAnimal,
