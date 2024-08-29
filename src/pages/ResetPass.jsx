@@ -63,7 +63,7 @@ function ResetPass() {
           required
         />
       </FloatingLabel>
-      <Button variant="primary" type="submit" className="mt-3">
+      <Button type="submit" className="primaryButton mt-3">
         Reset Password
       </Button>
     </Form>
