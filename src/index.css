@@ -63,7 +63,6 @@ a:active {
 .tertiaryButton {
   background-color: white;
   border-color: #36382e;
-  margin-top: 1em;
   color:#36382e;
   padding: 1rem;
 }
@@ -74,6 +73,7 @@ a:active {
   background-color: #36382e !important;
   border-color: #36382e !important;
 }
+
 
 /* navbar */
 
@@ -151,11 +151,22 @@ a:active {
   left: 2em;
 }
 
-.sectionText {
-  height: 100vh;
-  padding-top: 20vh;
-  position: relative;
+.meetYourCompaawnion {
+  height: 100%;
+  padding: 10% 0%;
 }
+
+.aboutUs {
+  height: 100%;
+  padding: 20% 0%;
+}
+
+.successStories {
+  height: 100%;
+  padding: 20% 0%;
+}
+
+
 
 .sectionTitle {
   font-size: clamp(7vw, 5vw, 3rem);
@@ -217,7 +228,7 @@ a:active {
 
 .aboutUsText,
 .storiesText {
-  font-size: 25px;
+  font-size: 25px !important;
   padding: 0.5em 1em 2em 1em;
 }
 
