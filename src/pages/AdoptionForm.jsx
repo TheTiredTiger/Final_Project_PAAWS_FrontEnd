@@ -115,10 +115,11 @@ function AdoptionForm() {
       <Container fluid>
         <Row>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "22vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>
-                <Card.Text>ID: <br /> {animal.id}</Card.Text>
+                <Card.Text> {animal.life_stage} {animal.species} <br />
+                  ID:  {animal.id}</Card.Text>
                 <Link to={`/animalpage/${animal.id}`}  >
                   <Button className="primaryButton">
                     More
@@ -128,10 +129,10 @@ function AdoptionForm() {
             </Card>
           </Col>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "22vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>{formData.first_name} {formData.last_name}</Card.Title>
-                <Card.Text>Email: {formData.email}</Card.Text>
+                <Card.Text>Email: <br/> {formData.email}</Card.Text>
                 <Link to="/userprofile">
                   <Button className="primaryButton">
                     Profile

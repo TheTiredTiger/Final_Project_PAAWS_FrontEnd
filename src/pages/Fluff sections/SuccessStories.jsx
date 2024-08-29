@@ -9,7 +9,7 @@ function SuccessStories() {
             </div>
             <div className="storiesDesc">
                 <p>
-                    At <strong style={{ color: "#6bffb8"}}>PAAWS</strong>, we believe that every animal deserves a second chance at life, love, and happiness. Through the generous support of our sponsors and adopters, countless cats and dogs have found their forever homes and experienced the care they so desperately needed. Below are just a few of the many heartwarming stories that show the incredible difference sponsorship and adoption can make. Meet Bella, Milo, and Luna—three beautiful souls who were given a new lease on life thanks to people like you.
+                    At <strong style={{ color: "#6bffb8"}}>PAAWS</strong>, we believe that every animal deserves a second chance at life, love, and happiness. Through the generous support of our sponsors and adopters, countless cats and dogs have found their forever homes and experienced the care they so desperately needed. Below are just a few of the many heartwarming stories that show the incredible difference sponsorship and adoption can make. Meet three beautiful souls who were given a new lease on life thanks to people like you.
                 </p>
             </div>
             <Row className="storiesRow">
@@ -65,9 +65,10 @@ function SuccessStories() {
             </Row>
             <div className="storiesConclusion">
                 <p>
-                    These stories reflect the profound impact that sponsorship and adoption can have on the lives of animals. With the help of caring individuals, animals like <strong style={{ color: "#ffa69e"}}>Bella</strong>, <strong style={{ color: "#ffa69e"}}>Milo</strong>, and <strong style={{ color: "#ffa69e"}}>Luna</strong> are given a second chance to find love, safety, and happiness.
+                    These stories reflect the profound impact that sponsorship and adoption can have on the lives of animals. With the help of caring individuals, animals like <strong style={{ color: "#ffa69e"}}>Bella</strong>, <strong style={{ color: "#ffa69e"}}>Milo</strong>, and <strong style={{ color: "#ffa69e"}}>Luna</strong> are given a second chance to find love, safety, and happiness. Ready to make a difference?
                 </p>
             </div>
+                <Button className="primaryButton" href="/ourpets">Check out our pets</Button>
     </div>
     );
 }
