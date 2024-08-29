@@ -19,7 +19,7 @@ body {
 
 /* navbar */
 
-.navbar{
+.navbar {
   background-color: rgb(255, 255, 255, 0.5);
   height: 15vh;
   font-size: 1.5em;
@@ -38,7 +38,7 @@ body {
   text-underline-offset: 15px;
 }
 
-.PAAWSLogo{
+.PAAWSLogo {
   width: 20%;
   height: 20%;
 }
@@ -158,7 +158,8 @@ body {
   background-color: #ffa69e;
 }
 
-.aboutUsText, .storiesText {
+.aboutUsText,
+.storiesText {
   font-size: 25px;
   padding-top: 0.5em;
 }
@@ -186,7 +187,9 @@ body {
   line-height: 1.75;
 }
 
-.ourStoryTitle, .ourMissionTitle, .motivationTitle {
+.ourStoryTitle,
+.ourMissionTitle,
+.motivationTitle {
   margin-bottom: 1.5em;
 }
 
@@ -212,7 +215,7 @@ body {
   padding: 5em;
 }
 
-.howItWorksTitle{
+.howItWorksTitle {
   line-height: 1.75;
 }
 
@@ -256,13 +259,12 @@ body {
   border-color: #6bffb8;
   font-size: 18px;
   margin-top: 1em;
-  color:#36382e;
+  color: #36382e;
   padding: 1rem;
 }
 
 .primaryButton:hover,
-.primaryButton:active
-{
+.primaryButton:active {
   background-color: #2AD897 !important;
   border-color: #2AD897 !important;
 }
@@ -336,8 +338,9 @@ body {
   overflow-x: auto;
 
   -webkit-overflow-scrolling: touch;
+
   &::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
 }
 
@@ -351,7 +354,7 @@ body {
 
 /* animal page */
 
-.animalPage{
+.animalPage {
   width: 90%;
   margin: auto;
   margin-top: 2rem;

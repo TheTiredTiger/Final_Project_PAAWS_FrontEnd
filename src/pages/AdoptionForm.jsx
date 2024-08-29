@@ -14,6 +14,9 @@ import { Link, useNavigate } from 'react-router-dom'; //test
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import '@sweetalert2/theme-bulma/bulma.css';
+
+
 
 
 //if we wanted we could use prop and avoid fetching
@@ -100,7 +103,8 @@ function AdoptionForm() {
       Swal.fire({
         title: "Duplicate Form!",
         text: "Adoption submition failed! Can not resubmit application to same pet",
-        icon: "error"
+        icon: "error",
+        confirmButtonColor: '#3085d6',
       });
     }
   };
