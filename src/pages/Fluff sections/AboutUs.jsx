@@ -1,5 +1,4 @@
-import { Row, Col, Button, Card, Image, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Row, Col, Button, Card, Image } from "react-bootstrap";
 
 function AboutUs() {
     return (
@@ -40,7 +39,7 @@ function AboutUs() {
                     Every animal has a unique story—some were born on the streets, others come from abusive situations, and many simply lose their homes due to life circumstances beyond their control. We believe in a world where animals are treated with respect, kindness, and dignity. Our motivation comes from knowing that, with your help, we can make a difference. We can change lives—both theirs and yours.
                 </p>
                 <p>
-                    By adopting or sponsoring an animal from our platform, you’re not just giving them a second chance at life; you’re becoming part of a community that values love, compassion, and hope.
+                    By adopting or sponsoring an animal from <strong style={{ color: "#ffa69e"}}>PAAWS</strong>, you’re not just giving them a second chance at life; you’re becoming part of a community that values love, compassion, and hope.
                 </p>
             </div>
         </div>
@@ -74,9 +73,9 @@ function AboutUs() {
         <Row>
             <Col className="contactUs" lg="6">
                 <h1 className="contactUsTitle">
-                    Contact Us
+                    Contact us
                 </h1>
-                <p className="contactUsText">If you have any questions or concerns, please reach out through our email: <strong style={{ color: "white"}}>paaws@gmail.com</strong>.</p>
+                <p className="contactUsText">If you're a shelter and want to get your animals featured, or if you have any questions or concerns, please reach out through our email: <strong style={{ color: "white"}}>paaws@gmail.com</strong>.</p>
                 <div className="socialMediaIcons">
                     <i class="fa-brands fa-square-facebook"></i>
                     <i class="fa-brands fa-instagram"></i>
