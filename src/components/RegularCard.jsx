@@ -38,7 +38,7 @@ function AnimalCard({ animal }) {
           Age: {animal.life_stage || "Unknown"} <br />
         </Card.Text>
         <Link to={`/animalpage/${animal.id}`} state={{ animal }} style={{ color: "white", textDecoration: "none" }}> {/* Added Satte to link to pass prop animal */}
-          <Button variant="primary">
+          <Button className='primaryButton'>
             More
           </Button>
         </Link>

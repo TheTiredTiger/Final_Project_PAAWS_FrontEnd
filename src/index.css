@@ -17,6 +17,63 @@ body {
   min-height: 100vh;
 }
 
+/* GENERAL STYLES */
+
+a {
+  color: #36382e;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.primaryButton {
+  background-color: #6bffb8;
+  border-color: #6bffb8;
+  margin-top: 1em;
+  color: #36382e;
+  padding: 1rem;
+}
+
+.primaryButton:hover,
+.primaryButton:active {
+  background-color: #2AD897 !important;
+  border-color: #2AD897 !important;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: white;
+  border-color: #ffa69e;
+  margin-top: 1em;
+  color: #ffa69e;
+  padding: 1rem;
+}
+
+.secondaryButton:hover,
+.secondaryButton:active {
+  background-color: #ffa69e !important;
+  border-color: #ffa69e !important;
+  color: white;
+}
+
+.tertiaryButton {
+  background-color: white;
+  border-color: #36382e;
+  margin-top: 1em;
+  color: #36382e;
+  padding: 1rem;
+}
+
+.tertiaryButton:hover,
+.tertiaryButton:active {
+  background-color: #36382e !important;
+  border-color: #36382e !important;
+}
+
 /* navbar */
 
 .navbar {
@@ -305,6 +362,9 @@ body {
   line-height: 1.75;
   margin-top: 1rem;
 }
+
+
+
 
 /* user profile */
 
