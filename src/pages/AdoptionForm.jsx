@@ -129,7 +129,7 @@ function AdoptionForm() {
       <Container fluid>
         <Row>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card className='adoptionFormCard' >
               <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>
                 <Card.Text> {animal.life_stage} {animal.species} <br />
@@ -143,7 +143,7 @@ function AdoptionForm() {
             </Card>
           </Col>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card className='adoptionFormCard'>
               <Card.Body>
                 <Card.Title>{formData.first_name} {formData.last_name}</Card.Title>
                 <Card.Text>Email: <br /> {formData.email}</Card.Text>
