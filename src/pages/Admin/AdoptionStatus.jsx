@@ -31,7 +31,6 @@ function AdoptionStatus() {
   const handleUpdateStatus = async (adoptionId, status) => {
     try {
       await updateAdoptionStatus(adoptionId, status);
-      // Update the UI after successful status change
       setAdoptions(prevAdoptions =>
         prevAdoptions.map(adoption =>
           adoption.id === adoptionId ? { ...adoption, adoption_status: status } : adoption
@@ -50,7 +49,7 @@ function AdoptionStatus() {
     <>
       <Row>
         {error && <p className="text-danger">{error}</p>}
-        {loading ? ( // Check if loading is true
+        {loading ? (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <Spinner animation="border" role="status">
               <span className="sr-only">Loading...</span>
