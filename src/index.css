@@ -33,13 +33,14 @@ a:active {
 .primaryButton {
   background-color: #6bffb8;
   border-color: #6bffb8;
-  color:#36382e;
+  margin-top: 1em;
+  color: #36382e;
+  color: #36382e;
   padding: 1rem;
 }
 
 .primaryButton:hover,
-.primaryButton:active
-{
+.primaryButton:active {
   background-color: #2AD897 !important;
   border-color: #2AD897 !important;
   color: white;
@@ -48,13 +49,14 @@ a:active {
 .secondaryButton {
   background-color: white;
   border-color: #ffa69e;
-  color:#ffa69e;
+  margin-top: 1em;
+  color: #ffa69e;
+  color: #ffa69e;
   padding: 1rem;
 }
 
 .secondaryButton:hover,
-.secondaryButton:active
-{
+.secondaryButton:active {
   background-color: #ffa69e !important;
   border-color: #ffa69e !important;
   color: white;
@@ -63,13 +65,14 @@ a:active {
 .tertiaryButton {
   background-color: white;
   border-color: #36382e;
-  color:#36382e;
+  margin-top: 1em;
+  color: #36382e;
+  color: #36382e;
   padding: 1rem;
 }
 
 .tertiaryButton:hover,
-.tertiaryButton:active
-{
+.tertiaryButton:active {
   background-color: #36382e !important;
   border-color: #36382e !important;
 }
@@ -77,7 +80,7 @@ a:active {
 
 /* navbar */
 
-.navbar{
+.navbar {
   background-color: rgb(255, 255, 255, 0.5);
   height: 15vh;
   font-size: 1.5em;
@@ -96,7 +99,7 @@ a:active {
   text-underline-offset: 15px;
 }
 
-.PAAWSLogo{
+.PAAWSLogo {
   width: 20%;
   height: 20%;
 }
@@ -228,215 +231,221 @@ a:active {
 
 .aboutUsText,
 .storiesText {
-  font-size: 25px !important;
-  padding: 0.5em 1em 2em 1em;
-}
+  font-size: 25px;
+  padding-top: 0.5em;
 
-.aboutUsDesc,
-.motivationText,
-.storiesDesc,
-.storiesConclusion {
-  margin: 4em 5em;
-  text-align: justify;
-}
-
-.motivationTitle {
-  text-decoration: underline;
-  text-underline-offset: 15px;
-  text-decoration-color: #2AD897;
-}
-
-.ourStory {
-  background-color: #ffa69e;
-  padding: 5em;
-}
-
-.ourStoryText,
-.ourMissionText,
-.storyText {
-  text-align: justify;
-}
-
-.ourStoryTitle,
-.ourMissionTitle,
-.motivationTitle {
-  margin-bottom: 1.5em;
-}
-
-.ourMission {
-  padding: 5em;
-  background-color: #ffc1bb;
-}
-
-.aboutUsDoubleSec {
-  margin-bottom: 7em;
-}
-
-.howItWorks {
-  height: 30vh;
-  text-align: middle;
-}
-
-.howItWorksHeader {
-  background-color: #2AD897;
-  padding: 5em;
-}
-
-.howItWorksTitle{
-  line-height: 1.75;
-}
-
-.howItWorksOne {
-  background-color: #4ceca9;
-  padding: 5em;
-}
-
-.howItWorksTwo {
-  background-color: #6bffb8;
-  padding: 5em;
-}
-
-.howItWorksThree {
-  background-color: #a9ffd6;
-  padding: 5em;
-}
-
-.callToAction {
-  margin: 12em 0em 4em 0em;
-
-}
-
-.callToActionTitle {
-  margin-bottom: 1em;
-}
-
-.callToActionText {
-  font-size: 18px;
-  line-height: 1.75;
-  text-align: justify;
-}
-
-.contactUs {
-  background-color: #6bffb8;
-  padding: 2em;
-  text-align: center;
-}
-
-.contactUsTitle {
-  margin: 2em 0em 0em 0em;
-}
-
-.contactUsText {
-  text-align: justify;
-  padding: 2em;
-  font-size: 20px;
-  line-height: 1.75;
-}
-
-.aboutUsPaawsLogo {
-  background-color: #36382e;
-  justify-content: center;
-}
-
-.socialMediaIcons {
-  display: flex;
-  font-size: 40px;
-  padding: 0em 6em;
-  justify-content: space-between;
-}
-
-.storyOne,
-.storyTwo,
-.storyThree {
-  padding:  3em;
-}
-
-.StoryTitle {
-  padding: 1em;
-}
-
-.storyOne {
-  background-color: #3dce94;
-}
-
-.storyTwo {
-  background-color: #3ce2a1;
-}
-
-.storyThree {
-  background-color: #67e9b6;
-}
-
-.storyImg {
-  width: 100%;
-  border:#36382e solid 3px;
-  margin-bottom: 1.5em;
-}
-
-/**/
-
-/* user profile */
-
-.bannerWrap {
-  position: relative;
-  overflow: hidden;
-  padding: 1rem;
-}
-
-.banner {
-  opacity: 0.6;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
-
-.userGreeting {
-  position: relative;
-}
-
-.userHeader {
-  text-align: left;
-  margin: 2rem 0rem 1.5rem 2rem;
-}
-
-.scrollingWrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-      display: none;
+  .aboutUsText,
+  .storiesText {
+    font-size: 25px !important;
+    padding: 0.5em 1em 2em 1em;
   }
-}
 
-.card {
-  margin: 1rem;
-  width: 18rem;
-  flex: "0 0 auto";
-  padding: 2em;
-}
+  .aboutUsDesc,
+  .motivationText,
+  .storiesDesc,
+  .storiesConclusion {
+    margin: 4em 5em;
+    text-align: justify;
+  }
+
+  .motivationTitle {
+    text-decoration: underline;
+    text-underline-offset: 15px;
+    text-decoration-color: #2AD897;
+  }
+
+  .ourStory {
+    background-color: #ffa69e;
+    padding: 5em;
+  }
+
+  .ourStoryText,
+  .ourMissionText,
+  .storyText {
+    text-align: justify;
+  }
+
+  .ourStoryTitle,
+  .ourMissionTitle,
+  .motivationTitle {
+    margin-bottom: 1.5em;
+  }
+
+  .ourMission {
+    padding: 5em;
+    background-color: #ffc1bb;
+  }
+
+  .aboutUsDoubleSec {
+    margin-bottom: 7em;
+  }
+
+  .howItWorks {
+    height: 30vh;
+    text-align: middle;
+  }
+
+  .howItWorksHeader {
+    background-color: #2AD897;
+    padding: 5em;
+  }
+
+  .howItWorksTitle {
+    line-height: 1.75;
+  }
+
+  .howItWorksOne {
+    background-color: #4ceca9;
+    padding: 5em;
+  }
+
+  .howItWorksTwo {
+    background-color: #6bffb8;
+    padding: 5em;
+  }
+
+  .howItWorksThree {
+    background-color: #a9ffd6;
+    padding: 5em;
+  }
+
+  .callToAction {
+    margin: 12em 0em 4em 0em;
+
+  }
+
+  .callToActionTitle {
+    margin-bottom: 1em;
+  }
+
+  .callToActionText {
+    font-size: 18px;
+    line-height: 1.75;
+    text-align: justify;
+  }
+
+  .contactUs {
+    background-color: #6bffb8;
+    padding: 2em;
+    text-align: center;
+  }
+
+  .contactUsTitle {
+    margin: 2em 0em 0em 0em;
+  }
+
+  .contactUsText {
+    text-align: justify;
+    padding: 2em;
+    font-size: 20px;
+    line-height: 1.75;
+  }
+
+  .aboutUsPaawsLogo {
+    background-color: #36382e;
+    justify-content: center;
+  }
+
+  .socialMediaIcons {
+    display: flex;
+    font-size: 40px;
+    padding: 0em 6em;
+    justify-content: space-between;
+  }
+
+  .storyOne,
+  .storyTwo,
+  .storyThree {
+    padding: 3em;
+  }
+
+  .StoryTitle {
+    padding: 1em;
+  }
+
+  .storyOne {
+    background-color: #3dce94;
+  }
+
+  .storyTwo {
+    background-color: #3ce2a1;
+  }
+
+  .storyThree {
+    background-color: #67e9b6;
+  }
+
+  .storyImg {
+    width: 100%;
+    border: #36382e solid 3px;
+    margin-bottom: 1.5em;
+  }
+
+  /**/
+
+  /* user profile */
+
+  .bannerWrap {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .banner {
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .userGreeting {
+    position: relative;
+  }
+
+  .userHeader {
+    text-align: left;
+    margin: 2rem 0rem 1.5rem 2rem;
+  }
+
+  .scrollingWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .card {
+    margin: 1rem;
+    width: 18rem;
+    flex: "0 0 auto";
+    padding: 2em;
+  }
 
 
-/* animal page */
+  /* animal page */
 
-.animalPage{
-  width: 90%;
-  margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+  .animalPage {
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
-.animalPageDesc {
-  text-align: left;
-  padding-top: 0;
-}
+  .animalPageDesc {
+    text-align: left;
+    padding-top: 0;
+  }
 
-.animalPageBtn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 1.5rem;
-}
+  .animalPageBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 1.5rem;
+  }

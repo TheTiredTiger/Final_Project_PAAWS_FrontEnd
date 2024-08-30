@@ -6,6 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 //Added by RM
 import { useAPI } from '../pages/Context/Context';
 import { useNavigate } from 'react-router-dom';
+import Darkmode from 'darkmode-js';
+
+
 
 
 
@@ -28,7 +31,7 @@ function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg " className="navbar p-0" sticky="top">
       <Container className="navbarContainer " href="/" fluid>
-          <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo' />
+        <img src="src\images\PAAWS_transparentBG.png" alt="PAAWS" className='PAAWSLogo' />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto centerNavBar justifyContentBetween" style={{ justifyContent: "center" }}>
