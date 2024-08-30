@@ -45,7 +45,7 @@ function NavigationBar() {
                 <NavDropdown
                 >
 
-            {['up', 'up-centered', 'down', 'down-centered', 'start', 'end'].map(
+            {/* {['up', 'up-centered', 'down', 'down-centered', 'start', 'end'].map(
               (direction) => (
             <DropdownButton
               as={ButtonGroup}
@@ -62,7 +62,7 @@ function NavigationBar() {
               <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
             </DropdownButton>
           ),
-        )}
+        )} */}
                   <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
                   <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
                   {user.is_admin && ( // Only show Admin option if user is an admin

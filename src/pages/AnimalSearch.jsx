@@ -150,7 +150,7 @@ function AnimalSearch() {
                                     </Col>
                                 ))
                             ) : (
-                                <Col lg="12">
+                                <Col lg="9">
                                     <p>No animals match the selected filters.</p>
                                 </Col>
                             )}
