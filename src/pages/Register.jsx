@@ -1,10 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { Link, useNavigate } from 'react-router-dom'; //Added useNavigate -RM
+import { Link, useNavigate } from 'react-router-dom';
+
+
+//Added useNavigate -RM
 //Added by Aléxis
 import React, { useState, useContext } from 'react';
 import { useAPI } from '../pages/Context/Context';
+import { Container } from 'react-bootstrap';
 
 function Register() {
   const { registerUser } = useAPI(); //Serves as hook to acess register func
@@ -44,7 +48,10 @@ function Register() {
     }
   };
   return (
-    <Form onSubmit={handleSubmit} className='py-3'>
+    <>
+    <Container fluid>
+
+    <Form onSubmit={handleSubmit} className='py-3' style={{ width: "30%", margin: "auto" }}>
       <FloatingLabel
         controlId="floatingFirstName"
         label="First name"
@@ -84,19 +91,20 @@ function Register() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-        />
+          />
       </FloatingLabel>
 
       <FloatingLabel
         controlId="floatingPassword"
         label="Password"
-      >
+        >
         <Form.Control
           type="password"
           placeholder="Password"
           name="password"
           value={formData.password}
           onChange={handleChange}
+          style={{ marginBottom: "2em"}}
         />
       </FloatingLabel>
 
@@ -107,8 +115,10 @@ function Register() {
       {success && <p className="text-success">{success}</p>}
       {/* Show error message if registration failed */}
       {error && <p className="text-danger">{error}</p>}
-      <p>Already have an account? <Link to="/login">Log in</Link>!</p>
+      <p style={{ marginTop: "1em"}}>Already have an account? <Link to="/login" className='nonBtnLink'>Log in</Link>!</p>
     </Form>
+    </Container>
+    </>
   );
 }
 
