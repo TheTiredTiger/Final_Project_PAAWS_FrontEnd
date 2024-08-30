@@ -48,73 +48,74 @@ function AdoptionFormView() {
               <Card.Body>
                 <Card.Title>{form.animal_name}</Card.Title>
                 <Card.Text>ID: {form.id}</Card.Text>
-                <Button variant="primary">
-                  <Link to={`/animalpage/${form.animal_reference}`} style={{ color: "white", textDecoration: "none" }}>
+                <Link to={`/animalpage/${form.animal_reference}`} >
+                  <Button className='primaryButton'>
                     More
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
           <Col lg="6">
             <Card style={{ width: "60%", margin: "auto", marginTop: "1rem" }}>
               <Card.Body>
-                <Card.Title>{form.first_name} {form.last_name}</Card.Title>
-                <Card.Text>Email: {form.email}</Card.Text>
-                <Button variant="primary">
-                  <Link to="/userprofile" style={{ color: "white", textDecoration: "none" }}>
+                <Card.Title>Full name</Card.Title>
+                <Card.Text>Email: </Card.Text>
+                <Link to="/userprofile" >
+                  <Button className='primaryButton'>
                     Profile
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
         </Row>
 
+
         <Card style={{ width: "85%", margin: "auto", marginTop: "1rem" }}>
           <div style={{ display: "flex" }}>
-            <div className="m-3" style={{ width: "50%" }}>
+            <div className="m-3" controlId="formBasicPhone" style={{ width: "50%" }}>
               <p>Phone number:</p>
-              <input type="text" value={form.phone_number} readOnly className="form-control" />
             </div>
-            <div className="m-3" style={{ width: "50%" }}>
+            <div className="m-3" controlId="formFirstTimeAdopting" style={{ width: "50%" }}>
               <p>Is this your first time having a pet?</p>
-              <input type="text" value={form.first_time_adopting} readOnly className="form-control" />
+              <p className='answer'>{/* answer */}</p>
             </div>
           </div>
 
-          <div className="m-3">
+          <div className="m-3" controlId="formAlreadyHavePets">
             <p>Do you already have any pets currently? If so, how many?</p>
-            <input type="text" value={form.already_have_pets || "NA"} readOnly className="form-control" />
+            <p className='answer'>{/* answer || "NA" */}</p>
           </div>
 
-          <div className="m-3">
+          <div className="m-3" controlId="formCurrentPetsDescription">
             <p>Please describe your current pets in detail.</p>
-            <textarea value={form.current_pets_description || "NA"} readOnly className="form-control" />
+            <p className='answer'>{/* answer || "NA" */}</p>
           </div>
 
-          <div className="m-3">
+
+          <div className="m-3" controlId="formInterestReason">
             <p>Why are you interested in this particular animal?</p>
-            <textarea value={form.interest_reason} readOnly className="form-control" />
+            <p className='answer'>{/* answer */}</p>
           </div>
 
-          <div className="m-3">
+          <div className="m-3" controlId="formMetAnimal">
             <p>Do you plan to meet this animal before the adoption or have you already met them?</p>
-            <input type="text" value={form.met_animal} readOnly className="form-control" />
+            <p className='answer'>{/* answer */}</p>
           </div>
 
-          <div className="m-3">
+          <div className="m-3" controlId="formSpaceForPlay">
             <p>Will the animal have space to play/be entertained?</p>
-            <input type="text" value={form.space_for_play} readOnly className="form-control" />
+            <p className='answer'>{/* answer */}</p>
           </div>
 
-          <div className="m-3">
+          <div className="m-3" controlId="formVetBills">
             <p>Will you be able to front initial vet bills, like neutering, as per the shelter's stipulations?</p>
-            <input type="text" value={form.able_to_front_vet_bills} readOnly className="form-control" />
+            <p className='answer'>{/* answer */}</p>
           </div>
 
-          <Link to="/adoptionstatus" style={{ color: "grey", textDecoration: "none" }}>
-            <Button variant="outline-secondary">
+          <Link to="/adoptionstatus">
+            <Button className='tertiaryButton'>
               Return
             </Button>
           </Link>

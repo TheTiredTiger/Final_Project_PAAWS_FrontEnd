@@ -102,9 +102,14 @@ function AdoptionForm() {
       /*  alert("Adoption submition failed! Can not resubmit application to same pet") */
       Swal.fire({
         title: "Duplicate Form!",
+<<<<<<< HEAD
         text: "Adoption submission failed! Cannot resubmit application to thesame pet.",
         icon: "error",
         confirmButtonColor: '#2AD897',
+=======
+        text: "Adoption submission failed! Cannot resubmit application to the same pet.",
+        icon: "error"
+>>>>>>> d2ba149933fbc5888e9e6ebacbb4df3874c507b2
       });
     }
   };
@@ -119,28 +124,29 @@ function AdoptionForm() {
       <Container fluid>
         <Row>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "22vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>
-                <Card.Text>ID: <br /> {animal.id}</Card.Text>
-                <Button variant="primary">
-                  <Link to={`/animalpage/${animal.id}`} style={{ color: "white", textDecoration: "none" }}>
+                <Card.Text> {animal.life_stage} {animal.species} <br />
+                  ID:  {animal.id}</Card.Text>
+                <Link to={`/animalpage/${animal.id}`}  >
+                  <Button className="primaryButton">
                     More
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
           <Col lg="6">
-            <Card style={{ width: "65%", height: "22vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
+            <Card style={{ width: "65%", height: "28vh", margin: "auto", marginTop: "2rem", paddingTop: "1rem" }}>
               <Card.Body>
                 <Card.Title>{formData.first_name} {formData.last_name}</Card.Title>
-                <Card.Text>Email: {formData.email}</Card.Text>
-                <Button variant="primary">
-                  <Link to="/userprofile" style={{ color: "white", textDecoration: "none" }}>
+                <Card.Text>Email: <br/> {formData.email}</Card.Text>
+                <Link to="/userprofile">
+                  <Button className="primaryButton">
                     Profile
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
           </Col>
@@ -269,7 +275,7 @@ function AdoptionForm() {
             />
           </Form.Group>
 
-          <Button className='m-2' variant="primary" type="submit">
+          <Button className='m-2 primaryButton' variant="primary" type="submit">
             Submit
           </Button>
         </Form>

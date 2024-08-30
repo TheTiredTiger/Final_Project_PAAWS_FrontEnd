@@ -28,7 +28,7 @@ import AdminFormView from './pages/Admin/AdminFormView'
 import SuccessPage from './pages/Payment/SucessPage'
 import CancelPage from './pages/Payment/CancelPage'
 
-import PrivateRoute from './PrivateRoute';
+/* import PrivateRoute from './PrivateRoute'; */
 
 function App() {
 

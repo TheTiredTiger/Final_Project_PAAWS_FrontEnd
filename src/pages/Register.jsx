@@ -100,7 +100,7 @@ function Register() {
         />
       </FloatingLabel>
 
-      <Button className='m-2' variant="primary" type="submit">
+      <Button className='primaryButton m-2' type="submit">
         {loading ? 'Registering...Please Wait' : 'Submit'} {/* while loading showes message (might add something diffent later) */}
       </Button>
       {/* Show success message if registration was successful */}

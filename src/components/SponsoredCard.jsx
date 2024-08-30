@@ -12,7 +12,8 @@ function SponsoredCard({ pet }) {
         <Card.Img
           variant="top"
           src={(pet.animal.images && pet.animal.images[0] && pet.animal.images[0].image_url) || 'https://cdn.britannica.com/86/166986-050-4CEFE5DE/cute-kitten-and-puppy-outdoors-in-grass.jpg'}
-          alt={pet.animal.name}
+          alt={pet.animal.name} 
+          style={{  width: "100%", height: "25vh", objectFit: "cover"}}
         />
         <Card.Body>
           <Card.Title>{pet.animal.name || 'Adorable little fluffball'}</Card.Title>
@@ -20,7 +21,7 @@ function SponsoredCard({ pet }) {
             Contributed: € {pet.total_sponsorship_amount} Total  {/* para já acho que deviamos por o simbolo do euro a direita sendo que tmeos os distritos de pt para já -RM */}
           </Card.Text>
           <Link to={`/animalpage/${pet.animal.id} `} state={{ pet }}>
-            <Button variant="primary">
+            <Button className='primaryButton'>
               More
             </Button>
           </Link>

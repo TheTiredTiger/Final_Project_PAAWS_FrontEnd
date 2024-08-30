@@ -45,6 +45,21 @@ export const APIProvider = ({ children }) => {
         return Promise.reject(error);
     });
 
+    //For auto log out when token expires 
+    api.interceptors.response.use(
+        response => response,
+        async (error) => {
+            // Check if the error response status is 401 (Unauthorized)
+            if (error.response && error.response.status === 401) {
+                // Call the logoutUser function to clear the session and redirect
+                await logoutUser();
+            }
+
+            return Promise.reject(error);
+        }
+    );
+
+
     //Interceptors v3
     /*    api.interceptors.response.use(
             response => response,
