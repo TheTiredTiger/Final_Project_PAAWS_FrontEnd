@@ -12,9 +12,11 @@ import Col from 'react-bootstrap/Col';
 import { useAPI } from './Context/Context';
 import { Link, useNavigate } from 'react-router-dom'; //test
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 import '@sweetalert2/theme-bulma/bulma.css';
+import loadincat from '../images/gifs/newloadingcato.gif'
+import autoAnimate from '@formkit/auto-animate';
 
 
 
@@ -45,6 +47,8 @@ function AdoptionForm() {
     email: ''        // Added
   });
 
+  const dependentQuestionsRef = useRef(null);
+
   useEffect(() => {
     // Fetch the animal data using the id
     const fetchAnimal = async () => {
@@ -71,6 +75,12 @@ function AdoptionForm() {
       }));
     }
   }, [getAnimal, id]);
+
+  useEffect(() => {
+    if (dependentQuestionsRef.current) {
+      autoAnimate(dependentQuestionsRef.current); // Apply auto-animate to the dependent questions container
+    }
+  }, [dependentQuestionsRef]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -109,7 +119,7 @@ function AdoptionForm() {
     }
   };
 
-  if (!animal) return <div>Loading...</div>;
+  if (!animal) return <div><img src={loadincat} /></div>;
 
 
   console.log(formData.first_time_adopting)
@@ -195,7 +205,7 @@ function AdoptionForm() {
 
           {/* Not working yet - BF */}
           {formData.first_time_adopting == "No" && (
-            <div className="dependentQuestions">
+            <div className="dependentQuestions" ref={dependentQuestionsRef}>
               <Form.Group className="m-3" controlId="formAlreadyHavePets">
                 <Form.Label>Do you already have any pets currently? If so, how many?</Form.Label>
                 <Form.Control

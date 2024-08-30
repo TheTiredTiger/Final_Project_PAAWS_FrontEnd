@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useAPI } from './Context/Context';
 import Button from 'react-bootstrap/Button';
@@ -7,12 +7,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal'; // Import Modal
 import SponsorPage from './SponsorPage'; // Import SponsorPage
+import autoAnimate from '@formkit/auto-animate';
+import loadincat from '../images/gifs/newloadingcato.gif'
 
 function AnimalPage() {
   const { getAnimal } = useAPI();
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
   const [showSponsorModal, setShowSponsorModal] = useState(false); // State to control modal visibility
+
+  const modalBodyRef = useRef(null);
 
   useEffect(() => {
     const fetchAnimal = async () => {
@@ -27,8 +31,14 @@ function AnimalPage() {
     fetchAnimal();
   }, [id, getAnimal]);
 
+  useEffect(() => {
+    if (modalBodyRef.current) {
+      autoAnimate(modalBodyRef.current); // Apply auto-animate to the modal body
+    }
+  }, [modalBodyRef]);
+
   if (!animal) {
-    return <p>Loading...</p>;
+    return <img src={loadincat} />;
   }
 
   return (
@@ -81,7 +91,7 @@ function AnimalPage() {
         <Modal.Header closeButton>
           <Modal.Title>Sponsor {animal.name}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body ref={modalBodyRef}>
           <SponsorPage />
         </Modal.Body>
       </Modal>
