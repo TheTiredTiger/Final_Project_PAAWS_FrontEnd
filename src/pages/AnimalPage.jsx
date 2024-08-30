@@ -1,27 +1,20 @@
-// Linked from AnimalSearch, should feature more details about the pet (and if we do add a cap, if donations are closed)
-
-// Section below leading to adoption form
-
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useAPI } from './Context/Context'
+import { useAPI } from './Context/Context';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-//By RM
-import { useEffect, useState } from 'react';
+import Modal from 'react-bootstrap/Modal'; // Import Modal
+import SponsorPage from './SponsorPage'; // Import SponsorPage
 
 function AnimalPage() {
-  /* console.log("I am animal prop", animal) */
-
-  const { getAnimal } = useAPI()
+  const { getAnimal } = useAPI();
   const { id } = useParams();
-  console.log("I am id ", id)
-  /*  console.log("I am animal object in animal page", animal) */
-  const [animal, setAnimal] = useState(null); // State to store the animal data
+  const [animal, setAnimal] = useState(null);
+  const [showSponsorModal, setShowSponsorModal] = useState(false); // State to control modal visibility
 
   useEffect(() => {
-    // Fetch the animal data using the id
     const fetchAnimal = async () => {
       try {
         const fetchedAnimal = await getAnimal(id);
@@ -34,9 +27,6 @@ function AnimalPage() {
     fetchAnimal();
   }, [id, getAnimal]);
 
-  //killing bugs
-  console.log("I am ANIMAL OBJECT AFTER FETCH:", animal);
-
   if (!animal) {
     return <p>Loading...</p>;
   }
@@ -45,11 +35,10 @@ function AnimalPage() {
     <>
       <Card className='animalPage' key={animal}>
         <Row>
-          <Col lg="5" >
-            <Card.Img className="animalPageImg" variant="top" src={animal.images[0].image_url}
-              alt="animal picture" />
+          <Col lg="5">
+            <Card.Img className="animalPageImg" variant="top" src={animal.images[0].image_url} alt="animal picture" />
           </Col>
-          <Col lg="7" >
+          <Col lg="7">
             <Card.Body className='animalPageDesc'>
               <Card.Title>{animal.name || "Unknown Animal"}</Card.Title>
               <Card.Text>
@@ -63,12 +52,14 @@ function AnimalPage() {
                 Description: {animal.description || "Unknown"}
               </Card.Text>
               <div className="animalPageBtn">
-                <Link to={`/sponsor/${animal.id}`} >
-                  <Button className='primaryButton' style={{ margin: "1rem" }}>
-                    Sponsor
-                  </Button>
-                </Link>
-                <Link to="/ourpets" >
+                <Button
+                  className='primaryButton'
+                  style={{ margin: "1rem" }}
+                  onClick={() => setShowSponsorModal(true)} // Open modal on click
+                >
+                  Sponsor
+                </Button>
+                <Link to="/ourpets">
                   <Button className='tertiaryButton'>
                     Return
                   </Button>
@@ -79,8 +70,23 @@ function AnimalPage() {
         </Row>
       </Card>
 
-      {/* link to adoption form */}
+      {/* Modal for SponsorPage */}
+      <Modal
+        show={showSponsorModal}
+        onHide={() => setShowSponsorModal(false)}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Sponsor {animal.name}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <SponsorPage />
+        </Modal.Body>
+      </Modal>
 
+      {/* link to adoption form */}
       <div className="toAdoptionForm">
         <h4>Interested in adopting instead?</h4>
         <p>Check out our <Link to={`/adoptionform/${animal.id}`} >form</Link></p>

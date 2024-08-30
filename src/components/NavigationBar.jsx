@@ -6,7 +6,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 //Added by RM
 import { useAPI } from '../pages/Context/Context';
 import { useNavigate } from 'react-router-dom';
-import Darkmode from 'darkmode-js';
 
 
 

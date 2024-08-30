@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import FilterSection from '../components/FilterSection';
 import AnimalCard from '../components/RegularCard';
 import { useAPI } from '../pages/Context/Context';
+import autoAnimate from '@formkit/auto-animate';
 
 function AnimalSearch() {
     const { listAnimals } = useAPI();
@@ -20,6 +21,15 @@ function AnimalSearch() {
     });
     const [sortOption, setSortOption] = useState('name');
     const [loading, setLoading] = useState(true); // Add loading state
+
+
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        if (containerRef.current) {
+            autoAnimate(containerRef.current);
+        }
+    }, [containerRef]);
 
     // Fetch animals on component mount
     useEffect(() => {
@@ -97,7 +107,7 @@ function AnimalSearch() {
                 <Col lg="3">
                     <FilterSection filters={filters} setFilters={setFilters} />
                 </Col>
-                <Col lg="9">
+                <Col lg="9" ref={containerRef}>
                     <div style={{ marginBottom: '1rem' }}>
                         <label htmlFor="sortOption">Sort By: </label>
                         <select id="sortOption" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
