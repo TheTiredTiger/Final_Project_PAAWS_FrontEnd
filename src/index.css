@@ -115,10 +115,10 @@ h2 {
   background-color: rgb(255, 255, 255, 0.5);
   height: 15vh;
   font-size: 1.5em;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  
+
 }
 
 .centerNavBar {
@@ -163,7 +163,7 @@ h2 {
   bottom: 0;
   width: 100%;
   height: 3em;
-  background-color: white; 
+  background-color: white;
   font-size: 18px;
 }
 
@@ -277,205 +277,205 @@ h2 {
   padding: 0.5em 0em 1em;
 }
 
-  .aboutUsDesc,
-  .motivationText,
-  .storiesDesc,
-  .storiesConclusion {
+.aboutUsDesc,
+.motivationText,
+.storiesDesc,
+.storiesConclusion {
     margin: 4em 5em;
     text-align: justify;
-  }
+}
 
-  .motivationTitle {
-    text-decoration: underline;
-    text-underline-offset: 15px;
-    text-decoration-color: #2AD897;
-  }
+.motivationTitle {
+  text-decoration: underline;
+  text-underline-offset: 15px;
+  text-decoration-color: #2AD897;
+}
 
-  .ourStory {
-    background-color: #ffa69e;
-    padding: 5em;
-  }
+.ourStory {
+  background-color: #ffa69e;
+  padding: 5em;
+}
 
-  .ourStoryText,
-  .ourMissionText,
-  .storyText {
-    text-align: justify;
-  }
+.ourStoryText,
+.ourMissionText,
+.storyText {
+  text-align: justify;
+}
 
-  .ourStoryTitle,
-  .ourMissionTitle,
-  .motivationTitle {
-    margin-bottom: 1.5em;
-  }
+.ourStoryTitle,
+.ourMissionTitle,
+.motivationTitle {
+  margin-bottom: 1.5em;
+}
 
-  .ourMission {
-    padding: 5em;
-    background-color: #ffc1bb;
-  }
+.ourMission {
+  padding: 5em;
+  background-color: #ffc1bb;
+}
 
-  .aboutUsDoubleSec {
-    margin-bottom: 7em;
-  }
+.aboutUsDoubleSec {
+  margin-bottom: 7em;
+}
 
-  .howItWorks {
-    height: 25%;
-    text-align: middle;
-  }
+.howItWorks {
+  height: 25%;
+  text-align: middle;
+}
 
-  .howItWorksHeader {
-    background-color: #2AD897;
-    padding: 5em;
-  }
+.howItWorksHeader {
+  background-color: #2AD897;
+  padding: 5em;
+}
 
-  .howItWorksTitle {
-    line-height: 1.75;
-  }
+.howItWorksTitle {
+  line-height: 1.75;
+}
 
-  .howItWorksOne {
-    background-color: #4ceca9;
-    padding: 5em;
-  }
+.howItWorksOne {
+  background-color: #4ceca9;
+  padding: 5em;
+}
 
-  .howItWorksTwo {
-    background-color: #6bffb8;
-    padding: 5em;
-  }
+.howItWorksTwo {
+  background-color: #6bffb8;
+  padding: 5em;
+}
 
-  .howItWorksThree {
-    background-color: #a9ffd6;
-    padding: 5em;
-  }
+.howItWorksThree {
+  background-color: #a9ffd6;
+  padding: 5em;
+}
 
-  .callToAction {
-    margin: 5em 0em;
-  }
+.callToAction {
+  margin: 5em 0em;
+}
 
-  .callToActionTitle {
-    margin-bottom: 1em;
-  }
+.callToActionTitle {
+  margin-bottom: 1em;
+}
 
-  .callToActionText {
-    font-size: 18px;
-    line-height: 1.75;
-    text-align: justify;
-  }
+.callToActionText {
+  font-size: 18px;
+  line-height: 1.75;
+  text-align: justify;
+}
 
-  .contactUs {
-    background-color: #6bffb8;
-    padding: 2em;
-    text-align: center;
-  }
+.contactUs {
+  background-color: #6bffb8;
+  padding: 2em;
+  text-align: center;
+}
 
-  .contactUsTitle {
-    margin: 2em 0em 0em 0em;
-  }
+.contactUsTitle {
+  margin: 2em 0em 0em 0em;
+}
 
-  .contactUsText {
-    text-align: justify;
-    padding: 2em;
-    font-size: 20px;
-    line-height: 1.75;
-  }
+.contactUsText {
+  text-align: justify;
+  padding: 2em;
+  font-size: 20px;
+  line-height: 1.75;
+}
 
-  .aboutUsPaawsLogo {
-    background-color: #36382e;
-    justify-content: center;
-  }
+.aboutUsPaawsLogo {
+  background-color: #36382e;
+  justify-content: center;
+}
 
-  .socialMediaIcons {
-    display: flex;
-    font-size: 40px;
-    padding: 0em 6em;
-    justify-content: space-between;
-  }
+.socialMediaIcons {
+  display: flex;
+  font-size: 40px;
+  padding: 0em 6em;
+  justify-content: space-between;
+}
 
-  .storyOne,
-  .storyTwo,
-  .storyThree {
-    padding: 3em;
-  }
+.storyOne,
+.storyTwo,
+.storyThree {
+  padding: 3em;
+}
 
-  .StoryTitle {
-    padding: 1em;
-  }
+.StoryTitle {
+  padding: 1em;
+}
 
-  .storyOne {
-    background-color: #3dce94;
-  }
+.storyOne {
+  background-color: #3dce94;
+}
 
-  .storyTwo {
-    background-color: #3ce2a1;
-  }
+.storyTwo {
+  background-color: #3ce2a1;
+}
 
-  .storyThree {
-    background-color: #67e9b6;
-  }
+.storyThree {
+  background-color: #67e9b6;
+}
 
-  .storyImg {
-    width: 100%;
-    height: 35vh;
-    object-fit: cover;
-    border: #36382e solid 3px;
-    margin-bottom: 1.5em;
-  }
+.storyImg {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+  border: #36382e solid 3px;
+  margin-bottom: 1.5em;
+}
 
-  .storyImgAfterOne {
-    margin: 3em 0em 0em 0em;
-  }
+.storyImgAfterOne {
+  margin: 3em 0em 0em 0em;
+}
 
-  .storyImgAfterTwo,
-  .storyImgAfterThree {
-    margin-top: 1em;
-  }
+.storyImgAfterTwo,
+.storyImgAfterThree {
+  margin-top: 1em;
+}
 
-  .cTABtn {
-    font-size: 18px;
-    margin-top: -1em;
-  }
+.cTABtn {
+  font-size: 18px;
+  margin-top: -1em;
+}
 
-  .animalSearchHeader {
-    background-color: #ffc1bb;
-    margin-bottom: 1.5em;
-  }
+.animalSearchHeader {
+  background-color: #ffc1bb;
+  margin-bottom: 1.5em;
+}
 
- /*  .sortBy {
+/*  .sortBy {
     text-align: right;
     margin: 2em 3.5em 2em 0em;
 
   } */
 
 
-  /**/
+/**/
 
-  /* user profile */
+/* user profile */
 
-  .userProfileHeader {
+.userProfileHeader {
     background-color: #2AD897;
+}
+
+.userHeader {
+  text-align: left;
+  margin: 2rem 0rem 1.5rem 2rem;
+}
+
+.scrollingWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
 
-  .userHeader {
-    text-align: left;
-    margin: 2rem 0rem 1.5rem 2rem;
-  }
-
-  .scrollingWrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-
-    -webkit-overflow-scrolling: touch;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .card {
-    margin: 1rem;
-    width: 18rem;
-    flex: "0 0 auto";
-    padding: 2em;
-  }
+.card {
+  margin: 1rem;
+  width: 18rem;
+  flex: "0 0 auto";
+  padding: 2em;
+}
 
 /* personal data */
 .personalDataLabel {
@@ -497,49 +497,84 @@ h2 {
 }
 
 
-  /* animal page */
+/* animal page */
 
-  .animalPage {
-    width: 90%;
-    margin: auto;
-    margin-top: 2em;
-    margin-bottom: 5em;
-  }
+.animalPage {
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
 
-  .animalPageDesc {
-    text-align: left;
-    padding-top: 0;
-  }
+.animalPageDesc {
+  text-align: left;
+  padding-top: 0;
+}
 
-  .animalPageBtn {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 1.5rem;
-  }
+.animalPageBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1.5rem;
+}
 
-  .animalPageText {
-    color: #36382e;
-  }
+.animalPageText {
+  color: #36382e;
+}
 
-  .animalPageImg {
-    height: "50%";
-    object-fit: cover;
-    width: 100%;
-  }
+.animalPageImg {
+  height: "50%";
+  object-fit: cover;
+  width: 100%;
+}
 
-  .toAdoptionForm {
-    background-color: #ffa69e;
-    padding: 3em;
-    color: #36382e;
-  }
+.toAdoptionForm {
+  background-color: #ffa69e;
+  padding: 3em;
+  color: #36382e;
+}
 
-  /* adoptionForm */
+/* adoptionForm */
 
-  .adoptionFormCard {
-    width: 65%;
-    height: 30vh;
-    margin: auto;
-    margin-top: 2em;
-    padding-top: 1em;
-  }
+.adoptionFormCard {
+  width: 65%;
+  height: 30vh;
+  margin: auto;
+  margin-top: 2em;
+  padding-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-switcher img {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.image-switcher img.hidden {
+  opacity: 0;
+}
