@@ -522,16 +522,47 @@ h2 {
   color: #36382e;
 }
 
-.animalPageImg {
-  height: "50%";
-  object-fit: cover;
-  width: 100%;
-}
-
 .toAdoptionForm {
   background-color: #ffa69e;
   padding: 3em;
   color: #36382e;
+}
+
+.imageSwitcher img {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  height: 70vh;
+  width: 100vh;
+  object-fit: cover;
+  
+}
+
+.imageSwitcher img.hidden {
+  opacity: 0;
+}
+
+/* .animalPageBtnL {
+  left: 0;
+}
+
+.animalPageBtnR {
+  right: 0;
+} */
+
+.carouselBtn {
+  background-color: white;
+  color: #36382e;
+  border: none;
+}
+
+.carouselBtn:hover,
+.carouselBtn:active {
+  background-color: #36382e;
+  color: white
+}
+
+.imageControls {
+  margin: auto;
 }
 
 /* adoptionForm */
@@ -570,11 +601,3 @@ h2 {
 
 
 
-.image-switcher img {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
-}
-
-.image-switcher img.hidden {
-  opacity: 0;
-}
