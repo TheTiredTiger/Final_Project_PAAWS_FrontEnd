@@ -9,6 +9,7 @@ import Modal from 'react-bootstrap/Modal'; // Import Modal
 import SponsorPage from './SponsorPage'; // Import SponsorPage
 import autoAnimate from '@formkit/auto-animate';
 import loadincat from '../images/gifs/newloadingcato.gif'
+import ImageSwitcher from '../components/ImageSwitch';
 
 function AnimalPage() {
   const { getAnimal } = useAPI();
@@ -47,11 +48,12 @@ function AnimalPage() {
       <Card className='animalPage' key={animal}>
         <Row>
           <Col lg="5">
-            <Card.Img className="animalPageImg" src={animal.images[0].image_url} alt="animal picture" />
+            {/*  <Card.Img className="animalPageImg" src={animal.images[0].image_url} alt="animal picture" /> */}
+            <ImageSwitcher images={animal.images} />
           </Col>
           <Col lg="7">
             <Card.Body className='animalPageDesc'>
-              <Card.Title style={{ marginBottom: "1em"}}><h2> {animal.name || "Unknown Animal"} </h2></Card.Title>
+              <Card.Title style={{ marginBottom: "1em" }}><h2> {animal.name || "Unknown Animal"} </h2></Card.Title>
               <Card.Text className='animalPageText'>
                 <p><strong>Species:</strong> {animal.species || "Unknown"} </p>
                 <p><strong>Gender:</strong> {animal.gender || "Unknown"} </p>
