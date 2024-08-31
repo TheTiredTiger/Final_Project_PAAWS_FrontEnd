@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const AdoptionStatusCard = ({ adoption, onApprove, onReject, onViewForm }) => {
+const AdoptionStatusCard = ({ adoption, onApprove, onReject, onViewForm, isUpdating }) => {
   // Function to determine the card's background color based on status
   const getCardStyle = () => {
     switch (adoption.adoption_status) {
@@ -31,11 +31,19 @@ const AdoptionStatusCard = ({ adoption, onApprove, onReject, onViewForm }) => {
         </Card.Text>
         <Card.Text>Status: {adoption.adoption_status}</Card.Text>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Button className='primaryButton' onClick={onApprove}>
-            <i className="fa-solid fa-check" />
+          <Button
+            className='primaryButton'
+            onClick={onApprove}
+            disabled={isUpdating}  // Disable the button when updating
+          >
+            {isUpdating ? <Spinner as="span" animation="border" size="sm" /> : <i className="fa-solid fa-check" />}
           </Button>
-          <Button className='secondaryButton' onClick={onReject}>
-            <i className="fa-solid fa-x" />
+          <Button
+            className='secondaryButton'
+            onClick={onReject}
+            disabled={isUpdating}  // Disable the button when updating
+          >
+            {isUpdating ? <Spinner as="span" animation="border" size="sm" /> : <i className="fa-solid fa-x" />}
           </Button>
           <Link to={`/adoptionform_adminview/${adoption.id}`} >
             <Button className='tertiaryButton' onClick={onViewForm}>
@@ -44,7 +52,6 @@ const AdoptionStatusCard = ({ adoption, onApprove, onReject, onViewForm }) => {
           </Link>
         </div>
       </Card.Body>
-      {/* something wrong with push delete after... */}
     </Card>
   );
 };
