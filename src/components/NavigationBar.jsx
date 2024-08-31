@@ -38,50 +38,28 @@ function NavigationBar() {
             <Nav.Link href="/successstories" className='navbarItem mx-2'>Success Stories</Nav.Link>
           </Nav>
 
-          <Nav className='navbarRight '>
+          <Nav className='navbarRight'>
             {user ? (
-              // If user is logged in
-              <div>
-                <NavDropdown
-                >
-
-            {/* {['up', 'up-centered', 'down', 'down-centered', 'start', 'end'].map(
-              (direction) => (
-            <DropdownButton
-              as={ButtonGroup}
-              key={direction}
-              id={`dropdown-button-drop-${direction}`}
-              drop={direction}
-              variant="secondary"
-              title={` Drop ${direction} `}
-            >
-              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
-            </DropdownButton>
-          ),
-        )} */}
-                  <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
-                  {user.is_admin && ( // Only show Admin option if user is an admin
-                    <NavDropdown.Item href="/adminpage">Admin</NavDropdown.Item>
-                  )}
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item> {/* Trigger logout */}
-                </NavDropdown>
-              </div>
+              // If the user is logged in
+              <NavDropdown title={<i className="fa-solid fa-user me-3" />} id="user-nav-dropdown" alignRight>
+                <NavDropdown.Item href="/userprofile">Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/personaldata">Personal data</NavDropdown.Item>
+                {user.is_admin && ( // Only show Admin option if the user is an admin
+                  <NavDropdown.Item href="/adminpage">Admin</NavDropdown.Item>
+                )}
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item> {/* Trigger logout */}
+              </NavDropdown>
             ) : (
-              // If user is not logged in
+              // If the user is not logged in
               <Nav.Link href="/login" className='login'>
                 Log in
               </Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
-        </Container>
-        </Navbar>
+      </Container>
+    </Navbar>
   );
 }
 
