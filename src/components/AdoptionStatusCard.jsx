@@ -44,6 +44,7 @@ const AdoptionStatusCard = ({ adoption, onApprove, onReject, onViewForm }) => {
           </Link>
         </div>
       </Card.Body>
+      {/* something wrong with push delete after... */}
     </Card>
   );
 };
