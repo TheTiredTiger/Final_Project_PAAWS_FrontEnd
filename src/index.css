@@ -215,8 +215,6 @@ h2 {
   padding: 20% 0%;
 }
 
-
-
 .sectionTitle {
   font-size: clamp(7vw, 5vw, 3rem);
   line-height: 1.5;
@@ -278,7 +276,6 @@ h2 {
   font-size: 25px !important;
   padding: 0.5em 0em 1em;
 }
-
 
   .aboutUsDesc,
   .motivationText,
@@ -452,23 +449,8 @@ h2 {
 
   /* user profile */
 
-  .bannerWrap {
-    position: relative;
-    overflow: hidden;
-    padding: 1rem;
-  }
-
-  .banner {
-    opacity: 0.6;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-  }
-
-  .userGreeting {
-    position: relative;
+  .userProfileHeader {
+    background-color: #2AD897;
   }
 
   .userHeader {
@@ -495,9 +477,13 @@ h2 {
     padding: 2em;
   }
 
+/* personal data */
+.personalDataLabel {
+  color: #36382e;
+  margin: 1em 0em;
+}
+
 /* filter section */
-
-
 
 .filterTitle {
   padding: 1em 0em 0.25em 0;

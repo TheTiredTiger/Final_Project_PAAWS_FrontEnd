@@ -44,7 +44,7 @@ function Login() {
       console.log('Login successful:', response); //test
       navigate('/userprofile'); //Redirects user to profile page
     } catch (err) {
-      setError('Login failed. Please check your credentials.'); // Tell user he messed up (politely :D)
+      setError('Something smells funny... Is your pawprint incorrect?'); // Tell user he messed up (politely :D)
     } finally {
       setLoading(false); //Button back from vacation!
     }
