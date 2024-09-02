@@ -23,6 +23,7 @@ body {
 a {
   color: #36382e;
   text-decoration: none;
+  margin: 0;
 }
 
 a:hover,
@@ -34,6 +35,27 @@ a:active {
 h2 {
   color: #2AD897;
 }
+
+h3 {
+  margin: 0.5em 0em;
+}
+
+.nav-tabs .nav-link {
+  color: #36382e;
+  justify-content: center;
+}
+
+.nav-tabs .nav-link.active {
+  color: #2AD897;
+}
+
+/* not working */
+/* .custom-control-input:checked,
+.custom-control-label::before {
+  border-color: #6bffb8;
+  background-color: #6bffb8;
+} */
+
 
 .primaryButton {
   background-color: #6bffb8;
@@ -575,29 +597,17 @@ h2 {
   padding-top: 1em;
 }
 
+/* Admin */
 
+.adminCard {
+  width: 18rem;
+  height: 80%;
+  margin: auto;
+  margin-top: 3em;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.adminForm {
+  width: 85%;
+  margin: auto;
+  margin-top: 3em;
+}
