@@ -58,17 +58,17 @@ function AdoptionStatus() {
 
   return (
     <>
-      <Row>
+      <Row className="justify-content-center">
         {error && <p className="text-danger">{error}</p>}
         {loading ? (
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+          <div>
             <Spinner animation="border" role="status">
               <span className="sr-only">Loading...</span>
             </Spinner>
           </div>
         ) : (
           adoptions.map(adoption => (
-            <Col lg="4" key={adoption.id}>
+            <Col lg="3" key={adoption.id}>
               <AdoptionStatusCard
                 adoption={adoption}
                 onApprove={() => handleUpdateStatus(adoption.id, 'Approved')}
@@ -82,8 +82,8 @@ function AdoptionStatus() {
       </Row>
 
       {!loading && (
-        <div style={{ display: "flex", justifyContent: "right" }}>
-          <Button href='/adminpage' className="tertiaryButton">Return</Button>
+        <div>
+          <Button href='/adminpage' className=" m-2 tertiaryButton">Return</Button>
         </div>
       )}
     </>

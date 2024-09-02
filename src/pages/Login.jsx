@@ -42,7 +42,8 @@ function Login() {
       const response = await loginUser(formData); // Let's see if the API likes us today
       // Here is the post-login magic- redirect the user somewere nice (update when PAAWS is further in life)
       console.log('Login successful:', response); //test
-      navigate('/userprofile'); //Redirects user to profile page
+      navigate('/'); //Redirects user to profile page
+      // changed this  because it'll fit better with the presentation's flow - BF
     } catch (err) {
       setError('Something smells funny... Is your pawprint incorrect?'); // Tell user he messed up (politely :D)
     } finally {
