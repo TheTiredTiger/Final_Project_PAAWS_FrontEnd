@@ -487,9 +487,8 @@ h3 {
   overflow-x: auto;
 
   -webkit-overflow-scrolling: touch;
-
   &::-webkit-scrollbar {
-    display: none;
+      display: none;
   }
 }
 
@@ -498,12 +497,25 @@ h3 {
   width: 18rem;
   flex: "0 0 auto";
   padding: 2em;
+  color: #36382e !important;
 }
 
 /* personal data */
 .personalDataLabel {
   color: #36382e;
   margin: 1em 0em;
+}
+
+.pending {
+  background-color: rgb(54,56,46, 0.1);
+}
+
+.approved {
+  background-color: rgb(107,255,184, 0.3)
+}
+
+.rejected {
+  background-color: rgb(255,193,187, 0.5);
 }
 
 /* filter section */
