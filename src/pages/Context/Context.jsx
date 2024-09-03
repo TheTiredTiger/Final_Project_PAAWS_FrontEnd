@@ -12,7 +12,7 @@ export const APIProvider = ({ children }) => {
     const [token, setToken] = useState(null);
 
     //cd Mudei o url para a versao deployed da nossa API
-    const url = `https://final-project-paaws-back-end.onrender.com`; //url to change api rquests -RM
+    const url = `https://961mfdzq-3000.uks1.devtunnels.ms`; //url to change api rquests -RM
 
     const api = axios.create({
         /*  baseURL: 'https://961mfdzq-3000.uks1.devtunnels.ms', // Replace with your API base URL "Porta" */
@@ -436,6 +436,45 @@ export const APIProvider = ({ children }) => {
             throw error;
         }
     };
+
+    /*  const updateAdoptionStatus = async (adoptionId, newStatus) => {
+         try {
+             // Step 1: Fetch the current adoption request to get the animal ID
+             const adoptionResponse = await api.get(`/adoption/${adoptionId}`);
+             const adoption = adoptionResponse.data;
+             const animalId = adoption.animal_id;
+ 
+             // Step 2: If the new status is "approved", reject all other pending adoptions for the same animal
+             if (newStatus === 'approved') {
+                 // Fetch all pending adoptions for the same animal
+                 const allAdoptionsResponse = await api.get(`/adoptions`);
+                 const pendingAdoptions = allAdoptionsResponse.data.filter(
+                     (adoption) => adoption.animal_id === animalId && adoption.adoption_status === 'pending'
+                 );
+ 
+                 // Reject each pending adoption
+                 for (let pendingAdoption of pendingAdoptions) {
+                     if (pendingAdoption.id !== adoptionId) {
+                         await api.put(`/update_adoption_status/${pendingAdoption.id}`, {
+                             adoption_status: 'rejected',
+                         });
+                     }
+                 }
+             }
+ 
+             // Step 3: Update the status of the current adoption request
+             const response = await api.put(`/update_adoption_status/${adoptionId}`, {
+                 adoption_status: newStatus,
+             });
+ 
+             console.log('Adoption status updated successfully:', response.data);
+             return response.data;
+         } catch (error) {
+             console.error(`Updating adoption status failed:`, error.response ? error.response.data : error.message);
+             throw error;
+         }
+     }; */
+
     // New function to get all adoptions with animal images
     const getAllAdoptions = async () => {
         try {
