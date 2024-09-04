@@ -51,17 +51,17 @@ const SuccessPage = () => {
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
         textAlign: 'center',
         flexDirection: 'column'
-    }; */
-
+    };
+ */
     return (
         <>
-        <div className='my-5'>
+        <div className='mt-5'>
             <h1>Payment Successful</h1>
             <p>Your payment was successful. Thank you for your purchase!</p>
         </div>
 
-        <div>
-            <img src="/src/images/gifs/theyseemerollingacato.gif" alt="a grey cat wearing dark sunglasses is rolling on a cardboard car" />
+         <div>
+            <img src={successGif} alt="a grey cat wearing dark sunglasses is rolling on a cardboard car" />
         </div>
         </>
     );

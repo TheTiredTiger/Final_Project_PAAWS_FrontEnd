@@ -50,12 +50,42 @@ h3 {
   color: #2AD897;
 }
 
-/* not working */
-/* .custom-control-input:checked,
-.custom-control-label::before {
-  border-color: #6bffb8;
+a.dropdown-item:active {
+  background-color: #2AD897;
+}
+
+input[type="checkbox"]:checked,  
+input[type="radio"]:checked {
   background-color: #6bffb8;
+  border-color: #6bffb8;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  border-color: #6bffb8;
+  box-shadow: 0 0 0 0.25rem rgb(107,255,184, 0.3);
+}
+
+.form-control:focus {
+  border-color: #6bffb8;
+  box-shadow: 0 0 0 0.25rem rgb(107,255,184, 0.3);
+}
+
+/* input#password.form-control:focus-visible {
+  background-color: #2AD897;
 } */
+
+/* Change autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* Change text color for autofill */
+input:-webkit-autofill {
+  -webkit-text-fill-color: black !important;
+}
 
 
 .primaryButton {
@@ -487,9 +517,8 @@ h3 {
   overflow-x: auto;
 
   -webkit-overflow-scrolling: touch;
-
   &::-webkit-scrollbar {
-    display: none;
+      display: none;
   }
 }
 
@@ -498,12 +527,25 @@ h3 {
   width: 18rem;
   flex: "0 0 auto";
   padding: 2em;
+  color: #36382e !important;
 }
 
 /* personal data */
 .personalDataLabel {
   color: #36382e;
   margin: 1em 0em;
+}
+
+.pending {
+  background-color: rgb(54,56,46, 0.1);
+}
+
+.approved {
+  background-color: rgb(107,255,184, 0.3)
+}
+
+.rejected {
+  background-color: rgb(255,193,187, 0.5);
 }
 
 /* filter section */

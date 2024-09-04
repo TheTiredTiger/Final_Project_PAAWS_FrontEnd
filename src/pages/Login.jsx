@@ -75,7 +75,7 @@ function Login() {
   return (<>
     <Container fluid>
 
-    <Form onSubmit={handleSubmit} className='my-3'style={{ width: "30%", margin: "auto" }}> {/* Just lowering the form a bit – RM To TT */}
+    <Form onSubmit={handleSubmit} className='my-3'style={{ width: "30%", margin: "auto" }}>
       <FloatingLabel
         controlId="floatingInput"
         label="Email address"
@@ -86,9 +86,8 @@ function Login() {
           placeholder="name@example.com"
           name="email"
           value={formData.email}
-          onChange={handleChange} // Change the value – but don’t go breaking my heart
-          required // Yeah, you’re gonna need to fill this out – no skipping!
-          // Your comments are sending me - BF
+          onChange={handleChange}
+          style={{ color: '#000' }} // Add this line
         />
       </FloatingLabel>
 
@@ -98,23 +97,23 @@ function Login() {
           placeholder="Password"
           name="password"
           value={formData.password}
-          onChange={handleChange} // Go ahead, type something secure... hopefully
-          required // Seriously, you can’t just skip this – we need to pretend to care about security
+          onChange={handleChange}
+          required
+          style={{ color: '#000' }} // Add this line
           />
       </FloatingLabel>
+
       <Link onClick={handleShow} className='nonBtnLink forgotPass' >
         <p style={{ marginTop: "1em"}}>Forgot your password?</p>
       </Link>
 
-      {/* If something goes wrong, we’ll kindly let them know – in red, because red means danger */}
       {error && <p className="text-danger">{error}</p>}
 
-      {/* The magic button – either submit or just stare at it while it says 'Logging in...' */}
       <Button className='primaryButton m-2' type="submit" disabled={loading}>
-        {loading ? 'Logging in...' : 'Submit'} {/* Button changes based on how tired it is */}
+        {loading ? 'Logging in...' : 'Submit'}
       </Button>
 
-      <p style={{ marginTop: "1em"}}>Don't have an account? <Link to='/register' className='nonBtnLink'>Register</Link>! {/* No account? Join the fun of filling out more forms! */}</p>
+      <p style={{ marginTop: "1em"}}>Don't have an account? <Link to='/register' className='nonBtnLink'>Register</Link>!</p>
     </Form>
     </Container>
 

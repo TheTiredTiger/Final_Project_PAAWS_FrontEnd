@@ -69,10 +69,11 @@ function AdoptionFormView() {
           </Col>
         </Row>
 
-        <Card style={{ width: "85%", margin: "auto", marginTop: "1rem" }}>
+        <Card style={{ width: "80%", margin: "auto", marginTop: "1rem" }}>
           <div style={{ display: "flex" }}>
             <div className="m-3" style={{ width: "50%" }}>
-              <p>Phone number: {form.phone_number}</p>
+              <p>Phone number:</p>
+              <p>{form.phone_number}</p>
             </div>
             <div className="m-3" style={{ width: "50%" }}>
               <p>Is this your first time having a pet? </p>
