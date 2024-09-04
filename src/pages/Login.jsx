@@ -70,8 +70,6 @@ function Login() {
     }
   };
 
-
-
   return (<>
     <Container fluid>
 
@@ -109,7 +107,7 @@ function Login() {
 
       {error && <p className="text-danger">{error}</p>}
 
-      <Button className='primaryButton m-2' type="submit" disabled={loading}>
+      <Button className='primaryButton m-2' variant="success" type="submit" disabled={loading}>
         {loading ? 'Logging in...' : 'Submit'}
       </Button>
 
